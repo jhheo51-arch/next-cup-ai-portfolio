@@ -261,6 +261,7 @@ function tasteInput() {
     essential: $("#essential").checked,
     store: $("#store").value,
     dislikes: window.NextCupAIState.dislikes,
+    priority: $("#taste-priority")?.value || "",
   };
 }
 async function compare() {
@@ -272,6 +273,12 @@ async function compare() {
     return;
   }
   const p = tasteInput();
+  if (p.priority && !p.tags.includes(p.priority)) {
+    lastComparison = null;
+    $("#comparison-title").textContent = "필수 특징을 좋아하는 감각에서도 선택해 주세요.";
+    $("#results").textContent = "필수 특징: " + C.labels[p.priority] + ". 두 선택이 일치해야 비교할 수 있습니다.";
+    return;
+  }
   const button = $("#taste-form button[type=submit]");
   button.disabled = true;
   lastComparison = null;

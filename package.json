@@ -1,1 +1,16 @@
-{"name":"next-cup-v04","version":"0.4.0","private":true,"engines":{"node":">=24"},"scripts":{"start":"node server.cjs","test":"node --test tests/*.test.cjs","invite":"node admin.cjs invite","admin-invite":"node admin.cjs admin-invite","reports":"node admin.cjs reports","live-check":"node live-check.cjs"}}
+{
+  "name": "next-cup-ai-portfolio",
+  "version": "0.8.0",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.cjs",
+    "test": "node --test tests/*.test.cjs",
+    "invite": "node admin.cjs invite",
+    "admin-invite": "node admin.cjs admin-invite",
+    "reports": "node admin.cjs reports",
+    "live-check": "node live-check.cjs"
+  }
+}

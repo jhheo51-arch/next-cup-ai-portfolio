@@ -1,0 +1,11 @@
+const {test} = require('node:test');
+const assert = require('node:assert/strict');
+const C = require('../core.js');
+const input = { tags:['cream','ice'], essential:false, store:'all', priority:'ice' };
+test('갈린 질감을 필수로 확인하면 라떼와 콜드 브루 제외', () => assert.deepEqual(C.compare(input).candidates.map(d=>d.id), ['chocolate','mango','strawberry']));
+test('초콜릿을 피하면 과일 블렌디드 두 가지 유지', () => assert.deepEqual(C.compare({...input, dislikes:['cocoa']}).candidates.map(d=>d.id), ['mango','strawberry']));
+test('과일과 초콜릿을 모두 피하면 갈린 질감 대안 보류', () => assert.equal(C.compare({...input, dislikes:['cocoa','fruit']}).status, 'empty'));
+test('요거트가 필수이면 딸기 요거트만 남음', () => assert.deepEqual(C.compare({tags:['ice','yogurt'],essential:false,store:'all',priority:'yogurt'}).candidates.map(d=>d.id),['strawberry']));
+test('좋아하는 감각에 없는 필수 특징은 재확인', () => assert.equal(C.compare({...input, priority:'vanilla'}).status, 'invalid'));
+test('필수 쌀 조건을 질감 선택으로 덮어쓰지 않음', () => assert.equal(C.compare({...input, essential:true}).candidates.length, 0));
+test('필수 특징 없는 이전 입력은 호환 유지', () => assert.equal(C.compare({...input, priority:''}).candidates.length, 5));

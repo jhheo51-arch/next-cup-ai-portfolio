@@ -6,6 +6,8 @@
   "use strict";
   const labels = {
     rice: "구수한 쌀 풍미",
+    fruit: "과일 풍미",
+    yogurt: "요거트 풍미",
     cream: "부드러운 크림감",
     ice: "차갑게 갈린 질감",
     crunch: "바삭한 토핑",
@@ -32,6 +34,8 @@
   };
   // These tags describe prototype assumptions, not verified recipes or sensory measurements.
   const drinks = [
+    { id:"strawberry", name:"딸기 딜라이트 요거트 블렌디드", tags:["ice","fruit","yogurt"], sourceIds:["S13"], checked:"2026-10-07", sale:"listed", scope:"공식 블렌디드 목록 확인 / 지점 재고 미확인", tagBasis:{ice:"블렌디드 형식을 갈린 질감으로 분류",fruit:"공식 설명의 딸기 과육",yogurt:"공식 설명의 요거트"}, difference:"쌀 풍미와 쌀과자 토핑은 없습니다. 딸기와 요거트 풍미가 있어 원래 음료와 맛이 다릅니다." },
+    { id:"mango", name:"망고 패션 프루트 블렌디드", tags:["ice","fruit","tea"], sourceIds:["S13"], checked:"2026-10-07", sale:"listed", scope:"공식 블렌디드 목록 확인 / 지점 재고 미확인", tagBasis:{ice:"블렌디드 형식을 갈린 질감으로 분류",fruit:"공식 설명의 망고와 패션 프루트",tea:"공식 설명의 블랙 티"}, difference:"쌀 풍미와 쌀과자 토핑은 없습니다. 과일과 블랙 티 풍미가 있으며, 무카페인 대안으로 안내하지 않습니다." },
     {
       id: "chocolate",
       name: "초콜릿 크림 칩 프라푸치노",
@@ -91,10 +95,11 @@
     v.length <= Object.keys(o).length &&
     new Set(v).size === v.length &&
     v.every((k) => has(o, k));
-  function compare({ tags, essential, store, dislikes = [] } = {}) {
+  function compare({ tags, essential, store, dislikes = [], priority = "" } = {}) {
     if (
       !list(tags, labels) ||
       !list(dislikes, labels) ||
+      (priority !== "" && (!has(labels, priority) || !tags.includes(priority))) ||
       tags.some((t) => dislikes.includes(t)) ||
       typeof essential !== "boolean" ||
       !["all", "limited", "unknown"].includes(store)
@@ -110,6 +115,7 @@
     );
     const candidates = allowed
       .filter((d) => !essential || d.tags.includes("rice"))
+      .filter((d) => !priority || d.tags.includes(priority))
       .map((d) => ({
         ...d,
         shared: tags.filter((t) => d.tags.includes(t)),
@@ -171,6 +177,7 @@
         p.store,
         [...p.tags].sort(),
         p.essential,
+        p.priority || "",
       ]);
     if (type === "request")
       return JSON.stringify([

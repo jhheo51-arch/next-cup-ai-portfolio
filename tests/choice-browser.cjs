@@ -1,0 +1,65 @@
+"use strict";
+const { chromium } = require(process.env.PLAYWRIGHT_PATH || "playwright");
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const { createApp } = require("../server.cjs");
+(async () => {
+  const app = createApp({ dbPath: ":memory:" });
+  await new Promise(resolve => app.server.listen(0, "127.0.0.1", resolve));
+  const browser = await chromium.launch({ channel: "msedge", headless: true });
+  const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+  const errors = [], checks = [];
+  page.on("pageerror", e => errors.push(e.message));
+  const check = (name, value) => { assert.ok(value, name); checks.push(name); };
+  try {
+    await page.goto(`http://127.0.0.1:${app.server.address().port}/#collection`);
+    await page.locator("#choice-menu").fill("가상 시험 음료 <script>alert(1)</script>");
+    await page.locator("#choice-reason").fill("가상 시나리오: 갈린 질감이 좋아서");
+    await page.locator("#choice-rating").selectOption("okay");
+    await page.locator("#choice-form button").click();
+    check("음용 전 맛 평가 차단", (await page.locator("#choice-error").innerText()).includes("실제로 마신"));
+    await page.locator("#choice-stage").selectOption("tasted");
+    await page.locator("#choice-form button").click();
+    check("목록 밖 선택 저장 및 HTML 이스케이프", await page.locator("#choice-rows h3").innerText() === "가상 시험 음료 <script>alert(1)</script>");
+    await page.reload();
+    check("새로고침 후 선택 기록 유지", (await page.locator("#choice-rows").innerText()).includes("갈린 질감"));
+    await page.evaluate(() => location.hash = "research");
+    await page.locator("#trial-person").fill("SYNTHETIC01");
+    await page.locator("#trial-task").fill("T01");
+    await page.locator("#trial-setup button").click();
+    await page.evaluate(() => location.hash = "research");
+    await page.locator("#trial-note").fill("가상 시험");
+    await page.locator("#trial-finish button").click();
+    check("비교하지 않은 완료 기록 차단", (await page.locator("#trial-error").innerText()).includes("먼저 확인"));
+    await page.evaluate(() => location.hash = "discover");
+    await page.locator('[name=taste][value=ice]').check();
+    await page.locator('#taste-priority').selectOption('ice');
+    await page.locator("#rice-requirement").selectOption("no");
+    await page.locator('#taste-form button[type=submit]').click();
+    await page.locator("[data-save=chocolate]").waitFor();
+    await page.evaluate(() => location.hash = "research");
+    await page.locator("#trial-understood").selectOption("yes");
+    await page.locator("#trial-finish button").click();
+    const rows = await page.evaluate(() => JSON.parse(localStorage.getItem("next-cup:choice-evidence:v1")));
+    const trial = rows.find(r => r.type === "trial");
+    check("가상 시험 분리와 비교 상태 기록", trial.kind === "synthetic" && trial.comparison.candidates[0] === "chocolate");
+    check("필수 특징이 비교 기록에 보존", trial.comparison.input.priority === "ice");
+    check("시계와 실제 변경 이벤트 기록", trial.elapsedSeconds > 0 && trial.changes >= 1 && trial.aiRequests === 0);
+    const download = page.waitForEvent("download");
+    await page.locator("#evidence-export").click();
+    const downloaded = await download;
+    const exported = JSON.parse(fs.readFileSync(await downloaded.path(), "utf8"));
+    check("다운로드에 가상 구분 보존", exported.records.find(r => r.type === "trial").kind === "synthetic");
+    for (const viewport of [{width:375,height:812},{width:812,height:375}]) {
+      await page.setViewportSize(viewport);
+      check(`가로 넘침 없음 ${viewport.width}`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+    }
+    await page.screenshot({ path: "evidence/choice-mobile.png", fullPage: true });
+    await page.evaluate(() => localStorage.setItem("next-cup:choice-evidence:v1", "broken"));
+    await page.reload();
+    check("손상된 저장 데이터 보존", await page.evaluate(() => localStorage.getItem("next-cup:choice-evidence:v1") === "broken"));
+    check("스크립트 오류 없음", errors.length === 0);
+    fs.writeFileSync("evidence/choice-browser-results.json", JSON.stringify({ checkedAt: new Date().toISOString(), type: "synthetic-browser-test", aiCalls: 0, realExternalParticipants: 0, checks, errors }, null, 2));
+    console.log(JSON.stringify({ passed: checks.length, checks }));
+  } finally { await browser.close(); app.server.closeAllConnections(); await app.close(); }
+})().catch(e => { console.error(e); process.exitCode = 1; });

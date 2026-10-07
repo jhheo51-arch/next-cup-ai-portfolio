@@ -1,0 +1,59 @@
+{
+  "kind": "synthetic-release-smoke",
+  "externalParticipants": 0,
+  "policy": "전 사례 1회 실행. 실패도 보존. 품질 통계나 고객 만족도 시험 아님.",
+  "cases": [
+    {
+      "id": "R01",
+      "text": "쌀은 없어도 괜찮아요. 차갑게 갈린 질감과 요거트 풍미가 좋아요. 초콜릿 풍미는 싫어요.",
+      "likes": [
+        "ice",
+        "yogurt"
+      ],
+      "dislikes": [
+        "cocoa"
+      ],
+      "rice": "no",
+      "priority": "yogurt",
+      "expected": [
+        "strawberry"
+      ]
+    },
+    {
+      "id": "R02",
+      "text": "쌀의 구수한 풍미가 좋아요. 쌀 풍미는 꼭 있어야 해요.",
+      "likes": [
+        "rice"
+      ],
+      "dislikes": [],
+      "rice": "yes",
+      "priority": "",
+      "expected": []
+    },
+    {
+      "id": "R03",
+      "text": "바닐라 향이 좋아요. 쌀은 없어도 괜찮아요.",
+      "likes": [
+        "vanilla"
+      ],
+      "dislikes": [],
+      "rice": "no",
+      "priority": "",
+      "override": {
+        "likes": [
+          "ice",
+          "fruit"
+        ],
+        "dislikes": [
+          "tea",
+          "cocoa"
+        ],
+        "rice": "no",
+        "priority": "ice"
+      },
+      "expected": [
+        "strawberry"
+      ]
+    }
+  ]
+}

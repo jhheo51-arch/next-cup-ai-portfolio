@@ -1,0 +1,620 @@
+TAP version 13
+# Subtest: 쌀 풍미 필수는 모든 부분 대안보다 우선
+ok 1 - 쌀 풍미 필수는 모든 부분 대안보다 우선
+  ---
+  duration_ms: 4.1667
+  type: 'test'
+  ...
+# Subtest: 사용자가 필수 조건을 해제한 경우에만 부분 대안
+ok 2 - 사용자가 필수 조건을 해제한 경우에만 부분 대안
+  ---
+  duration_ms: 43.9657
+  type: 'test'
+  ...
+# Subtest: 미확인 매장은 추천 보류
+ok 3 - 미확인 매장은 추천 보류
+  ---
+  duration_ms: 0.2018
+  type: 'test'
+  ...
+# Subtest: 품절 후보 제외
+ok 4 - 품절 후보 제외
+  ---
+  duration_ms: 0.1885
+  type: 'test'
+  ...
+# Subtest: 선호와 필수 조건 모두 미선택은 확인 요청
+ok 5 - 선호와 필수 조건 모두 미선택은 확인 요청
+  ---
+  duration_ms: 0.1793
+  type: 'test'
+  ...
+# Subtest: 바삭한 토핑만 원하면 억지 추천하지 않음
+ok 6 - 바삭한 토핑만 원하면 억지 추천하지 않음
+  ---
+  duration_ms: 0.1383
+  type: 'test'
+  ...
+# Subtest: 잘못된 태그와 중복 차단
+ok 7 - 잘못된 태그와 중복 차단
+  ---
+  duration_ms: 0.2184
+  type: 'test'
+  ...
+# Subtest: 전 조합의 필수, 품절 조건 유지
+ok 8 - 전 조합의 필수, 품절 조건 유지
+  ---
+  duration_ms: 0.7662
+  type: 'test'
+  ...
+# Subtest: 재출시 요청 유효
+ok 9 - 재출시 요청 유효
+  ---
+  duration_ms: 0.2785
+  type: 'test'
+  ...
+# Subtest: 공백 요청, 길이 제한
+ok 10 - 공백 요청, 길이 제한
+  ---
+  duration_ms: 1.1105
+  type: 'test'
+  ...
+# Subtest: 지점 확장 요청에 메뉴와 지점 필수
+ok 11 - 지점 확장 요청에 메뉴와 지점 필수
+  ---
+  duration_ms: 0.239
+  type: 'test'
+  ...
+# Subtest: 제안은 재료와 고객 맥락 필수
+ok 12 - 제안은 재료와 고객 맥락 필수
+  ---
+  duration_ms: 0.1341
+  type: 'test'
+  ...
+# Subtest: 사전에 없는 재료나 음료 형식 차단
+ok 13 - 사전에 없는 재료나 음료 형식 차단
+  ---
+  duration_ms: 0.1041
+  type: 'test'
+  ...
+# Subtest: 기록 스키마와 시간 검증
+ok 14 - 기록 스키마와 시간 검증
+  ---
+  duration_ms: 1.7817
+  type: 'test'
+  ...
+# Subtest: 필수 조건 위반 후보 저장 차단
+ok 15 - 필수 조건 위반 후보 저장 차단
+  ---
+  duration_ms: 0.2622
+  type: 'test'
+  ...
+# Subtest: 후보 중복은 취향 선택 순서, 평가와 무관
+ok 16 - 후보 중복은 취향 선택 순서, 평가와 무관
+  ---
+  duration_ms: 0.3375
+  type: 'test'
+  ...
+# Subtest: 커피 비선호이면 라떼, 콜드 브루 제외
+ok 17 - 커피 비선호이면 라떼, 콜드 브루 제외
+  ---
+  duration_ms: 3.7484
+  type: 'test'
+  ...
+# Subtest: 5개 취향의 전체 192 조합에서 필수 조건 유지
+ok 18 - 5개 취향의 전체 192 조합에서 필수 조건 유지
+  ---
+  duration_ms: 28.5067
+  type: 'test'
+  ...
+# Subtest: 기본 화면과 평가 목록의 공통 메뉴 태그 일치
+ok 19 - 기본 화면과 평가 목록의 공통 메뉴 태그 일치
+  ---
+  duration_ms: 2.3102
+  type: 'test'
+  ...
+# Subtest: H01 확인한 조건의 후보 일치
+ok 20 - H01 확인한 조건의 후보 일치
+  ---
+  duration_ms: 0.5834
+  type: 'test'
+  ...
+# Subtest: H02 확인한 조건의 후보 일치
+ok 21 - H02 확인한 조건의 후보 일치
+  ---
+  duration_ms: 0.1817
+  type: 'test'
+  ...
+# Subtest: H03 확인한 조건의 후보 일치
+ok 22 - H03 확인한 조건의 후보 일치
+  ---
+  duration_ms: 16.3836
+  type: 'test'
+  ...
+# Subtest: H04 확인한 조건의 후보 일치
+ok 23 - H04 확인한 조건의 후보 일치
+  ---
+  duration_ms: 0.3099
+  type: 'test'
+  ...
+# Subtest: H05 확인한 조건의 후보 일치
+ok 24 - H05 확인한 조건의 후보 일치
+  ---
+  duration_ms: 0.4546
+  type: 'test'
+  ...
+# Subtest: H06 확인한 조건의 후보 일치
+ok 25 - H06 확인한 조건의 후보 일치
+  ---
+  duration_ms: 1.3983
+  type: 'test'
+  ...
+# Subtest: H07 확인한 조건의 후보 일치
+ok 26 - H07 확인한 조건의 후보 일치
+  ---
+  duration_ms: 0.6211
+  type: 'test'
+  ...
+# Subtest: H08 확인한 조건의 후보 일치
+ok 27 - H08 확인한 조건의 후보 일치
+  ---
+  duration_ms: 0.3772
+  type: 'test'
+  ...
+# Subtest: H09 확인한 조건의 후보 일치
+ok 28 - H09 확인한 조건의 후보 일치
+  ---
+  duration_ms: 0.7064
+  type: 'test'
+  ...
+# Subtest: H10 확인한 조건의 후보 일치
+ok 29 - H10 확인한 조건의 후보 일치
+  ---
+  duration_ms: 0.556
+  type: 'test'
+  ...
+# Subtest: H11 확인한 조건의 후보 일치
+ok 30 - H11 확인한 조건의 후보 일치
+  ---
+  duration_ms: 0.2144
+  type: 'test'
+  ...
+# Subtest: H12 확인한 조건의 후보 일치
+ok 31 - H12 확인한 조건의 후보 일치
+  ---
+  duration_ms: 1.205
+  type: 'test'
+  ...
+# Subtest: 사용자 원문에 없는 인용, assistant 인용 거절
+ok 32 - 사용자 원문에 없는 인용, assistant 인용 거절
+  ---
+  duration_ms: 0.914
+  type: 'test'
+  ...
+# Subtest: 필수 조건과 근거 누락 거절
+ok 33 - 필수 조건과 근거 누락 거절
+  ---
+  duration_ms: 0.8386
+  type: 'test'
+  ...
+# Subtest: 선호 배열이 비어도 쌀 필수 조건은 추천 보류
+ok 34 - 선호 배열이 비어도 쌀 필수 조건은 추천 보류
+  ---
+  duration_ms: 0.6443
+  type: 'test'
+  ...
+# Subtest: 예약 운영 증거: 실제 기록과 중복, 소급 방지
+ok 35 - 예약 운영 증거: 실제 기록과 중복, 소급 방지
+  ---
+  duration_ms: 95.9655
+  type: 'test'
+  ...
+# Subtest: 갈린 질감을 필수로 확인하면 라떼와 콜드 브루 제외
+ok 36 - 갈린 질감을 필수로 확인하면 라떼와 콜드 브루 제외
+  ---
+  duration_ms: 3.4955
+  type: 'test'
+  ...
+# Subtest: 필수 질감과 초콜릿 비선호를 함께 만족하지 못하면 추천 보류
+ok 37 - 필수 질감과 초콜릿 비선호를 함께 만족하지 못하면 추천 보류
+  ---
+  duration_ms: 0.3231
+  type: 'test'
+  ...
+# Subtest: 좋아하는 감각에 없는 필수 특징은 재확인
+ok 38 - 좋아하는 감각에 없는 필수 특징은 재확인
+  ---
+  duration_ms: 0.2123
+  type: 'test'
+  ...
+# Subtest: 필수 쌀 조건을 질감 선택으로 덮어쓰지 않음
+ok 39 - 필수 쌀 조건을 질감 선택으로 덮어쓰지 않음
+  ---
+  duration_ms: 0.1971
+  type: 'test'
+  ...
+# Subtest: 필수 특징 없는 이전 입력은 호환 유지
+ok 40 - 필수 특징 없는 이전 입력은 호환 유지
+  ---
+  duration_ms: 16.9678
+  type: 'test'
+  ...
+# Subtest: 공개본: 개인 응답 원문과 개인 컴퓨터 경로 없음
+ok 41 - 공개본: 개인 응답 원문과 개인 컴퓨터 경로 없음
+  ---
+  duration_ms: 8.2958
+  type: 'test'
+  ...
+# Subtest: 검토 후보의 조건, 신선도 검사
+    # Subtest: 쌀 필수는 대안 없음
+    ok 1 - 쌀 필수는 대안 없음
+      ---
+      duration_ms: 1.3699
+      type: 'test'
+      ...
+    # Subtest: 비선호 배제
+    ok 2 - 비선호 배제
+      ---
+      duration_ms: 15.2254
+      type: 'test'
+      ...
+    # Subtest: 오래된 자료는 제외
+    ok 3 - 오래된 자료는 제외
+      ---
+      duration_ms: 2.8037
+      type: 'test'
+      ...
+    # Subtest: 미래 확인일은 제외
+    ok 4 - 미래 확인일은 제외
+      ---
+      duration_ms: 0.585
+      type: 'test'
+      ...
+    # Subtest: 보류 후보 제외
+    ok 5 - 보류 후보 제외
+      ---
+      duration_ms: 0.469
+      type: 'test'
+      ...
+    # Subtest: 종료 기간 제외
+    ok 6 - 종료 기간 제외
+      ---
+      duration_ms: 0.2919
+      type: 'test'
+      ...
+    # Subtest: 선호와 비선호 충돌 거절
+    ok 7 - 선호와 비선호 충돌 거절
+      ---
+      duration_ms: 0.5338
+      type: 'test'
+      ...
+    # Subtest: 임의 태그 거절
+    ok 8 - 임의 태그 거절
+      ---
+      duration_ms: 0.3052
+      type: 'test'
+      ...
+    # Subtest: 빈 취향 확인 질문
+    ok 9 - 빈 취향 확인 질문
+      ---
+      duration_ms: 0.2909
+      type: 'test'
+      ...
+    1..9
+ok 42 - 검토 후보의 조건, 신선도 검사
+  ---
+  duration_ms: 25.407
+  type: 'test'
+  ...
+# Subtest: 평가 기록, 운영 검토, 복구
+    # Subtest: 초기 실제 평가 0, 평균 미측정
+    ok 1 - 초기 실제 평가 0, 평균 미측정
+      ---
+      duration_ms: 1.2164
+      type: 'test'
+      ...
+    # Subtest: 동의 없으면 시작 불가
+    ok 2 - 동의 없으면 시작 불가
+      ---
+      duration_ms: 0.3
+      type: 'test'
+      ...
+    # Subtest: 다른 사람 평가 접근 불가
+    ok 3 - 다른 사람 평가 접근 불가
+      ---
+      duration_ms: 0.3911
+      type: 'test'
+      ...
+    # Subtest: 진행 중 중복 평가 거절
+    ok 4 - 진행 중 중복 평가 거절
+      ---
+      duration_ms: 0.2733
+      type: 'test'
+      ...
+    # Subtest: 미선택 시음 평가 거절 0
+    ok 5 - 미선택 시음 평가 거절 0
+      ---
+      duration_ms: 0.6576
+      type: 'test'
+      ...
+    # Subtest: 미선택 시음 평가 거절 1
+    ok 6 - 미선택 시음 평가 거절 1
+      ---
+      duration_ms: 0.2894
+      type: 'test'
+      ...
+    # Subtest: 합성 시험은 실제 완료 수에서 제외
+    ok 7 - 합성 시험은 실제 완료 수에서 제외
+      ---
+      duration_ms: 0.8
+      type: 'test'
+      ...
+    # Subtest: 완료 평가 재작성 거절
+    ok 8 - 완료 평가 재작성 거절
+      ---
+      duration_ms: 0.2186
+      type: 'test'
+      ...
+    # Subtest: 회원 운영자 기능 차단
+    ok 9 - 회원 운영자 기능 차단
+      ---
+      duration_ms: 0.1467
+      type: 'test'
+      ...
+    # Subtest: 다른 사례 출처 혼합 거절
+    ok 10 - 다른 사례 출처 혼합 거절
+      ---
+      duration_ms: 0.1601
+      type: 'test'
+      ...
+    # Subtest: 보류 반영
+    ok 11 - 보류 반영
+      ---
+      duration_ms: 0.4072
+      type: 'test'
+      ...
+    # Subtest: 기존 버전 복구, 이력 보존
+    ok 12 - 기존 버전 복구, 이력 보존
+      ---
+      duration_ms: 0.4931
+      type: 'test'
+      ...
+    # Subtest: 목록 부재를 단종으로 변경 못 함
+    ok 13 - 목록 부재를 단종으로 변경 못 함
+      ---
+      duration_ms: 0.1824
+      type: 'test'
+      ...
+    # Subtest: 근거 묶음에 개인 응답 없음
+    ok 14 - 근거 묶음에 개인 응답 없음
+      ---
+      duration_ms: 0.5356
+      type: 'test'
+      ...
+    # Subtest: 철회하면 원문 제거, 집계 제외
+    ok 15 - 철회하면 원문 제거, 집계 제외
+      ---
+      duration_ms: 0.3664
+      type: 'test'
+      ...
+    1..15
+ok 43 - 평가 기록, 운영 검토, 복구
+  ---
+  duration_ms: 16.9912
+  type: 'test'
+  ...
+# Subtest: HTTP 회원, 게시, 투표, 권한 통합
+    # Subtest: 비회원은 게시 목록 불가
+    ok 1 - 비회원은 게시 목록 불가
+      ---
+      duration_ms: 48.3005
+      type: 'test'
+      ...
+    # Subtest: 외부 Origin과 헤더 누락 차단
+    ok 2 - 외부 Origin과 헤더 누락 차단
+      ---
+      duration_ms: 22.1063
+      type: 'test'
+      ...
+    # Subtest: 짧은 비밀번호 차단
+    ok 3 - 짧은 비밀번호 차단
+      ---
+      duration_ms: 3.4865
+      type: 'test'
+      ...
+    # Subtest: 초대 가입과 쿠키
+    ok 4 - 초대 가입과 쿠키
+      ---
+      duration_ms: 35.7343
+      type: 'test'
+      ...
+    # Subtest: 초대 재사용 거절
+    ok 5 - 초대 재사용 거절
+      ---
+      duration_ms: 34.8586
+      type: 'test'
+      ...
+    # Subtest: 다른 회원과 운영자 가입
+    ok 6 - 다른 회원과 운영자 가입
+      ---
+      duration_ms: 69.5884
+      type: 'test'
+      ...
+    # Subtest: 비밀번호 평문 미저장
+    ok 7 - 비밀번호 평문 미저장
+      ---
+      duration_ms: 0.2789
+      type: 'test'
+      ...
+    # Subtest: 잘못된 로그인 거절
+    ok 8 - 잘못된 로그인 거절
+      ---
+      duration_ms: 32.4365
+      type: 'test'
+      ...
+    # Subtest: 동의 없는 게시 거절
+    ok 9 - 동의 없는 게시 거절
+      ---
+      duration_ms: 2.1688
+      type: 'test'
+      ...
+    # Subtest: 개인정보 패턴 게시 차단
+    ok 10 - 개인정보 패턴 게시 차단
+      ---
+      duration_ms: 2.7134
+      type: 'test'
+      ...
+    # Subtest: 실제 저장과 목록 읽기
+    ok 11 - 실제 저장과 목록 읽기
+      ---
+      duration_ms: 4.3312
+      type: 'test'
+      ...
+    # Subtest: 타인의 게시물 수정 거절
+    ok 12 - 타인의 게시물 수정 거절
+      ---
+      duration_ms: 11.5719
+      type: 'test'
+      ...
+    # Subtest: 작성자 수정과 오래된 버전 충돌
+    ok 13 - 작성자 수정과 오래된 버전 충돌
+      ---
+      duration_ms: 13.7698
+      type: 'test'
+      ...
+    # Subtest: 같은 표를 반복해도 한 표
+    ok 14 - 같은 표를 반복해도 한 표
+      ---
+      duration_ms: 15.9613
+      type: 'test'
+      ...
+    # Subtest: 이유 변경과 취소
+    ok 15 - 이유 변경과 취소
+      ---
+      duration_ms: 36.3651
+      type: 'test'
+      ...
+    # Subtest: 신고 저장과 중복 방지
+    ok 16 - 신고 저장과 중복 방지
+      ---
+      duration_ms: 33.2965
+      type: 'test'
+      ...
+    # Subtest: 운영 화면 권한
+    ok 17 - 운영 화면 권한
+      ---
+      duration_ms: 14.7735
+      type: 'test'
+      ...
+    # Subtest: 운영자 숨김, 복구 및 숨긴 글 투표 차단
+    ok 18 - 운영자 숨김, 복구 및 숨긴 글 투표 차단
+      ---
+      duration_ms: 83.4759
+      type: 'test'
+      ...
+    # Subtest: 취향 API 전송 동의 필수
+    ok 19 - 취향 API 전송 동의 필수
+      ---
+      duration_ms: 6.9068
+      type: 'test'
+      ...
+    # Subtest: 요약 API 근거와 표본 건수
+    ok 20 - 요약 API 근거와 표본 건수
+      ---
+      duration_ms: 1.6405
+      type: 'test'
+      ...
+    # Subtest: 조건 검사와 출처
+    ok 21 - 조건 검사와 출처
+      ---
+      duration_ms: 18.1186
+      type: 'test'
+      ...
+    # Subtest: 비선호 겹침은 잘못된 입력
+    ok 22 - 비선호 겹침은 잘못된 입력
+      ---
+      duration_ms: 1.5138
+      type: 'test'
+      ...
+    # Subtest: 비공개 전환 및 빈 자료 요약 차단
+    ok 23 - 비공개 전환 및 빈 자료 요약 차단
+      ---
+      duration_ms: 40.7142
+      type: 'test'
+      ...
+    # Subtest: 로그아웃 세션 폐기
+    ok 24 - 로그아웃 세션 폐기
+      ---
+      duration_ms: 21.073
+      type: 'test'
+      ...
+    # Subtest: 키와 DB 파일 제공 안 함
+    ok 25 - 키와 DB 파일 제공 안 함
+      ---
+      duration_ms: 32.0994
+      type: 'test'
+      ...
+    1..25
+ok 44 - HTTP 회원, 게시, 투표, 권한 통합
+  ---
+  duration_ms: 611.0813
+  type: 'test'
+  ...
+# Subtest: AI 출력 검사
+ok 45 - AI 출력 검사
+  ---
+  duration_ms: 0.3203
+  type: 'test'
+  ...
+# Subtest: Gemini 실제 호출 없이 오류 경로 검사
+    # Subtest: 정상 JSON
+    ok 1 - 정상 JSON
+      ---
+      duration_ms: 1.2092
+      type: 'test'
+      ...
+    # Subtest: 잘못된 응답은 적용하지 않음
+    ok 2 - 잘못된 응답은 적용하지 않음
+      ---
+      duration_ms: 0.9706
+      type: 'test'
+      ...
+    # Subtest: 한도 오류
+    ok 3 - 한도 오류
+      ---
+      duration_ms: 0.221
+      type: 'test'
+      ...
+    # Subtest: 시간 초과
+    ok 4 - 시간 초과
+      ---
+      duration_ms: 0.2931
+      type: 'test'
+      ...
+    # Subtest: 키 없으면 호출 안 함
+    ok 5 - 키 없으면 호출 안 함
+      ---
+      duration_ms: 0.1526
+      type: 'test'
+      ...
+    1..5
+ok 46 - Gemini 실제 호출 없이 오류 경로 검사
+  ---
+  duration_ms: 3.3977
+  type: 'test'
+  ...
+# Subtest: AI 호출 상한과 민감정보 없는 운영 기록
+ok 47 - AI 호출 상한과 민감정보 없는 운영 기록
+  ---
+  duration_ms: 1.543
+  type: 'test'
+  ...
+1..47
+# tests 101
+# suites 0
+# pass 101
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 841.3587

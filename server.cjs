@@ -13,14 +13,19 @@ const reasons = {
   newIdea: "새로운 메뉴로",
 };
 const files = {
+  "/portfolio.css": "portfolio.css",
+  "/portfolio.js": "portfolio.js",
+  "/simple.js": "simple.js",
+  "/simple.css": "simple.css",
+  "/choice-evidence.js": "choice-evidence.js",
   "/focus.js": "focus.js",
   "/focus.css": "focus.css",
   "/lab.js": "lab.js",
   "/lab.css": "lab.css",
   "/HANDOFF.md": "HANDOFF.md",
   "/PROTOCOL.md": "PROTOCOL.md",
-  "/": "index.html",
-  "/index.html": "index.html",
+  "/": "simple.html",
+  "/index.html": "simple.html",
   "/style.css": "style.css",
   "/app.js": "app.js",
   "/core.js": "core.js",
@@ -267,6 +272,8 @@ function createApp({ dbPath, aiOverride, dailyLimit = 40 } = {}) {
             result.candidates.length ? "부분 대안 반환" : "추천 보류",
           ],
           sources: [
+            {id:"strawberry",url:"https://www.starbucks.co.kr/menu/drink_view.do?product_cd=9200000003276",checked:"2026-10-07",scope:"공식 블렌디드 목록 확인, 지점 재고 미확인"},
+            {id:"mango",url:"https://www.starbucks.co.kr/menu/drink_view.do?product_cd=167004",checked:"2026-10-07",scope:"공식 블렌디드 목록 확인, 지점 재고 미확인"},
             {
               id: "coldbrew",
               url: "https://www.starbucks.co.kr/store/store_coldbrew.do",

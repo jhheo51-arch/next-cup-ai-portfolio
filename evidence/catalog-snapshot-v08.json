@@ -1,0 +1,20 @@
+{
+  "sourceId": "S13",
+  "checked": "2026-10-07T10:09:43.944Z",
+  "page": "https://www.starbucks.co.kr/menu/drink_list.do",
+  "dataUrl": "https://www.starbucks.co.kr/upload/json/menu/W0000005.js",
+  "method": "공식 메뉴 페이지에서 사용하는 공개 목록을 수동 1회 확인. 공개 API 계약이나 지점 재고 자료가 아님.",
+  "rawSha256": "3207a926d9e1de717c24be919f7d96d58d6e98fd5eb1d72c0e79bf8777d8e19a",
+  "items": [
+    {
+      "id": "167004",
+      "name": "망고 패션 프루트 블렌디드",
+      "description": "망고 패션 프루트 주스와 블랙 티가 깔끔하게 어우러진 과일 블렌디드"
+    },
+    {
+      "id": "9200000003276",
+      "name": "딸기 딜라이트 요거트 블렌디드",
+      "description": "고농축 유산균의 부드러운 요거트와 딸기 본연의 상콤&달콤한 과육이 상큼하게 어우러진 리뉴얼 된 과일 요거트 블렌디드\r\n"
+    }
+  ]
+}

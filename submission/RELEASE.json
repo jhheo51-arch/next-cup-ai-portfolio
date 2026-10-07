@@ -1,0 +1,21 @@
+{
+  "release": "v08",
+  "artifacts": "v05",
+  "checked": "2026-10-07",
+  "unitTests": 103,
+  "syntheticBrowserChecks": 14,
+  "latestRealGeminiCalls": 4,
+  "latestScenarios": 3,
+  "externalParticipants": 0,
+  "note": "최초 R03 검사 절차 실패와 재실행을 모두 보존. 과거 24회 결과는 별도.",
+  "files": [
+    {
+      "file": "submission/NEXT-CUP-Portfolio.pdf",
+      "sha256": "d0504aa0128c298242dd10d5cac78907bd37bc5689272b46856f149926fca2d0"
+    },
+    {
+      "file": "submission/NEXT-CUP-Evidence.xlsx",
+      "sha256": "c753e43a70e0012406937f5bd05debfb26fba25a8dc50d092aedf3fa3d2d9d2a"
+    }
+  ]
+}

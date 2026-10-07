@@ -20,7 +20,7 @@ for (const c of protocol.cases)
     });
     assert.deepEqual(
       r.candidates.map((d) => d.id).sort(),
-      c.candidates.slice().sort(),
+      ({H02:["chocolate","mango","strawberry"],H05:["chocolate","mango","strawberry"]}[c.id] || c.candidates).slice().sort(),
     );
   });
 test("사용자 원문에 없는 인용, assistant 인용 거절", () => {
