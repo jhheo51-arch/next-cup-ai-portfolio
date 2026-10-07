@@ -18,7 +18,7 @@ function monitor(db){
 module.exports={monitor,slots};
 if(require.main===module){
  const fs=require('node:fs'),path=require('node:path'),{openStore}=require('./db.cjs');
- fs.mkdirSync(path.join(__dirname,'runtime'),{recursive:true});const store=openStore(path.join(__dirname,'runtime/next-cup.sqlite'));
+ fs.mkdirSync(path.join(__dirname,'../runtime'),{recursive:true});const store=openStore(path.join(__dirname,'../runtime/next-cup.sqlite'));
  try{const m=monitor(store.db);if(process.argv[2]==='status')console.log(JSON.stringify(m.status(),null,2));
  else if(process.argv[2]==='record')console.log(JSON.stringify(m.record(JSON.parse(fs.readFileSync(process.argv[3],'utf8')))));
  else throw Error('사용법: node monitor.cjs status 또는 record 실행결과JSON경로');

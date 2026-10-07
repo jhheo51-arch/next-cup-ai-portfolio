@@ -13,27 +13,27 @@ const reasons = {
   newIdea: "새로운 메뉴로",
 };
 const files = {
-  "/portfolio.css": "portfolio.css",
-  "/portfolio.js": "portfolio.js",
-  "/simple.js": "simple.js",
-  "/simple.css": "simple.css",
-  "/choice-evidence.js": "choice-evidence.js",
-  "/focus.js": "focus.js",
-  "/focus.css": "focus.css",
-  "/lab.js": "lab.js",
-  "/lab.css": "lab.css",
-  "/HANDOFF.md": "HANDOFF.md",
-  "/PROTOCOL.md": "PROTOCOL.md",
-  "/": "simple.html",
-  "/index.html": "simple.html",
-  "/style.css": "style.css",
-  "/app.js": "app.js",
+  "/portfolio.css": "public/portfolio.css",
+  "/portfolio.js": "public/portfolio.js",
+  "/simple.js": "public/simple.js",
+  "/simple.css": "public/simple.css",
+  "/choice-evidence.js": "legacy/choice-evidence.js",
+  "/focus.js": "legacy/focus.js",
+  "/focus.css": "legacy/focus.css",
+  "/lab.js": "legacy/lab.js",
+  "/lab.css": "legacy/lab.css",
+  "/HANDOFF.md": "../docs/HANDOFF.md",
+  "/PROTOCOL.md": "../docs/PROTOCOL.md",
+  "/": "public/simple.html",
+  "/index.html": "public/simple.html",
+  "/style.css": "legacy/style.css",
+  "/app.js": "legacy/app.js",
   "/core.js": "core.js",
-  "/connected.js": "connected.js",
-  "/rice-cup.svg": "rice-cup.svg",
-  "/PRD.md": "PRD.md",
-  "/README.md": "README.md",
-  "/PROJECT.md": "PRD.md",
+  "/connected.js": "legacy/connected.js",
+  "/rice-cup.svg": "public/rice-cup.svg",
+  "/PRD.md": "../docs/PRD.md",
+  "/README.md": "../README.md",
+  "/PROJECT.md": "../docs/PRD.md",
 };
 const types = {
   ".html": "text/html; charset=utf-8",
@@ -63,8 +63,8 @@ const postText = (p) =>
       ].join("\n");
 function createApp({ dbPath, aiOverride, dailyLimit = 40 } = {}) {
   if (!dbPath) {
-    fs.mkdirSync(path.join(__dirname, "runtime"), { recursive: true });
-    dbPath = path.join(__dirname, "runtime/next-cup.sqlite");
+    fs.mkdirSync(path.join(__dirname, "../runtime"), { recursive: true });
+    dbPath = path.join(__dirname, "../runtime/next-cup.sqlite");
   }
   const store = openStore(dbPath),
     ai =

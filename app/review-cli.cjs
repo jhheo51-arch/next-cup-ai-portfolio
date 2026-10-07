@@ -1,7 +1,7 @@
 'use strict';
 // Local scheduled observer: queues evidence only; cannot approve or change catalog.
 const fs=require('node:fs'),path=require('node:path'),{openStore}=require('./db.cjs'),{initResearch}=require('./research.cjs');
-const root=path.join(__dirname,'runtime');fs.mkdirSync(root,{recursive:true});
+const root=path.join(__dirname,'../runtime');fs.mkdirSync(root,{recursive:true});
 const store=openStore(path.join(root,'next-cup.sqlite')),lab=initResearch(store,null),actor={id:'scheduled-observer',role:'admin'};
 try{
  if(process.argv[2]==='status'){

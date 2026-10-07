@@ -1,6 +1,9 @@
 {
   "release": "v08",
-  "artifacts": "v05",
+  "artifacts": "v06",
+  "repositoryLayout": "app/docs/tests/evidence/submission",
+  "repositoryChecks": 20,
+  "realAICallsDuringReorganization": 0,
   "checked": "2026-10-07",
   "unitTests": 103,
   "syntheticBrowserChecks": 14,
@@ -11,11 +14,11 @@
   "files": [
     {
       "file": "submission/NEXT-CUP-Portfolio.pdf",
-      "sha256": "d0504aa0128c298242dd10d5cac78907bd37bc5689272b46856f149926fca2d0"
+      "sha256": "489f0a9da06e41acca58ef8cf6f2be3bb8b80b5bff19b01fd2ce814d6b266622"
     },
     {
       "file": "submission/NEXT-CUP-Evidence.xlsx",
-      "sha256": "c753e43a70e0012406937f5bd05debfb26fba25a8dc50d092aedf3fa3d2d9d2a"
+      "sha256": "0a37721b7688b6ddcbe35b27ca2d754bd2840d50bc4a8fc02a81fed2080be565"
     }
   ]
 }

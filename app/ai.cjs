@@ -4,7 +4,7 @@ const fs = require("node:fs"),
   C = require("./core.js");
 const { PROMPT, VERSION, checkGrounding } = require("./taste-policy.cjs");
 function settings() {
-  const file = path.join(__dirname, ".env");
+  const file = path.join(__dirname, "../.env");
   let env = {};
   if (fs.existsSync(file))
     env = require("node:util").parseEnv(fs.readFileSync(file, "utf8"));

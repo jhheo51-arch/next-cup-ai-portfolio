@@ -3,7 +3,7 @@
   "model": "gemini-3.1-flash-lite",
   "kind": "synthetic",
   "humanParticipants": 0,
-  "scope": "6개의 명시적 표현 검사. 모호한 기억·실제 맛·고객 효과 검증 아님.",
+  "scope": "6개의 명시적 표현 검사. 모호한 기억, 실제 맛, 고객 효과 검증 아님.",
   "rows": [
     {
       "id": "rice",

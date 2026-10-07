@@ -1,8 +1,8 @@
 const test = require("node:test"),
   assert = require("node:assert/strict");
-const C = require("../core.js"),
-  { checkGrounding } = require("../taste-policy.cjs");
-const { seedCatalog } = require("../research.cjs");
+const C = require("../app/core.js"),
+  { checkGrounding } = require("../app/taste-policy.cjs");
+const { seedCatalog } = require("../app/research.cjs");
 test("기본 화면과 평가 목록의 공통 메뉴 태그 일치", () => {
   for (const d of C.drinks) {
     assert.deepEqual(seedCatalog.find((x) => x.id === d.id).tags, d.tags);

@@ -1,5 +1,5 @@
 const test=require('node:test'),assert=require('node:assert/strict');
-const {openStore}=require('../db.cjs'),{initResearch,compare,seedCatalog}=require('../research.cjs');
+const {openStore}=require('../app/db.cjs'),{initResearch,compare,seedCatalog}=require('../app/research.cjs');
 const at=Date.parse('2026-10-07T12:00:00Z');
 const input={likes:['cream'],dislikes:[],required:[]};
 test('검토 후보의 조건, 신선도 검사',async t=>{

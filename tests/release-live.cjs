@@ -1,6 +1,6 @@
 const fs=require('node:fs'),crypto=require('node:crypto');
 const {chromium}=require(process.env.PLAYWRIGHT_PATH||'playwright');
-const {createApp}=require('../server.cjs'),C=require('../core.js'),P=require('../taste-policy.cjs');
+const {createApp}=require('../app/server.cjs'),C=require('../app/core.js'),P=require('../app/taste-policy.cjs');
 const protocol=require('../evidence/release-scenarios-v08.json');
 const out=process.env.RELEASE_OUTPUT_DIR||'runtime/release-'+new Date().toISOString().replace(/[:.]/g,'-');fs.mkdirSync(out,{recursive:true});
 (async()=>{

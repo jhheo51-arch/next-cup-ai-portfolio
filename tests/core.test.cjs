@@ -1,4 +1,4 @@
-const test=require('node:test');const assert=require('node:assert/strict');const C=require('../core.js');
+const test=require('node:test');const assert=require('node:assert/strict');const C=require('../app/core.js');
 const input={tags:['rice','cream'],essential:true,store:'all'};
 test('쌀 풍미 필수는 모든 부분 대안보다 우선',()=>assert.equal(C.compare(input).status,'empty'));
 test('사용자가 필수 조건을 해제한 경우에만 부분 대안',()=>{const r=C.compare({...input,essential:false});assert.equal(r.status,'partial');assert.ok(r.candidates.every(d=>d.missing.includes('rice')));});

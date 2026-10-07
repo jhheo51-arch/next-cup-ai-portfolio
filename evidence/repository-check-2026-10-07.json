@@ -1,0 +1,28 @@
+{
+  "checked": "2026-10-07T10:40:33.723Z",
+  "scope": "folder-reorganization",
+  "checks": [
+    "README.md links",
+    "docs/CONTENT.md links",
+    "docs/DEMO.md links",
+    "docs/EVIDENCE.md links",
+    "docs/HANDOFF.md links",
+    "docs/PRD.md links",
+    "docs/PROTOCOL.md links",
+    "docs/VALIDATION.md links",
+    "HTTP 200 /",
+    "HTTP 200 /simple.js",
+    "HTTP 200 /simple.css",
+    "HTTP 200 /portfolio.js",
+    "HTTP 200 /portfolio.css",
+    "HTTP 200 /rice-cup.svg",
+    "HTTP 200 /core.js",
+    "HTTP 200 /README.md",
+    "HTTP 200 /PRD.md",
+    "HTTP 200 /HANDOFF.md",
+    "HTTP 200 /PROTOCOL.md",
+    "private files blocked"
+  ],
+  "realAICalls": 0,
+  "externalParticipants": 0
+}

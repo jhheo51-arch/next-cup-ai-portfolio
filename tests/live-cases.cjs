@@ -1,5 +1,5 @@
 // Optional paid Gemini calls. All prompts below are synthetic, not customer evidence.
-const {createAI}=require('../ai.cjs'),fs=require('node:fs'),path=require('node:path');
+const {createAI}=require('../app/ai.cjs'),fs=require('node:fs'),path=require('node:path');
 const cases=[
  ['rice','이천 햅쌀 크림 프라푸치노의 구수한 쌀 풍미가 꼭 있어야 합니다. 커피는 싫어요.',['rice'],['coffee'],'yes'],
  ['vanilla','바닐라 크림 콜드 브루의 바닐라 향과 크림감이 좋아요.',['vanilla','cream'],[],'unknown'],

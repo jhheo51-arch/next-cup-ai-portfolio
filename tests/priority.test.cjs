@@ -1,6 +1,6 @@
 const {test} = require('node:test');
 const assert = require('node:assert/strict');
-const C = require('../core.js');
+const C = require('../app/core.js');
 const input = { tags:['cream','ice'], essential:false, store:'all', priority:'ice' };
 test('갈린 질감을 필수로 확인하면 라떼와 콜드 브루 제외', () => assert.deepEqual(C.compare(input).candidates.map(d=>d.id), ['chocolate','mango','strawberry']));
 test('초콜릿을 피하면 과일 블렌디드 두 가지 유지', () => assert.deepEqual(C.compare({...input, dislikes:['cocoa']}).candidates.map(d=>d.id), ['mango','strawberry']));

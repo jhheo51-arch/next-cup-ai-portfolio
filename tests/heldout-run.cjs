@@ -3,10 +3,10 @@
 const fs = require("node:fs"),
   path = require("node:path"),
   crypto = require("node:crypto");
-const { createAI } = require("../ai.cjs"),
-  C = require("../core.js");
+const { createAI } = require("../app/ai.cjs"),
+  C = require("../app/core.js");
 const protocol = require("../evidence/heldout-v1.json"),
-  { PROMPT } = require("../taste-policy.cjs");
+  { PROMPT } = require("../app/taste-policy.cjs");
 const hash = (s) => crypto.createHash("sha256").update(s).digest("hex");
 const equal = (a, b) =>
   JSON.stringify([...a].sort()) === JSON.stringify([...b].sort());

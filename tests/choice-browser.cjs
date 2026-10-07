@@ -2,7 +2,7 @@
 const { chromium } = require(process.env.PLAYWRIGHT_PATH || "playwright");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
-const { createApp } = require("../server.cjs");
+const { createApp } = require("../app/server.cjs");
 (async () => {
   const app = createApp({ dbPath: ":memory:" });
   await new Promise(resolve => app.server.listen(0, "127.0.0.1", resolve));
