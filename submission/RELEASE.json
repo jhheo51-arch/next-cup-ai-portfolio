@@ -1,25 +1,25 @@
 {
   "repositoryLayout": "app/docs/tests/evidence/submission",
-  "repositoryChecks": 21,
+  "repositoryChecks": 22,
   "realAICallsDuringReorganization": 0,
-  "checked": "2026-10-07",
-  "unitTests": 122,
+  "checked": "2026-10-08",
+  "unitTests": 123,
   "syntheticBrowserChecks": 14,
   "externalParticipants": 0,
-  "note": "기존 연결 시험과 이번 심층 평가를 구분. 이번 16문장 평가는 연결 실패로 미완료이며 의미 정확도 미산출. 가상 장애 시험은 수정 전 7/8, 수정 후 8/8.",
+  "note": "PDF, Excel, GitHub의 범위와 수치를 대조. 기존 실제 호출과 가상 응답 재생을 구분. 심층 해석 평가 미완료, 고객 효과 미측정.",
   "files": [
     {
       "file": "submission/NEXT-CUP-Portfolio.pdf",
-      "sha256": "6a3633c0cb3df02d411dac1e5ec15d1ca3046a3476eab955b93227d0579fd7bd"
+      "sha256": "15145becf6485add09e8333b3ef20ce5ba75532699eb7663c8eec9c4ce6012dc"
     },
     {
       "file": "submission/NEXT-CUP-Evidence.xlsx",
-      "sha256": "1b9eff6c6ccb0766b23ce09a57a33f7bf4ec5832679e4af846c298b9d9b6505c"
+      "sha256": "60580d43a79455d2b0c83750310bf731c5a083f343f3bc3d96f3d9f9a8f8f1ab"
     }
   ],
   "connectionRealGeminiCalls": 4,
   "connectionScenarios": 3,
-  "pdfPages": 10,
+  "pdfPages": 11,
   "excelSheets": 11,
   "hardEvaluation": {
     "planned": 16,
@@ -27,7 +27,9 @@
     "interruptedInFlight": 1,
     "additionalDiagnosticTimeout": 1,
     "heldoutExecuted": 0,
-    "semanticAccuracy": null
+    "semanticAccuracy": null,
+    "followupEvaluationRetryRequests": 6,
+    "followupGenerateDiagnosticRequests": 1
   },
   "syntheticRecovery": {
     "before": 7,
@@ -35,5 +37,29 @@
     "total": 8,
     "realAICalls": 0
   },
-  "needTriageCases": 9
+  "needTriageCases": 9,
+  "responsiveLayoutChecks": 29,
+  "realAICallsDuringSubmissionSync": 0,
+  "inputComparison": {
+    "kind": "retrospective-response-replay",
+    "manualFieldChanges": [
+      5,
+      2,
+      6
+    ],
+    "aiReplayFieldChanges": [
+      1,
+      0,
+      6
+    ],
+    "realAICalls": 0,
+    "externalParticipants": 0,
+    "customerBenefitMeasured": false
+  },
+  "availabilityRegression": {
+    "fixtureHttpStatus": 503,
+    "before": "failed",
+    "after": "passed",
+    "realProviderRecoveryVerified": false
+  }
 }

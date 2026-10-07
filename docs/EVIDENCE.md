@@ -18,3 +18,5 @@
 정기 점검 예정일과 실행 증거는 별도입니다. 이번 수동 확인을 예약 실행으로 세지 않습니다.
 추가 시험과 설계 판단은 [DECISIONS.md](DECISIONS.md), evidence/diagnostic-tests.txt, evidence/recovery-after.json에서 확인합니다.
 PDF와 Excel에 같은 시험 범위와 미검증 항목을 적었습니다.
+
+2026-10-08 제출 전 재확인: [파일/화면 확인 결과](../evidence/submission-check.json), [자동 검사 123개](../evidence/submission-tests.txt). [입력 비교](../evidence/input-comparison.json)의 값 변경 횟수와 [503 진단](../evidence/connection-diagnostic.json)을 PDF와 Excel에도 반영했습니다. 과거 원자료는 당시 결과 그대로 보존합니다.
