@@ -1,19 +1,517 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#006241"><title>NEXT CUP — 그리운 맛의 다음 이야기</title><link rel="stylesheet" href="style.css"><script defer src="core.js"></script><script defer src="app.js"></script><script defer src="connected.js"></script><script defer src="lab.js"></script><link rel="stylesheet" href="lab.css"></head><body>
-<a class="skip" href="#main">본문으로 이동</a>
-<header class="header"><a class="brand" href="#discover" aria-label="NEXT CUP 홈"><span class="brand-mark" aria-hidden="true">N<span>✦</span></span><span>NEXT CUP<small>최애의 다음 잔</small></span></a><nav aria-label="주 메뉴"><a href="#discover">취향 이어가기</a><a href="#request">다시 만나고 싶어요</a><a href="#studio">나만의 메뉴</a><a href="#collection">내 보관함</a></nav><a class="outline small" href="#notes">기획 노트 ↗</a></header>
-<div class="concept-bar"><span>STARBUCKS FAN CONCEPT</span><p>개인 포트폴리오 ,  공식 서비스가 아닙니다</p><span class="mode">Gemini 연결 전 ,  체험 버전</span></div>
-<main id="main" tabindex="-1">
-<section id="discover" class="view">
- <div class="hero"><div class="hero-copy"><p class="eyebrow">A TASTE WORTH REMEMBERING</p><h1>그리운 맛에는,<br>다음 이야기가<br>있으니까.</h1><p class="hero-description">이천 햅쌀 크림 프라푸치노를 좋아했던 당신.<br>그 한 잔의 기억에서, 새로운 이야기를 시작해요.</p><a class="button light" href="#finder">내 취향 이어보기 <span aria-hidden="true">↗</span></a><p class="hero-caption">좋아했던 이유를 찾고 ,  다시 만나고 싶은 마음을 남기고</p></div><div class="hero-visual"><span class="visual-type" aria-hidden="true">RICE<br>& CREAM.</span><img src="rice-cup.svg" width="480" height="540" alt="이천 햅쌀의 구수한 풍미를 표현한 크림 음료 콘셉트 일러스트. 실제 제품 사진이 아닙니다."><div class="product-label"><span>THE ONE I MISS</span><strong>이천 햅쌀<br>크림 프라푸치노</strong><small>제품을 떠올린 콘셉트 일러스트</small></div><span class="year">MEMORY NO. 01 / 2019</span></div></div>
- <div class="story-strip"><div><span class="story-num">01</span><p><strong>내가 좋아했던 한 잔</strong><small>실제 취향에서 시작한 프로젝트</small></p></div><div><span class="story-num">02</span><p><strong>고객 요청으로 돌아온 기록</strong><small>2019년 5월 크림 버전 재출시</small></p></div><a href="#notes">그 한 잔의 이야기 <span aria-hidden="true">↗</span></a></div>
- <section id="finder" class="section"><div class="section-heading"><div><p class="eyebrow">KEEP WHAT YOU LOVE</p><h2>그 한 잔의 무엇이 좋았나요?</h2></div><p>똑같은 맛을 약속하기보다,<br>이어갈 수 있는 취향부터 찾아볼게요.</p></div>
- <div class="finder-grid"><form id="taste-form" class="card taste-form"><span class="step">01 / 나의 취향</span><h3>이천 햅쌀 크림 프라푸치노</h3><p class="muted">구수한 쌀 풍미는 공식 설명입니다. 다른 감각은 나의 기억으로 선택해 주세요.</p><fieldset><legend>좋아했던 느낌 <span>여러 개 선택</span></legend><div class="chips"><label><input type="checkbox" name="taste" value="rice" checked><span>구수한 쌀 풍미</span></label><label><input type="checkbox" name="taste" value="cream" checked><span>부드러운 크림감</span></label><label><input type="checkbox" name="taste" value="ice"><span>차갑게 갈린 질감</span></label><label><input type="checkbox" name="taste" value="crunch"><span>바삭한 토핑</span></label></div></fieldset><label class="check"><input id="essential" type="checkbox" checked> 쌀 풍미만큼은 꼭 유지하고 싶어요</label><div class="field"><label for="store">방문 조건 <span class="muted">가상 매장</span></label><select id="store"><option value="all">가까운 매장 A ,  후보 3종</option><option value="limited">방문 매장 B ,  콜드 브루 품절</option><option value="unknown">판매 정보를 모르는 매장</option></select></div><button class="button" type="submit">이어갈 수 있는 취향 찾기 <span aria-hidden="true">→</span></button><p class="fine">규칙 기반 비교 ,  실시간 판매, 재고 정보가 아닙니다.</p></form>
- <section class="comparison" aria-labelledby="comparison-title"><span class="step">02 / 취향의 다음 선택</span><h3 id="comparison-title">쌀의 구수함은,<br>아무 맛으로도 대신할 수 없죠.</h3><div id="results"><p>꼭 지키고 싶은 맛을 먼저 알려주세요.<br>대안이 없다면, 그 마음을 메뉴 요청으로 이어드릴게요.</p><div class="taste-orbit" aria-hidden="true"><span>RICE</span><span>CREAM</span><span>MEMORY</span></div></div></section></div></section>
- <section class="next-story"><div><p class="eyebrow">YOUR TASTE, YOUR VOICE</p><h2>다음 메뉴의 시작이<br>당신의 취향이라면.</h2></div><a class="feature-link" href="#request"><span>01 / BRING IT BACK</span><h3>다시 만나고 싶어요 <b aria-hidden="true">↗</b></h3><p>돌아왔으면 하는 메뉴와<br>꼭 남겨줬으면 하는 맛을 기록해요.</p></a><a class="feature-link" href="#studio"><span>02 / MAKE IT YOURS</span><h3>나만의 메뉴 만들기 <b aria-hidden="true">↗</b></h3><p>쌀의 구수함에 새로운 아이디어를 더해,<br>나만의 신메뉴 제안서를 만들어요.</p></a></section>
-</section>
-<section id="request" class="view section" hidden><div class="page-heading"><p class="eyebrow">BRING MY FAVORITE BACK</p><h1>다시 만나고 싶은<br>이유를 들려주세요.</h1><p>단순한 한 표보다, 좋아했던 이유가 담긴 메뉴 요청.</p></div><div class="form-layout"><aside class="memory-card"><img src="rice-cup.svg" width="480" height="540" alt="햅쌀 크림 음료 콘셉트 일러스트"><span>MY FOREVER FAVORITE</span><h2>이천 햅쌀<br>크림 프라푸치노</h2><p>2019년 고객 요청으로 재출시된 기록이 있습니다. 지금의 마음도 기록으로 남겨보세요.</p><a href="#notes">확인된 이야기 읽기 ↗</a></aside><form id="request-form" class="card"><p class="step">나의 메뉴 요청서</p><div class="field"><label for="request-kind">어떤 요청인가요?</label><select id="request-kind" name="kind"><option value="return">이천 햅쌀 크림 프라푸치노 재출시</option><option value="local">특정 지점 메뉴를 가까운 곳에서도</option></select></div><div class="field" id="local-menu-field" hidden><label for="local-menu">메뉴명과 판매했던 지점 <span>필수</span></label><input id="local-menu" name="localMenu" maxlength="100" placeholder="기억나는 메뉴명과 지점을 적어주세요"></div><div class="field"><label for="request-reason">이 메뉴가 그리운 이유 <span>필수</span></label><textarea id="request-reason" name="reason" maxlength="500" required rows="4" placeholder="예: 커피 맛보다 구수한 쌀 맛이 좋아서 자주 마셨어요."></textarea></div><div class="field"><label for="request-keep">다시 나와도 꼭 지켰으면 하는 것 <span>필수</span></label><input id="request-keep" name="keep" required maxlength="160" placeholder="예: 쌀 고유의 구수한 풍미"></div><div class="field"><label for="request-change">달라져도 괜찮은 것 <span>선택</span></label><input id="request-change" name="change" maxlength="160" placeholder="예: 토핑이 바뀌어도 괜찮아요"></div><div class="notice-box">이 요청서는 <strong>내 브라우저에만 저장</strong>됩니다.<br>스타벅스에 전송되거나 실제 투표에 집계되지 않습니다.</div><p id="request-error" class="error" role="alert"></p><button class="button" type="submit">메뉴 요청서 저장하기 <span aria-hidden="true">→</span></button><p class="fine">작성 중 내용은 이 기기에 임시 보관됩니다. 개인정보는 적지 마세요.</p></form></div></section>
-<section id="studio" class="view section" hidden><div class="page-heading"><p class="eyebrow">NEXT CUP STUDIO</p><h1>좋아하는 맛에,<br>나만의 생각 한 스푼.</h1><p>실제 주문용 레시피가 아닌, 새로운 메뉴를 위한 아이디어 공간입니다.</p></div><div class="form-layout studio-layout"><form id="studio-form" class="card"><p class="step">01 / 나만의 메뉴 설계</p><div class="field"><label for="idea-name">내 메뉴의 이름 <span>필수</span></label><input id="idea-name" name="title" maxlength="60" required placeholder="예: 이천 햅쌀 구름 프라푸치노"></div><div class="field"><label for="idea-base">어떤 음료로 만들까요?</label><select id="idea-base" name="base"><option value="cream">크림 블렌디드</option><option value="latte">라떼</option><option value="tea">티 음료</option></select></div><fieldset><legend>더하고 싶은 재료 <span>하나 이상</span></legend><div class="chips"><label><input type="checkbox" name="ingredient" value="rice" checked><span>이천 쌀</span></label><label><input type="checkbox" name="ingredient" value="sesame"><span>흑임자</span></label><label><input type="checkbox" name="ingredient" value="oat"><span>오트</span></label><label><input type="checkbox" name="ingredient" value="vanilla"><span>바닐라</span></label></div></fieldset><div class="field"><label for="idea-texture">떠올리는 식감</label><select id="idea-texture" name="texture"><option value="smooth">부드럽게</option><option value="crunch">바삭한 포인트</option><option value="thick">꾸덕하게</option></select></div><div class="field"><label for="idea-story">누가, 언제 좋아할 메뉴인가요? <span>필수</span></label><textarea id="idea-story" name="story" maxlength="500" required rows="3" placeholder="예: 쌀 음료를 그리워하는 사람에게, 오후 간식 같은 한 잔"></textarea></div><p id="studio-error" class="error" role="alert"></p><button class="button" type="submit">나만의 메뉴 제안 저장 <span aria-hidden="true">→</span></button><p class="fine">재료 수급, 배합, 영양, 알레르기, 제조 가능성은 검증하지 않았습니다.</p></form><aside class="proposal-preview"><span class="step">02 / 나의 메뉴 카드</span><div class="mini-cup" aria-hidden="true"><span>YOUR<br>NEXT<br>CUP.</span></div><p class="eyebrow">CREATED BY YOU</p><h2 id="preview-name">아직 이름 없는,<br>나의 다음 한 잔.</h2><p id="preview-components">크림 블렌디드 ,  이천 쌀 ,  부드럽게</p><p id="preview-story">좋아하는 맛에서 시작해 보세요.</p><span class="status-chip">신메뉴 아이디어 ,  미전송</span><p class="fine">현재 주문 가능한 커스텀 메뉴가 아닙니다.<br>저장 후 내 보관함에서 다시 수정할 수 있어요.</p></aside></div></section>
-<section id="collection" class="view section" hidden><div class="page-heading"><p class="eyebrow">MY NEXT CUP</p><h1>나의 취향이 모이는 곳.</h1><p>다음 잔 후보부터 메뉴 요청까지. 이 기기에 남긴 나만의 기록입니다.</p></div><div class="collection-top"><div class="chips filters" aria-label="기록 유형"><button type="button" data-filter="all" aria-pressed="true">전체</button><button type="button" data-filter="candidate" aria-pressed="false">다음 잔</button><button type="button" data-filter="request" aria-pressed="false">메뉴 요청</button><button type="button" data-filter="idea" aria-pressed="false">내 메뉴</button></div><button id="export" class="outline" type="button">기록 내려받기</button></div><p class="fine">자동 공유, 다른 기기 동기화 없음 ,  ‘커뮤니티에 제안’한 사본만 회원에게 공유됩니다. 브라우저 데이터를 지우면 개인 기록이 삭제될 수 있습니다.</p><div id="collection-content" class="saved-grid"></div></section>
-<section id="notes" class="view section" hidden><div class="page-heading"><p class="eyebrow">WHY NEXT CUP</p><h1>한 사람의 진짜 취향에서,<br>고객의 목소리를 잇는 서비스로.</h1><p>스타벅스 AI 기획/개발 지원을 위한 개인 프로젝트입니다.</p></div><div class="notes-grid"><article class="card"><span class="step">01 / 출발점</span><h2>이천 햅쌀 크림 프라푸치노</h2><p>지원자가 실제로 좋아했던 메뉴를 중심 사례로 삼았습니다. 한 사람의 경험을 전체 고객의 수요로 일반화하지 않습니다.</p><ul><li>2019년 1월: 햅쌀 음료 출시.</li><li>2019년 5월: 고객 요청으로 크림 버전 재출시.</li><li>같이 출시된 커피 버전에만 ‘연중 판매’ 명시.</li><li>판매 종료일, 이유, 영구 단종 여부는 미확인.</li></ul><p>현재 판매 여부와 재고는 별도 확인이 필요합니다. 재현 레시피나 맛의 동일성을 약속하지 않습니다.</p><a href="https://www.shinsegaegroupnewsroom.com/starbucks-rice-latte-2000/" target="_blank" rel="noreferrer">2019.01 공식 자료 ↗</a><br><a href="https://www.shinsegaegroupnewsroom.com/starbucks-organic-farm-produce-popular/" target="_blank" rel="noreferrer">2019.05 공식 재출시 자료 ↗</a></article><article class="card"><span class="step">02 / 직무와의 연결</span><h2>예측보다 먼저,<br>고객이 원하는 맛을 이해하기.</h2><p><strong>고객 분석, AI 서비스 기획:</strong> 원하는 감각, 타협할 수 없는 조건, 대안이 부족한 이유를 수집하는 흐름으로 연결됩니다.</p><p><strong>AI 개발, 운영:</strong> Gemini 연결 후 모호한 취향 해석, 확인 질문, 유사 제안 묶기와 실패 처리를 추가 검증해야 합니다. 현재는 선택 입력과 규칙 기반 비교입니다.</p><p><strong>메뉴 의사결정:</strong> 요청 사유를 검토할 기초 자료를 만드는 방향입니다. 개인 저장 건수를 실제 수요, 판매량으로 해석하지 않습니다.</p></article><article class="card"><span class="step">03 / 구현의 경계</span><h2>지금 되는 것과,<br>아직 아닌 것.</h2><p>취향 선택 → 조건 검사 → 부분 대안 또는 추천 보류 → 메뉴 요청, 신메뉴 아이디어 → 저장, 수정, 시음 피드백.</p><p>매장 A/B와 맛 태그는 가상 조건입니다. 실제 판매 API, 스타벅스 요청 접수, 커뮤니티, 투표, Gemini는 연결되지 않았습니다.</p><p>쌀 풍미 필수 조건은 추천 점수보다 우선합니다. 해당 조건을 충족하는 후보가 없다면 추천하지 않습니다.</p></article><article class="card"><span class="step">04 / 다음 검증</span><h2>더 그럴듯한 답보다,<br>취향을 잘 이해한 답.</h2><p>일반 태그 선택과 AI 확인 질문의 취향 해석 정확도를 비교합니다. 실제 시음으로 부분 대안의 만족도를 별도로 확인합니다.</p><p>메뉴 요청은 누가, 왜, 무엇을 원하는지 조사하는 출발점입니다. 자발적 참여자의 의견만 모이는 편향을 확인해야 합니다.</p><a href="PROJECT.md">기획, 구현 문서 보기 ↗</a></article></div></section>
-</main><footer><a class="footer-brand" href="#discover">NEXT CUP<span>그리운 맛의 다음 이야기</span></a><p>STARBUCKS FAN CONCEPT / 개인 포트폴리오<br>스타벅스의 공식 서비스, 제휴 서비스가 아닙니다.</p><a href="#notes">사실과 가정, 그리고 기획 의도 ↗</a></footer><div id="toast" role="status" aria-live="polite"></div><noscript>이 체험은 JavaScript가 필요합니다. 메뉴 정보와 기획 노트는 페이지 본문에서 확인할 수 있습니다.</noscript></body></html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#006241" />
+    <title>NEXT CUP / 취향과 대안 찾기</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="core.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="connected.js"></script>
+    <script defer src="lab.js"></script>
+    <script defer src="focus.js"></script>
+    <link rel="stylesheet" href="lab.css" />
+    <link rel="stylesheet" href="focus.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">본문으로 이동</a>
+    <header class="header">
+      <a class="brand" href="#discover" aria-label="NEXT CUP 홈"
+        ><span class="brand-mark" aria-hidden="true">N<span>✦</span></span
+        ><span>NEXT CUP<small>최애의 다음 잔</small></span></a
+      >
+      <nav aria-label="주 메뉴">
+        <a href="#discover">취향 이어가기</a
+        ><a href="#request">다시 만나고 싶어요</a
+        ><a href="#studio">나만의 메뉴</a><a href="#collection">내 보관함</a>
+      </nav>
+      <a class="outline small" href="#notes">기획 노트 ↗</a>
+    </header>
+    <div class="concept-bar">
+      <span>STARBUCKS FAN CONCEPT</span>
+      <p>개인 포트폴리오 , 공식 서비스가 아닙니다</p>
+      <span class="mode">Gemini 연결 전 , 체험 버전</span>
+    </div>
+    <main id="main" tabindex="-1">
+      <section id="discover" class="view">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">A TASTE WORTH REMEMBERING</p>
+            <h1>그리운 맛에는,<br />다음 이야기가<br />있으니까.</h1>
+            <p class="hero-description">
+              이천 햅쌀 크림 프라푸치노를 좋아했던 당신.<br />그 한 잔의
+              기억에서, 새로운 이야기를 시작해요.
+            </p>
+            <a class="button light" href="#finder"
+              >내 취향 이어보기 <span aria-hidden="true">↗</span></a
+            >
+            <p class="hero-caption">
+              좋아했던 이유를 찾고 , 다시 만나고 싶은 마음을 남기고
+            </p>
+          </div>
+          <div class="hero-visual">
+            <span class="visual-type" aria-hidden="true"
+              >RICE<br />& CREAM.</span
+            ><img
+              src="rice-cup.svg"
+              width="480"
+              height="540"
+              alt="이천 햅쌀의 구수한 풍미를 표현한 크림 음료 콘셉트 일러스트. 실제 제품 사진이 아닙니다."
+            />
+            <div class="product-label">
+              <span>THE ONE I MISS</span
+              ><strong>이천 햅쌀<br />크림 프라푸치노</strong
+              ><small>제품을 떠올린 콘셉트 일러스트</small>
+            </div>
+            <span class="year">MEMORY NO. 01 / 2019</span>
+          </div>
+        </div>
+        <div class="story-strip">
+          <div>
+            <span class="story-num">01</span>
+            <p>
+              <strong>내가 좋아했던 한 잔</strong
+              ><small>실제 취향에서 시작한 프로젝트</small>
+            </p>
+          </div>
+          <div>
+            <span class="story-num">02</span>
+            <p>
+              <strong>고객 요청으로 돌아온 기록</strong
+              ><small>2019년 5월 크림 버전 재출시</small>
+            </p>
+          </div>
+          <a href="#notes"
+            >그 한 잔의 이야기 <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <section id="finder" class="section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">KEEP WHAT YOU LOVE</p>
+              <h2>그 한 잔의 무엇이 좋았나요?</h2>
+            </div>
+            <p>
+              똑같은 맛을 약속하기보다,<br />이어갈 수 있는 취향부터 찾아볼게요.
+            </p>
+          </div>
+          <div class="finder-grid">
+            <form id="taste-form" class="card taste-form">
+              <span class="step">01 / 나의 취향</span>
+              <h3>이천 햅쌀 크림 프라푸치노</h3>
+              <p class="muted">
+                구수한 쌀 풍미는 공식 설명입니다. 다른 감각은 나의 기억으로
+                선택해 주세요.
+              </p>
+              <fieldset>
+                <legend>좋아했던 느낌 <span>여러 개 선택</span></legend>
+                <div class="chips">
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="taste"
+                      value="rice"
+                      checked
+                    /><span>구수한 쌀 풍미</span></label
+                  ><label
+                    ><input
+                      type="checkbox"
+                      name="taste"
+                      value="cream"
+                      checked
+                    /><span>부드러운 크림감</span></label
+                  ><label
+                    ><input type="checkbox" name="taste" value="ice" /><span
+                      >차갑게 갈린 질감</span
+                    ></label
+                  ><label
+                    ><input type="checkbox" name="taste" value="crunch" /><span
+                      >바삭한 토핑</span
+                    ></label
+                  >
+                </div>
+              </fieldset>
+              <label class="check"
+                ><input id="essential" type="checkbox" checked /> 쌀 풍미만큼은
+                꼭 유지하고 싶어요</label
+              >
+              <div class="field">
+                <label for="store"
+                  >방문 조건 <span class="muted">가상 매장</span></label
+                ><select id="store">
+                  <option value="all">가까운 매장 A , 후보 3종</option>
+                  <option value="limited">방문 매장 B , 콜드 브루 품절</option>
+                  <option value="unknown">판매 정보를 모르는 매장</option>
+                </select>
+              </div>
+              <button class="button" type="submit">
+                이어갈 수 있는 취향 찾기 <span aria-hidden="true">→</span>
+              </button>
+              <p class="fine">
+                규칙 기반 비교 , 실시간 판매, 재고 정보가 아닙니다.
+              </p>
+            </form>
+            <section class="comparison" aria-labelledby="comparison-title">
+              <span class="step">02 / 취향의 다음 선택</span>
+              <h3 id="comparison-title">
+                쌀의 구수함은,<br />아무 맛으로도 대신할 수 없죠.
+              </h3>
+              <div id="results">
+                <p>
+                  꼭 지키고 싶은 맛을 먼저 알려주세요.<br />대안이 없다면, 그
+                  마음을 메뉴 요청으로 이어드릴게요.
+                </p>
+                <div class="taste-orbit" aria-hidden="true">
+                  <span>RICE</span><span>CREAM</span><span>MEMORY</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+        <section class="next-story">
+          <div>
+            <p class="eyebrow">YOUR TASTE, YOUR VOICE</p>
+            <h2>다음 메뉴의 시작이<br />당신의 취향이라면.</h2>
+          </div>
+          <a class="feature-link" href="#request"
+            ><span>01 / BRING IT BACK</span>
+            <h3>다시 만나고 싶어요 <b aria-hidden="true">↗</b></h3>
+            <p>
+              돌아왔으면 하는 메뉴와<br />꼭 남겨줬으면 하는 맛을 기록해요.
+            </p></a
+          ><a class="feature-link" href="#studio"
+            ><span>02 / MAKE IT YOURS</span>
+            <h3>나만의 메뉴 만들기 <b aria-hidden="true">↗</b></h3>
+            <p>
+              쌀의 구수함에 새로운 아이디어를 더해,<br />나만의 신메뉴 제안서를
+              만들어요.
+            </p></a
+          >
+        </section>
+      </section>
+      <section id="request" class="view section" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">BRING MY FAVORITE BACK</p>
+          <h1>다시 만나고 싶은<br />이유를 들려주세요.</h1>
+          <p>단순한 한 표보다, 좋아했던 이유가 담긴 메뉴 요청.</p>
+        </div>
+        <div class="form-layout">
+          <aside class="memory-card">
+            <img
+              src="rice-cup.svg"
+              width="480"
+              height="540"
+              alt="햅쌀 크림 음료 콘셉트 일러스트"
+            /><span>MY FOREVER FAVORITE</span>
+            <h2>이천 햅쌀<br />크림 프라푸치노</h2>
+            <p>
+              2019년 고객 요청으로 재출시된 기록이 있습니다. 지금의 마음도
+              기록으로 남겨보세요.
+            </p>
+            <a href="#notes">확인된 이야기 읽기 ↗</a>
+          </aside>
+          <form id="request-form" class="card">
+            <p class="step">나의 메뉴 요청서</p>
+            <div class="field">
+              <label for="request-kind">어떤 요청인가요?</label
+              ><select id="request-kind" name="kind">
+                <option value="return">이천 햅쌀 크림 프라푸치노 재출시</option>
+                <option value="local">특정 지점 메뉴를 가까운 곳에서도</option>
+              </select>
+            </div>
+            <div class="field" id="local-menu-field" hidden>
+              <label for="local-menu"
+                >메뉴명과 판매했던 지점 <span>필수</span></label
+              ><input
+                id="local-menu"
+                name="localMenu"
+                maxlength="100"
+                placeholder="기억나는 메뉴명과 지점을 적어주세요"
+              />
+            </div>
+            <div class="field">
+              <label for="request-reason"
+                >이 메뉴가 그리운 이유 <span>필수</span></label
+              ><textarea
+                id="request-reason"
+                name="reason"
+                maxlength="500"
+                required
+                rows="4"
+                placeholder="예: 커피 맛보다 구수한 쌀 맛이 좋아서 자주 마셨어요."
+              ></textarea>
+            </div>
+            <div class="field">
+              <label for="request-keep"
+                >다시 나와도 꼭 지켰으면 하는 것 <span>필수</span></label
+              ><input
+                id="request-keep"
+                name="keep"
+                required
+                maxlength="160"
+                placeholder="예: 쌀 고유의 구수한 풍미"
+              />
+            </div>
+            <div class="field">
+              <label for="request-change"
+                >달라져도 괜찮은 것 <span>선택</span></label
+              ><input
+                id="request-change"
+                name="change"
+                maxlength="160"
+                placeholder="예: 토핑이 바뀌어도 괜찮아요"
+              />
+            </div>
+            <div class="notice-box">
+              이 요청서는
+              <strong>내 브라우저에만 저장</strong>됩니다.<br />스타벅스에
+              전송되거나 실제 투표에 집계되지 않습니다.
+            </div>
+            <p id="request-error" class="error" role="alert"></p>
+            <button class="button" type="submit">
+              메뉴 요청서 저장하기 <span aria-hidden="true">→</span>
+            </button>
+            <p class="fine">
+              작성 중 내용은 이 기기에 임시 보관됩니다. 개인정보는 적지 마세요.
+            </p>
+          </form>
+        </div>
+      </section>
+      <section id="studio" class="view section" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">NEXT CUP STUDIO</p>
+          <h1>좋아하는 맛에,<br />나만의 생각 한 스푼.</h1>
+          <p>
+            실제 주문용 레시피가 아닌, 새로운 메뉴를 위한 아이디어 공간입니다.
+          </p>
+        </div>
+        <div class="form-layout studio-layout">
+          <form id="studio-form" class="card">
+            <p class="step">01 / 나만의 메뉴 설계</p>
+            <div class="field">
+              <label for="idea-name">내 메뉴의 이름 <span>필수</span></label
+              ><input
+                id="idea-name"
+                name="title"
+                maxlength="60"
+                required
+                placeholder="예: 이천 햅쌀 구름 프라푸치노"
+              />
+            </div>
+            <div class="field">
+              <label for="idea-base">어떤 음료로 만들까요?</label
+              ><select id="idea-base" name="base">
+                <option value="cream">크림 블렌디드</option>
+                <option value="latte">라떼</option>
+                <option value="tea">티 음료</option>
+              </select>
+            </div>
+            <fieldset>
+              <legend>더하고 싶은 재료 <span>하나 이상</span></legend>
+              <div class="chips">
+                <label
+                  ><input
+                    type="checkbox"
+                    name="ingredient"
+                    value="rice"
+                    checked
+                  /><span>이천 쌀</span></label
+                ><label
+                  ><input
+                    type="checkbox"
+                    name="ingredient"
+                    value="sesame"
+                  /><span>흑임자</span></label
+                ><label
+                  ><input type="checkbox" name="ingredient" value="oat" /><span
+                    >오트</span
+                  ></label
+                ><label
+                  ><input
+                    type="checkbox"
+                    name="ingredient"
+                    value="vanilla"
+                  /><span>바닐라</span></label
+                >
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="idea-texture">떠올리는 식감</label
+              ><select id="idea-texture" name="texture">
+                <option value="smooth">부드럽게</option>
+                <option value="crunch">바삭한 포인트</option>
+                <option value="thick">꾸덕하게</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="idea-story"
+                >누가, 언제 좋아할 메뉴인가요? <span>필수</span></label
+              ><textarea
+                id="idea-story"
+                name="story"
+                maxlength="500"
+                required
+                rows="3"
+                placeholder="예: 쌀 음료를 그리워하는 사람에게, 오후 간식 같은 한 잔"
+              ></textarea>
+            </div>
+            <p id="studio-error" class="error" role="alert"></p>
+            <button class="button" type="submit">
+              나만의 메뉴 제안 저장 <span aria-hidden="true">→</span>
+            </button>
+            <p class="fine">
+              재료 수급, 배합, 영양, 알레르기, 제조 가능성은 검증하지
+              않았습니다.
+            </p>
+          </form>
+          <aside class="proposal-preview">
+            <span class="step">02 / 나의 메뉴 카드</span>
+            <div class="mini-cup" aria-hidden="true">
+              <span>YOUR<br />NEXT<br />CUP.</span>
+            </div>
+            <p class="eyebrow">CREATED BY YOU</p>
+            <h2 id="preview-name">아직 이름 없는,<br />나의 다음 한 잔.</h2>
+            <p id="preview-components">크림 블렌디드 , 이천 쌀 , 부드럽게</p>
+            <p id="preview-story">좋아하는 맛에서 시작해 보세요.</p>
+            <span class="status-chip">신메뉴 아이디어 , 미전송</span>
+            <p class="fine">
+              현재 주문 가능한 커스텀 메뉴가 아닙니다.<br />저장 후 내
+              보관함에서 다시 수정할 수 있어요.
+            </p>
+          </aside>
+        </div>
+      </section>
+      <section id="collection" class="view section" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">MY NEXT CUP</p>
+          <h1>나의 취향이 모이는 곳.</h1>
+          <p>
+            다음 잔 후보부터 메뉴 요청까지. 이 기기에 남긴 나만의 기록입니다.
+          </p>
+        </div>
+        <div class="collection-top">
+          <div class="chips filters" aria-label="기록 유형">
+            <button type="button" data-filter="all" aria-pressed="true">
+              전체</button
+            ><button type="button" data-filter="candidate" aria-pressed="false">
+              다음 잔</button
+            ><button type="button" data-filter="request" aria-pressed="false">
+              메뉴 요청</button
+            ><button type="button" data-filter="idea" aria-pressed="false">
+              내 메뉴
+            </button>
+          </div>
+          <button id="export" class="outline" type="button">
+            기록 내려받기
+          </button>
+        </div>
+        <p class="fine">
+          자동 공유, 다른 기기 동기화 없음 , ‘커뮤니티에 제안’한 사본만 회원에게
+          공유됩니다. 브라우저 데이터를 지우면 개인 기록이 삭제될 수 있습니다.
+        </p>
+        <div id="collection-content" class="saved-grid"></div>
+      </section>
+      <section id="notes" class="view section" hidden>
+        <div class="page-heading">
+          <p class="eyebrow">WHY NEXT CUP</p>
+          <h1>한 사람의 진짜 취향에서,<br />고객의 목소리를 잇는 서비스로.</h1>
+          <p>스타벅스 AI 기획/개발 지원을 위한 개인 프로젝트입니다.</p>
+        </div>
+        <div class="notes-grid">
+          <article class="card">
+            <span class="step">01 / 출발점</span>
+            <h2>이천 햅쌀 크림 프라푸치노</h2>
+            <p>
+              지원자가 실제로 좋아했던 메뉴를 중심 사례로 삼았습니다. 한 사람의
+              경험을 전체 고객의 수요로 일반화하지 않습니다.
+            </p>
+            <ul>
+              <li>2019년 1월: 햅쌀 음료 출시.</li>
+              <li>2019년 5월: 고객 요청으로 크림 버전 재출시.</li>
+              <li>같이 출시된 커피 버전에만 ‘연중 판매’ 명시.</li>
+              <li>판매 종료일, 이유, 영구 단종 여부는 미확인.</li>
+            </ul>
+            <p>
+              현재 판매 여부와 재고는 별도 확인이 필요합니다. 재현 레시피나 맛의
+              동일성을 약속하지 않습니다.
+            </p>
+            <a
+              href="https://www.shinsegaegroupnewsroom.com/starbucks-rice-latte-2000/"
+              target="_blank"
+              rel="noreferrer"
+              >2019.01 공식 자료 ↗</a
+            ><br /><a
+              href="https://www.shinsegaegroupnewsroom.com/starbucks-organic-farm-produce-popular/"
+              target="_blank"
+              rel="noreferrer"
+              >2019.05 공식 재출시 자료 ↗</a
+            >
+          </article>
+          <article class="card">
+            <span class="step">02 / 직무와의 연결</span>
+            <h2>예측보다 먼저,<br />고객이 원하는 맛을 이해하기.</h2>
+            <p>
+              <strong>고객 분석, AI 서비스 기획:</strong> 원하는 감각, 타협할 수
+              없는 조건, 대안이 부족한 이유를 수집하는 흐름으로 연결됩니다.
+            </p>
+            <p>
+              <strong>AI 개발, 운영:</strong> Gemini 연결 후 모호한 취향 해석,
+              확인 질문, 유사 제안 묶기와 실패 처리를 추가 검증해야 합니다.
+              현재는 선택 입력과 규칙 기반 비교입니다.
+            </p>
+            <p>
+              <strong>메뉴 의사결정:</strong> 요청 사유를 검토할 기초 자료를
+              만드는 방향입니다. 개인 저장 건수를 실제 수요, 판매량으로 해석하지
+              않습니다.
+            </p>
+          </article>
+          <article class="card">
+            <span class="step">03 / 구현의 경계</span>
+            <h2>지금 되는 것과,<br />아직 아닌 것.</h2>
+            <p>
+              취향 선택 → 조건 검사 → 부분 대안 또는 추천 보류 → 메뉴 요청,
+              신메뉴 아이디어 → 저장, 수정, 시음 피드백.
+            </p>
+            <p>
+              매장 A/B와 맛 태그는 가상 조건입니다. 실제 판매 API, 스타벅스 요청
+              접수, 커뮤니티, 투표, Gemini는 연결되지 않았습니다.
+            </p>
+            <p>
+              쌀 풍미 필수 조건은 추천 점수보다 우선합니다. 해당 조건을 충족하는
+              후보가 없다면 추천하지 않습니다.
+            </p>
+          </article>
+          <article class="card">
+            <span class="step">04 / 다음 검증</span>
+            <h2>더 그럴듯한 답보다,<br />취향을 잘 이해한 답.</h2>
+            <p>
+              일반 태그 선택과 AI 확인 질문의 취향 해석 정확도를 비교합니다.
+              실제 시음으로 부분 대안의 만족도를 별도로 확인합니다.
+            </p>
+            <p>
+              메뉴 요청은 누가, 왜, 무엇을 원하는지 조사하는 출발점입니다.
+              자발적 참여자의 의견만 모이는 편향을 확인해야 합니다.
+            </p>
+            <a href="PROJECT.md">기획, 구현 문서 보기 ↗</a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="footer-brand" href="#discover"
+        >NEXT CUP<span>그리운 맛의 다음 이야기</span></a
+      >
+      <p>
+        STARBUCKS FAN CONCEPT / 개인 포트폴리오<br />스타벅스의 공식 서비스,
+        제휴 서비스가 아닙니다.
+      </p>
+      <a href="#notes">사실과 가정, 그리고 기획 의도 ↗</a>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <noscript
+      >이 체험은 JavaScript가 필요합니다. 메뉴 정보와 기획 노트는 페이지
+      본문에서 확인할 수 있습니다.</noscript
+    >
+  </body>
+</html>

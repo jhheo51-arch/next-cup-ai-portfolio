@@ -9,3 +9,5 @@ node_modules/
 *.log
 owner-invite.txt
 .DS_Store
+interview-private/
+*면접대비*.md

@@ -1,0 +1,61 @@
+{
+  "kind": "synthetic-browser-integration",
+  "actualGeminiCalls": 1,
+  "observedMs": 5093,
+  "results": [
+    {
+      "id": "실제 Gemini 해석을 사람이 적용한 뒤 쌀 필수 yes",
+      "pass": true
+    },
+    {
+      "id": "쌀 필수이면 0개",
+      "pass": true
+    },
+    {
+      "id": "요구 기록으로 조건 전달",
+      "pass": true
+    },
+    {
+      "id": "남은 요구 실제 로컬 저장",
+      "pass": true
+    },
+    {
+      "id": "갈린 얼음, 커피 비선호이면 초콜릿 크림 칩 1개",
+      "pass": true
+    },
+    {
+      "id": "바닐라만 선택하면 콜드 브루 1개",
+      "pass": true
+    },
+    {
+      "id": "미확인 필수 조건은 직접 확인 요청",
+      "pass": true
+    },
+    {
+      "id": "시간 초과 안내와 입력 보존",
+      "pass": true
+    },
+    {
+      "id": "수동 전환 후 늦은 답변 미적용",
+      "pass": true
+    },
+    {
+      "id": "가로 넘침 없음 375",
+      "pass": true
+    },
+    {
+      "id": "가로 넘침 없음 768",
+      "pass": true
+    },
+    {
+      "id": "가로 넘침 없음 1440",
+      "pass": true
+    },
+    {
+      "id": "브라우저 실행 오류 없음",
+      "pass": true
+    }
+  ],
+  "faults": [],
+  "limits": "사용자 만족도 시험 아님. 시간 초과와 지연 응답은 가상 응답으로 화면 처리만 검증."
+}

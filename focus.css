@@ -1,0 +1,8 @@
+.journey{display:grid;grid-template-columns:repeat(4,1fr);list-style:none;padding:20px 0;margin:0 0 24px;border-bottom:1px solid #cbded3;gap:16px;color:#006241;font-weight:700}
+#ai-progress{min-height:1.6em;font-size:14px;color:#24483a}
+#taste-form .chips{gap:8px}#taste-form .field{margin:20px 0}
+.result-card details{margin:12px 0;font-size:14px}.result-card p{overflow-wrap:anywhere}
+.next-story{display:flex;align-items:center;justify-content:space-between;gap:32px}.next-story h2{font-size:28px}.next-story p{max-width:620px}
+footer details{max-width:240px}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #b98630;outline-offset:4px}
+@media(max-width:760px){.journey{grid-template-columns:repeat(2,1fr);font-size:14px}.next-story{display:block}.next-story .outline{margin-top:20px}.header nav{flex-wrap:wrap}.result-card{min-width:0}.hero h1{font-size:40px}}
+html,body,*{scrollbar-width:none}*::-webkit-scrollbar{display:none}

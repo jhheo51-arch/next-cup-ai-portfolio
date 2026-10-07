@@ -4,7 +4,7 @@ test('쌀 풍미 필수는 모든 부분 대안보다 우선',()=>assert.equal(C
 test('사용자가 필수 조건을 해제한 경우에만 부분 대안',()=>{const r=C.compare({...input,essential:false});assert.equal(r.status,'partial');assert.ok(r.candidates.every(d=>d.missing.includes('rice')));});
 test('미확인 매장은 추천 보류',()=>assert.equal(C.compare({...input,store:'unknown'}).status,'unknown'));
 test('품절 후보 제외',()=>assert.ok(!C.compare({...input,essential:false,store:'limited'}).candidates.some(d=>d.id==='coldbrew')));
-test('미선택은 확인 요청',()=>assert.equal(C.compare({...input,tags:[]}).status,'clarify'));
+test('선호와 필수 조건 모두 미선택은 확인 요청',()=>assert.equal(C.compare({...input,tags:[],essential:false}).status,'clarify'));
 test('바삭한 토핑만 원하면 억지 추천하지 않음',()=>assert.equal(C.compare({...input,tags:['crunch'],essential:false}).status,'empty'));
 test('잘못된 태그와 중복 차단',()=>{for(const tags of [['invented'],['rice','rice'],['__proto__']])assert.equal(C.compare({...input,tags}).status,'invalid');});
 test('전 조합의 필수·품절 조건 유지',()=>{for(let n=0;n<16;n++)for(const essential of [true,false])for(const store of ['all','limited','unknown']){const r=C.compare({tags:Object.keys(C.labels).filter((_,i)=>n&(1<<i)),essential,store});assert.ok(r.candidates.every(d=>(!essential||d.tags.includes('rice'))&&(store!=='limited'||d.id!=='coldbrew')));}});

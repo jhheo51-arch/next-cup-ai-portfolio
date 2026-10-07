@@ -1,0 +1,1011 @@
+{
+  "started": "2026-10-07T08:27:27.489Z",
+  "protocolHash": "4c668b10defd6624a60e67f4daa6f7202dbb5d248b5a595e9ac705d1893736d0",
+  "promptHash": "fb0f501e80ead8ae561338ba06cc55e3c6fdab52a4aa6aba0172f31e3f63f1ae",
+  "model": "gemini-3.1-flash-lite",
+  "repeats": 2,
+  "humanParticipants": 0,
+  "finished": "2026-10-07T08:28:56.785Z",
+  "status": "complete",
+  "rows": [
+    {
+      "id": "H01",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "vanilla"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": [
+          "coldbrew"
+        ]
+      },
+      "result": {
+        "likes": [
+          "vanilla"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "사용자가 바닐라 향에 대한 선호를 명확히 표현함.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "vanilla",
+            "polarity": "like",
+            "quote": "바닐라 향이 은은하게 나는 게 제일 마음에 들어요."
+          }
+        ]
+      },
+      "candidates": [
+        "coldbrew"
+      ],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 4242,
+        "inputTokens": 427,
+        "outputTokens": 116
+      }
+    },
+    {
+      "id": "H02",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "ice"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown",
+        "candidates": [
+          "chocolate"
+        ]
+      },
+      "result": {
+        "likes": [
+          "ice"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown",
+        "understanding": "잘게 갈린 얼음 질감을 선호하며 커피 맛이 포함된 메뉴는 피하는 취향입니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "ice",
+            "polarity": "like",
+            "quote": "얼음이 잘게 갈린 느낌이 좋습니다."
+          },
+          {
+            "tag": "coffee",
+            "polarity": "dislike",
+            "quote": "커피 풍미는 싫습니다."
+          }
+        ]
+      },
+      "candidates": [
+        "chocolate"
+      ],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 7027,
+        "inputTokens": 426,
+        "outputTokens": 162
+      }
+    },
+    {
+      "id": "H03",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "cocoa"
+        ],
+        "essentialRice": "unknown",
+        "candidates": [
+          "coldbrew",
+          "latte"
+        ]
+      },
+      "result": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "cocoa"
+        ],
+        "essentialRice": "unknown",
+        "understanding": "부드러운 크림감을 선호하며 초콜릿 풍미를 피하고자 합니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "cream",
+            "polarity": "like",
+            "quote": "우유처럼 부드러운 크림감이 좋고"
+          },
+          {
+            "tag": "cocoa",
+            "polarity": "dislike",
+            "quote": "초콜릿 풍미는 피하고 싶어요."
+          }
+        ]
+      },
+      "candidates": [
+        "coldbrew",
+        "latte"
+      ],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 7196,
+        "inputTokens": 431,
+        "outputTokens": 165
+      }
+    },
+    {
+      "id": "H04",
+      "repeat": 1,
+      "ok": true,
+      "pass": false,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "rice"
+        ],
+        "dislikes": [],
+        "essentialRice": "yes",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "yes",
+        "understanding": "쌀의 구수한 풍미를 필수 요소로 설정했습니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "rice",
+            "polarity": "required",
+            "quote": "쌀 특유의 구수한 맛만은 빠지면 안 돼요."
+          }
+        ]
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 9943,
+        "inputTokens": 430,
+        "outputTokens": 102
+      }
+    },
+    {
+      "id": "H05",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "ice"
+        ],
+        "dislikes": [],
+        "essentialRice": "no",
+        "candidates": [
+          "chocolate"
+        ]
+      },
+      "result": {
+        "likes": [
+          "ice"
+        ],
+        "dislikes": [],
+        "essentialRice": "no",
+        "understanding": "쌀이 필수는 아니며 차갑게 갈린 얼음 질감을 선호합니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "ice",
+            "polarity": "like",
+            "quote": "잘게 갈린 얼음의 질감을 좋아해요."
+          },
+          {
+            "tag": "rice",
+            "polarity": "optional",
+            "quote": "쌀 맛은 없어도 괜찮아요."
+          }
+        ]
+      },
+      "candidates": [
+        "chocolate"
+      ],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 11455,
+        "inputTokens": 429,
+        "outputTokens": 149
+      }
+    },
+    {
+      "id": "H06",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "지역 농가 상생이라는 취지에 공감하고 계십니다. 구체적인 선호 감각은 언급하지 않으셨습니다.",
+        "question": "혹시 평소에 선호하시거나 피하고 싶은 특정한 맛이나 질감이 있으신가요?",
+        "evidence": []
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 8859,
+        "inputTokens": 430,
+        "outputTokens": 75
+      }
+    },
+    {
+      "id": "H07",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "crunch"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [
+          "crunch"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "바삭한 토핑 식감을 선호하십니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "crunch",
+            "polarity": "like",
+            "quote": "위에 얹힌 과자 같은 바삭한 토핑을 좋아해요."
+          }
+        ]
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1364,
+        "inputTokens": 424,
+        "outputTokens": 61
+      }
+    },
+    {
+      "id": "H08",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "제주 비자림 콜드 브루를 언급하셨으나 구체적인 선호 감각은 명시되지 않았습니다.",
+        "question": "제주 비자림 콜드 브루의 어떤 맛이나 질감이 가장 기억에 남으셨나요?",
+        "evidence": []
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1645,
+        "inputTokens": 432,
+        "outputTokens": 94
+      }
+    },
+    {
+      "id": "H09",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "vanilla"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [
+          "vanilla"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown",
+        "understanding": "사용자는 현재 커피를 싫어하며 바닐라 향만을 선호한다고 명시했습니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "coffee",
+            "polarity": "dislike",
+            "quote": "지금은 커피 풍미가 싫어요."
+          },
+          {
+            "tag": "vanilla",
+            "polarity": "like",
+            "quote": "바닐라 향만 좋아합니다."
+          }
+        ]
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 5836,
+        "inputTokens": 456,
+        "outputTokens": 158
+      }
+    },
+    {
+      "id": "H10",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "단맛이 강하지 않은 음료를 선호하시며, 특정 향이나 질감에 대한 선호는 아직 정해지지 않으셨습니다.",
+        "question": "혹시 평소에 선호하시는 특정 재료(예: 커피, 차, 우유 등)나 피하고 싶은 향이 있으신가요?",
+        "evidence": []
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 6547,
+        "inputTokens": 431,
+        "outputTokens": 109
+      }
+    },
+    {
+      "id": "H11",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "coffee",
+          "cocoa"
+        ],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "coffee",
+          "cocoa"
+        ],
+        "essentialRice": "unknown",
+        "understanding": "부드러운 크림감을 선호하며 커피와 초콜릿 풍미를 싫어하는 상태입니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "cream",
+            "polarity": "like",
+            "quote": "크림감은 좋아요."
+          },
+          {
+            "tag": "coffee",
+            "polarity": "dislike",
+            "quote": "커피 맛과 초콜릿 맛은 둘 다 싫어요."
+          },
+          {
+            "tag": "cocoa",
+            "polarity": "dislike",
+            "quote": "커피 맛과 초콜릿 맛은 둘 다 싫어요."
+          }
+        ]
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 3308,
+        "inputTokens": 427,
+        "outputTokens": 119
+      }
+    },
+    {
+      "id": "H12",
+      "repeat": 1,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "커피 풍미에 대한 선호가 아직 확립되지 않은 상태입니다.",
+        "question": "혹시 커피 외에 평소 즐기시거나 피하시는 다른 맛이나 식감이 있으신가요?",
+        "evidence": []
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1929,
+        "inputTokens": 427,
+        "outputTokens": 62
+      }
+    },
+    {
+      "id": "H01",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "vanilla"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": [
+          "coldbrew"
+        ]
+      },
+      "result": {
+        "likes": [
+          "vanilla"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "바닐라 향을 매우 선호하시며, 은은한 향을 긍정적으로 평가하십니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "vanilla",
+            "polarity": "like",
+            "quote": "바닐라 향이 은은하게 나는 게 제일 마음에 들어요."
+          }
+        ]
+      },
+      "candidates": [
+        "coldbrew"
+      ],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1605,
+        "inputTokens": 427,
+        "outputTokens": 75
+      }
+    },
+    {
+      "id": "H02",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "ice"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown",
+        "candidates": [
+          "chocolate"
+        ]
+      },
+      "result": {
+        "likes": [
+          "ice"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown",
+        "understanding": "얼음이 잘게 갈린 질감을 선호하며, 커피 풍미가 포함된 메뉴는 피하고 싶어 하십니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "ice",
+            "polarity": "like",
+            "quote": "얼음이 잘게 갈린 느낌이 좋습니다."
+          },
+          {
+            "tag": "coffee",
+            "polarity": "dislike",
+            "quote": "커피 풍미는 싫습니다."
+          }
+        ]
+      },
+      "candidates": [
+        "chocolate"
+      ],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1535,
+        "inputTokens": 426,
+        "outputTokens": 93
+      }
+    },
+    {
+      "id": "H03",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "cocoa"
+        ],
+        "essentialRice": "unknown",
+        "candidates": [
+          "coldbrew",
+          "latte"
+        ]
+      },
+      "result": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "cocoa"
+        ],
+        "essentialRice": "unknown",
+        "understanding": "부드러운 크림감을 선호하며 초콜릿 풍미는 피하고 싶어 하십니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "cream",
+            "polarity": "like",
+            "quote": "우유처럼 부드러운 크림감이 좋고"
+          },
+          {
+            "tag": "cocoa",
+            "polarity": "dislike",
+            "quote": "초콜릿 풍미는 피하고 싶어요."
+          }
+        ]
+      },
+      "candidates": [
+        "coldbrew",
+        "latte"
+      ],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1886,
+        "inputTokens": 431,
+        "outputTokens": 169
+      }
+    },
+    {
+      "id": "H04",
+      "repeat": 2,
+      "ok": true,
+      "pass": false,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "rice"
+        ],
+        "dislikes": [],
+        "essentialRice": "yes",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "yes",
+        "understanding": "쌀의 구수한 맛을 반드시 포함해야 하는 취향입니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "rice",
+            "polarity": "required",
+            "quote": "쌀 특유의 구수한 맛만은 빠지면 안 돼요."
+          }
+        ]
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 2138,
+        "inputTokens": 430,
+        "outputTokens": 103
+      }
+    },
+    {
+      "id": "H05",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "ice"
+        ],
+        "dislikes": [],
+        "essentialRice": "no",
+        "candidates": [
+          "chocolate"
+        ]
+      },
+      "result": {
+        "likes": [
+          "ice"
+        ],
+        "dislikes": [],
+        "essentialRice": "no",
+        "understanding": "쌀이 필수는 아니며, 잘게 갈린 얼음 질감을 선호함.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "ice",
+            "polarity": "like",
+            "quote": "잘게 갈린 얼음의 질감을 좋아해요"
+          },
+          {
+            "tag": "rice",
+            "polarity": "optional",
+            "quote": "쌀 맛은 없어도 괜찮아요"
+          }
+        ]
+      },
+      "candidates": [
+        "chocolate"
+      ],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1515,
+        "inputTokens": 429,
+        "outputTokens": 143
+      }
+    },
+    {
+      "id": "H06",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "지역 농가 상생에 관심이 있으시군요. 현재 구체적인 맛 선호는 언급되지 않았습니다.",
+        "question": "혹시 평소에 선호하거나 피하고 싶은 특정 맛이나 질감이 있으신가요?",
+        "evidence": []
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1781,
+        "inputTokens": 430,
+        "outputTokens": 68
+      }
+    },
+    {
+      "id": "H07",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "crunch"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [
+          "crunch"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "과자 같은 바삭한 식감을 선호하는 취향입니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "crunch",
+            "polarity": "like",
+            "quote": "위에 얹힌 과자 같은 바삭한 토핑을 좋아해요."
+          }
+        ]
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1616,
+        "inputTokens": 424,
+        "outputTokens": 107
+      }
+    },
+    {
+      "id": "H08",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "제주 비자림 콜드 브루를 언급하셨으나 구체적인 선호 감각을 명시하지 않아 취향을 확인할 수 없습니다.",
+        "question": "제주 비자림 콜드 브루에서 특별히 좋아하셨던 맛이나 식감이 있으신가요?",
+        "evidence": []
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1573,
+        "inputTokens": 432,
+        "outputTokens": 102
+      }
+    },
+    {
+      "id": "H09",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "vanilla"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [
+          "vanilla"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown",
+        "understanding": "사용자가 커피 풍미를 싫어한다고 명확히 밝혔으며, 현재 바닐라 향만을 선호합니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "coffee",
+            "polarity": "dislike",
+            "quote": "지금은 커피 풍미가 싫어요."
+          },
+          {
+            "tag": "vanilla",
+            "polarity": "like",
+            "quote": "바닐라 향만 좋아합니다."
+          }
+        ]
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1552,
+        "inputTokens": 456,
+        "outputTokens": 163
+      }
+    },
+    {
+      "id": "H10",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "당도가 낮은 음료를 선호하시며, 특정 향이나 질감에 대해서는 아직 선호가 없습니다.",
+        "question": "혹시 평소에 선호하시는 특정 맛(커피, 차, 과일 등)이나 피하고 싶은 식감이 있으신가요?",
+        "evidence": []
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1225,
+        "inputTokens": 431,
+        "outputTokens": 78
+      }
+    },
+    {
+      "id": "H11",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "coffee",
+          "cocoa"
+        ],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "coffee",
+          "cocoa"
+        ],
+        "essentialRice": "unknown",
+        "understanding": "부드러운 크림감을 선호하며 커피와 초콜릿 풍미를 피하고자 합니다.",
+        "question": "",
+        "evidence": [
+          {
+            "tag": "cream",
+            "polarity": "like",
+            "quote": "크림감은 좋아요."
+          },
+          {
+            "tag": "coffee",
+            "polarity": "dislike",
+            "quote": "커피 맛과 초콜릿 맛은 둘 다 싫어요."
+          },
+          {
+            "tag": "cocoa",
+            "polarity": "dislike",
+            "quote": "커피 맛과 초콜릿 맛은 둘 다 싫어요."
+          }
+        ]
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1768,
+        "inputTokens": 427,
+        "outputTokens": 117
+      }
+    },
+    {
+      "id": "H12",
+      "repeat": 2,
+      "ok": true,
+      "pass": true,
+      "candidateMatch": true,
+      "expected": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "candidates": []
+      },
+      "result": {
+        "likes": [],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "사용자가 커피 풍미에 대해 명확한 선호나 비선호를 결정하지 못한 상태입니다.",
+        "question": "커피 풍미를 드실 때 긍정적인 느낌과 부정적인 느낌 중 어떤 것이 더 강하게 드시나요?",
+        "evidence": []
+      },
+      "candidates": [],
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "policy": "taste-v2",
+        "ms": 1685,
+        "inputTokens": 427,
+        "outputTokens": 71
+      }
+    }
+  ],
+  "summary": {
+    "total": 24,
+    "exactPass": 22,
+    "candidateMatch": 24,
+    "errors": 0,
+    "meanMs": 3718,
+    "successMeanMs": 3718,
+    "p95Ms": 9943
+  },
+  "limitations": [
+    "같은 작성 도구가 설계한 내부 합성 평가",
+    "맛 유사도, 만족도, 구매 효과를 측정하지 않음",
+    "미확인 필수 조건은 화면에서 사람이 확인하며 후보 시험은 쌀 필수 아님을 가정",
+    "결과 확인 후 이 평가에 맞춘 프롬프트 재수정은 하지 않음"
+  ]
+}

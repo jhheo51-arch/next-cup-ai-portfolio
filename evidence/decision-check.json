@@ -1,0 +1,259 @@
+{
+  "at": "2026-10-07T08:34:44.683Z",
+  "baselineCommit": "c5f0ae5",
+  "scope": "같은 확인 조건을 이전 코드와 수정 코드에 입력한 회귀 시험",
+  "humanParticipants": 0,
+  "rows": [
+    {
+      "id": "H01",
+      "category": "간접 표현",
+      "input": {
+        "tags": [
+          "vanilla"
+        ],
+        "dislikes": [],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [
+        "coldbrew"
+      ],
+      "before": [],
+      "after": [
+        "coldbrew"
+      ],
+      "beforePass": false,
+      "afterPass": true,
+      "status": "partial"
+    },
+    {
+      "id": "H02",
+      "category": "원하지 않는 감각",
+      "input": {
+        "tags": [
+          "ice"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [
+        "chocolate"
+      ],
+      "before": [
+        "chocolate"
+      ],
+      "after": [
+        "chocolate"
+      ],
+      "beforePass": true,
+      "afterPass": true,
+      "status": "partial"
+    },
+    {
+      "id": "H03",
+      "category": "조건 조합",
+      "input": {
+        "tags": [
+          "cream"
+        ],
+        "dislikes": [
+          "cocoa"
+        ],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [
+        "coldbrew",
+        "latte"
+      ],
+      "before": [
+        "chocolate",
+        "coldbrew",
+        "latte"
+      ],
+      "after": [
+        "coldbrew",
+        "latte"
+      ],
+      "beforePass": false,
+      "afterPass": true,
+      "status": "partial"
+    },
+    {
+      "id": "H04",
+      "category": "필수 조건",
+      "input": {
+        "tags": [
+          "rice"
+        ],
+        "dislikes": [],
+        "essential": true,
+        "store": "all"
+      },
+      "expected": [],
+      "before": [],
+      "after": [],
+      "beforePass": true,
+      "afterPass": true,
+      "status": "empty"
+    },
+    {
+      "id": "H05",
+      "category": "타협 허용",
+      "input": {
+        "tags": [
+          "ice"
+        ],
+        "dislikes": [],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [
+        "chocolate"
+      ],
+      "before": [
+        "chocolate"
+      ],
+      "after": [
+        "chocolate"
+      ],
+      "beforePass": true,
+      "afterPass": true,
+      "status": "partial"
+    },
+    {
+      "id": "H06",
+      "category": "의미 중심",
+      "input": {
+        "tags": [],
+        "dislikes": [],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [],
+      "before": [],
+      "after": [],
+      "beforePass": true,
+      "afterPass": true,
+      "status": "clarify"
+    },
+    {
+      "id": "H07",
+      "category": "매칭 없는 질감",
+      "input": {
+        "tags": [
+          "crunch"
+        ],
+        "dislikes": [],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [],
+      "before": [],
+      "after": [],
+      "beforePass": true,
+      "afterPass": true,
+      "status": "empty"
+    },
+    {
+      "id": "H08",
+      "category": "메뉴명만 제시",
+      "input": {
+        "tags": [],
+        "dislikes": [],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [],
+      "before": [],
+      "after": [],
+      "beforePass": true,
+      "afterPass": true,
+      "status": "clarify"
+    },
+    {
+      "id": "H09",
+      "category": "취향 변경",
+      "input": {
+        "tags": [
+          "vanilla"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [],
+      "before": [],
+      "after": [],
+      "beforePass": true,
+      "afterPass": true,
+      "status": "empty"
+    },
+    {
+      "id": "H10",
+      "category": "사전 밖 조건",
+      "input": {
+        "tags": [],
+        "dislikes": [],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [],
+      "before": [],
+      "after": [],
+      "beforePass": true,
+      "afterPass": true,
+      "status": "clarify"
+    },
+    {
+      "id": "H11",
+      "category": "비선호 조합",
+      "input": {
+        "tags": [
+          "cream"
+        ],
+        "dislikes": [
+          "coffee",
+          "cocoa"
+        ],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [],
+      "before": [
+        "chocolate"
+      ],
+      "after": [],
+      "beforePass": false,
+      "afterPass": true,
+      "status": "empty"
+    },
+    {
+      "id": "H12",
+      "category": "이중 부정",
+      "input": {
+        "tags": [],
+        "dislikes": [],
+        "essential": false,
+        "store": "all"
+      },
+      "expected": [],
+      "before": [],
+      "after": [],
+      "beforePass": true,
+      "afterPass": true,
+      "status": "clarify"
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "beforePass": 9,
+    "afterPass": 12
+  },
+  "limits": "맛 유사도 또는 AI 대 수동의 사용자 효과가 아님. 미확인 쌀 필수 조건은 시험에서 선택 조건으로 가정."
+}

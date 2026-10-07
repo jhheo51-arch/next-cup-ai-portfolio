@@ -1,0 +1,21 @@
+{
+  "protocol":"H01",
+  "kind":"synthetic",
+  "purpose":"지시문 수정에 사용하지 않은 새 표현의 조건 추출과 후보 일치 확인. 같은 작성 도구가 설계한 내부 평가이며 외부 독립 검증이 아님.",
+  "repeats":2,
+  "frozenBeforeRun":true,
+  "cases":[
+    {"id":"H01","category":"간접 표현","text":"그 잔에서 바닐라 향이 은은하게 나는 게 제일 마음에 들어요.","likes":["vanilla"],"dislikes":[],"rice":"unknown","candidates":["coldbrew"]},
+    {"id":"H02","category":"원하지 않는 감각","text":"얼음이 잘게 갈린 느낌이 좋습니다. 커피 풍미는 싫습니다.","likes":["ice"],"dislikes":["coffee"],"rice":"unknown","candidates":["chocolate"]},
+    {"id":"H03","category":"조건 조합","text":"우유처럼 부드러운 크림감이 좋고 초콜릿 풍미는 피하고 싶어요.","likes":["cream"],"dislikes":["cocoa"],"rice":"unknown","candidates":["coldbrew","latte"]},
+    {"id":"H04","category":"필수 조건","text":"다른 건 바뀌어도 되지만 쌀 특유의 구수한 맛만은 빠지면 안 돼요.","likes":["rice"],"dislikes":[],"rice":"yes","candidates":[]},
+    {"id":"H05","category":"타협 허용","text":"쌀 맛은 없어도 괜찮아요. 대신 잘게 갈린 얼음의 질감을 좋아해요.","likes":["ice"],"dislikes":[],"rice":"no","candidates":["chocolate"]},
+    {"id":"H06","category":"의미 중심","text":"지역 농가를 돕는다는 취지가 마음에 들었어요. 맛은 기억나지 않아요.","likes":[],"dislikes":[],"rice":"unknown","candidates":[]},
+    {"id":"H07","category":"매칭 없는 질감","text":"위에 얹힌 과자 같은 바삭한 토핑을 좋아해요.","likes":["crunch"],"dislikes":[],"rice":"unknown","candidates":[]},
+    {"id":"H08","category":"메뉴명만 제시","text":"제주 비자림 콜드 브루가 생각나요. 어떤 맛이 좋았는지는 모르겠어요.","likes":[],"dislikes":[],"rice":"unknown","candidates":[]},
+    {"id":"H09","category":"취향 변경","history":[{"role":"user","text":"커피 풍미가 좋아요."},{"role":"assistant","text":"현재도 커피 풍미를 원하시나요?"},{"role":"user","text":"지금은 커피 풍미가 싫어요. 바닐라 향만 좋아합니다."}],"likes":["vanilla"],"dislikes":["coffee"],"rice":"unknown","candidates":[]},
+    {"id":"H10","category":"사전 밖 조건","text":"너무 달지 않은 음료면 좋겠어요. 구체적인 향이나 질감은 모르겠어요.","likes":[],"dislikes":[],"rice":"unknown","candidates":[]},
+    {"id":"H11","category":"비선호 조합","text":"크림감은 좋아요. 커피 맛과 초콜릿 맛은 둘 다 싫어요.","likes":["cream"],"dislikes":["coffee","cocoa"],"rice":"unknown","candidates":[]},
+    {"id":"H12","category":"이중 부정","text":"커피 풍미를 싫어하는 건 아니에요. 좋아하는지도 아직 모르겠어요.","likes":[],"dislikes":[],"rice":"unknown","candidates":[]}
+  ]
+}
