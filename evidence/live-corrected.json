@@ -1,0 +1,187 @@
+{
+  "at": "2026-10-07T07:40:31.057Z",
+  "model": "gemini-3.1-flash-lite",
+  "kind": "synthetic",
+  "humanParticipants": 0,
+  "scope": "6개의 명시적 표현 검사. 모호한 기억·실제 맛·고객 효과 검증 아님.",
+  "rows": [
+    {
+      "id": "rice",
+      "kind": "synthetic",
+      "pass": true,
+      "expected": {
+        "likes": [
+          "rice"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "yes"
+      },
+      "result": {
+        "likes": [
+          "rice"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "yes",
+        "understanding": "이천 햅쌀 크림 프라푸치노처럼 쌀 풍미가 필수적이며 커피가 들어간 음료는 선호하지 않으십니다.",
+        "question": "쌀 풍미와 커피 제외 외에 크림감이나 바삭한 토핑 같은 다른 식감이나 맛에 대해서는 어떻게 생각하시나요?"
+      },
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "ms": 15363,
+        "inputTokens": 336,
+        "outputTokens": 212
+      }
+    },
+    {
+      "id": "vanilla",
+      "kind": "synthetic",
+      "pass": true,
+      "expected": {
+        "likes": [
+          "vanilla",
+          "cream"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown"
+      },
+      "result": {
+        "likes": [
+          "vanilla",
+          "cream"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "바닐라 향과 크림감을 선호하시는군요.",
+        "question": "혹시 음료의 당도나 다른 맛에 대해서는 어떻게 생각하시나요?"
+      },
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "ms": 13898,
+        "inputTokens": 327,
+        "outputTokens": 189
+      }
+    },
+    {
+      "id": "custard",
+      "kind": "synthetic",
+      "pass": true,
+      "expected": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown"
+      },
+      "result": {
+        "likes": [
+          "cream"
+        ],
+        "dislikes": [
+          "coffee"
+        ],
+        "essentialRice": "unknown",
+        "understanding": "슈크림 라떼에서 부드러운 크림감을 선호하시며, 커피 풍미는 불호하는 것으로 이해했습니다.",
+        "question": "혹시 크림이나 커피 외에 다른 맛이나 식감 중에서 선호하거나 피하고 싶은 요소가 더 있으신가요?"
+      },
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "ms": 15178,
+        "inputTokens": 331,
+        "outputTokens": 220
+      }
+    },
+    {
+      "id": "chai",
+      "kind": "synthetic",
+      "pass": true,
+      "expected": {
+        "likes": [
+          "spice",
+          "tea"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown"
+      },
+      "result": {
+        "likes": [
+          "spice",
+          "tea"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "차이 티 라떼에서 느껴지는 계피 향신료와 차 풍미를 선호하시는군요.",
+        "question": "혹시 차이 티 라떼 외에 다른 종류의 차나 향신료가 들어간 음료도 좋아하시나요?"
+      },
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "ms": 11311,
+        "inputTokens": 327,
+        "outputTokens": 199
+      }
+    },
+    {
+      "id": "glazed",
+      "kind": "synthetic",
+      "pass": true,
+      "expected": {
+        "likes": [
+          "foam",
+          "coffee"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown"
+      },
+      "result": {
+        "likes": [
+          "foam",
+          "coffee"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "블랙 글레이즈드 라떼의 폼 질감과 커피 풍미를 선호하시는군요.",
+        "question": "혹시 평소에 음료의 단맛 정도는 어느 정도를 선호하시나요?"
+      },
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "ms": 11938,
+        "inputTokens": 326,
+        "outputTokens": 224
+      }
+    },
+    {
+      "id": "jeju",
+      "kind": "synthetic",
+      "pass": true,
+      "expected": {
+        "likes": [
+          "matcha",
+          "coffee"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown"
+      },
+      "result": {
+        "likes": [
+          "matcha",
+          "coffee"
+        ],
+        "dislikes": [],
+        "essentialRice": "unknown",
+        "understanding": "제주 비자림 콜드 브루의 말차와 커피 풍미를 선호하시는군요.",
+        "question": "말차나 커피 외에 선호하거나 피하고 싶은 다른 맛이나 식감이 있으신가요?"
+      },
+      "meta": {
+        "model": "gemini-3.1-flash-lite",
+        "ms": 9172,
+        "inputTokens": 326,
+        "outputTokens": 198
+      }
+    }
+  ]
+}

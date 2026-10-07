@@ -1,0 +1,3 @@
+const test=require('node:test'),assert=require('node:assert/strict'),C=require('../core.js');
+test('커피 비선호이면 라떼·콜드 브루 제외',()=>{const r=C.compare({tags:['cream'],dislikes:['coffee'],essential:false,store:'all'});assert.deepEqual(r.candidates.map(d=>d.id),['chocolate']);});
+test('5개 취향의 전체 192 조합에서 필수 조건 유지',()=>{for(let n=0;n<32;n++)for(const essential of [true,false])for(const store of ['all','limited','unknown']){const r=C.compare({tags:Object.keys(C.labels).filter((_,i)=>n&(1<<i)),essential,store});assert.ok(r.candidates.every(d=>(!essential||d.tags.includes('rice'))&&(store!=='limited'||d.id!=='coldbrew')));}});

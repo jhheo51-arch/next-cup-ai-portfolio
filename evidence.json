@@ -1,0 +1,313 @@
+{
+  "version": 1,
+  "claim": {
+    "id": "CL-01",
+    "text": "고객의 최애 취향과 충족되지 않은 조건을 근거와 함께 구조화하여, 대안 탐색과 다음 메뉴 검토를 돕는다.",
+    "status": "구현 가능성 확인, 실사용 효과 검증 대기"
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "url": "https://www.shinsegaegroupnewsroom.com/starbucks-organic-farm-produce-popular/",
+      "published": "2019-05-23",
+      "kind": "official",
+      "title": "햅쌀 크림 재출시",
+      "quote": "지속적인 고객 요청에 따라",
+      "finding": "2019년 5월 크림 버전 재출시. 연중 판매 발표는 새 커피 버전에 한정. 30만 잔은 5월 프라푸치노 2종 합산.",
+      "limits": "현재 수요, 영구 단종, 종료 사유를 입증하지 않음.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "S02",
+      "url": "https://www.shinsegaegroupnewsroom.com/starbucks-vanilla-cream-cold-brew/",
+      "published": "2018-09-20",
+      "kind": "official",
+      "title": "시즌에서 상시로",
+      "quote": "고객의 지속적인 요청으로 상시 판매 메뉴로 전환",
+      "finding": "2017년 4월 프로모션 출시 후 고객 요청으로 상시 판매 전환. 점장 추천 설문은 고객 선호 조사와 다름.",
+      "limits": "상시 전환일의 정확한 날짜와 지금 지점 재고는 미확인.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "S03",
+      "url": "https://www.shinsegaegroupnewsroom.com/the-evolution-of-starbucks-custard-cream-latte/",
+      "published": "2026-03-03",
+      "kind": "official",
+      "title": "슈크림 봄 시즌",
+      "quote": "3월 4일부터 4월 14일까지",
+      "finding": "2017년 출시한 슈크림 라떼. 2026년 봄 6종 라인업. 누적 2,600만 잔은 확장된 슈크림 음료 전체 합산.",
+      "limits": "오리지널 단독 판매량, 상시 판매의 근거 아님.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "S04",
+      "url": "https://www.shinsegaegroupnewsroom.com/starbucks-releases-chai-tea-latte-to-celebrate-april-fools-day/",
+      "published": "2026-03-31",
+      "kind": "official",
+      "title": "차이 티 한정 복귀",
+      "quote": "국내에서는 2024년 판매 종료됐다.",
+      "finding": "고객 요청 후 2026년 4월 1~14일 신세계 계열사 입점 112개 매장에 한정 재출시. SNS 반응은 회사가 선별해 소개한 것.",
+      "limits": "현재 전국 상시 판매, 공정한 고객 표본으로 해석하지 않음.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "S05",
+      "url": "https://www.shinsegaegroupnewsroom.com/starbucks-black-glazed-latte-30-million-cups/",
+      "published": "2026-10-06",
+      "kind": "official",
+      "title": "블랙 글레이즈드 가을 반복",
+      "quote": "누적 판매량 3,000만 잔을 돌파",
+      "finding": "2019년 이후 가을 시즌 반복 출시. 2026년 8월 판매 시작. 3,000만 잔은 발표 시점 누적이며 연간 수요가 아님.",
+      "limits": "상시 전환 아님. 개별 매장 재고, 시즌 종료일은 별도 확인.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "S06",
+      "url": "https://www.shinsegaegroupnewsroom.com/starbucks-jeju-limited-seoul-daegu/",
+      "published": "2023-03-27",
+      "kind": "official",
+      "title": "제주 메뉴 판매처 한시 확대",
+      "quote": "3월 28일부터 6월 30일까지 한정 기간 판매",
+      "finding": "제주 비자림 콜드 브루 등을 제주 외 7개 지정 매장으로 한시 확대.",
+      "limits": "2023년 이력이며 현재 7개 매장에서 판매한다는 근거 아님.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "R01",
+      "url": "https://gooruemi.tistory.com/8",
+      "published": "2024-03-09",
+      "kind": "public_review",
+      "title": "슈크림을 기다리는 후기",
+      "quote": "왜 봄 시즌 한정으로만 출시하는지",
+      "finding": "시즌 외 접근 욕구와 시럽을 줄이는 행동을 서술한 개인 후기.",
+      "limits": "구매 사실 독립 검증 없음. 한 작성자의 자기보고.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "R02",
+      "url": "https://yerssy.tistory.com/29",
+      "published": null,
+      "kind": "public_review",
+      "title": "선출시, 맛 변화에 대한 후기",
+      "quote": "사이렌 오더 여기저기를 뒤지는데",
+      "finding": "선출시 메뉴가 앱에서 안 보여 매장에서 문의한 경험. 같은 글에서 부드러운 말차 조합을 긍정적으로 평가.",
+      "limits": "행사, 쿠폰 맥락. 앱에 없음이 미판매라는 뜻이 아니라는 탐색 신호. 작성일 정확히 미확인.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "R03",
+      "url": "https://seongminkim.tistory.com/152",
+      "published": null,
+      "kind": "public_review",
+      "title": "달콤함에 대한 반대 반응",
+      "quote": "맛은 좋았는데 먹다 보니 달아서 물리는 맛",
+      "finding": "크림은 긍정적으로 평가하지만 단맛으로 재구매를 망설이는 개인 후기.",
+      "limits": "슈크림 선호자 전부가 재구매한다는 가설의 반례. 작성일 정확히 미확인.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "S07",
+      "url": "https://www.starbucks.co.kr/store/store_coldbrew.do",
+      "published": null,
+      "kind": "official",
+      "title": "콜드 브루 공식 소개",
+      "quote": "",
+      "finding": "v03에서 바닐라 크림 콜드 브루 메뉴명 확인.",
+      "limits": "웹 소개는 실시간 주문 가능 여부가 아님.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "S08",
+      "url": "https://www.starbucks.co.kr/menu/drink_view.do?product_cd=168066",
+      "published": null,
+      "kind": "official",
+      "title": "초콜릿 크림 칩 공식 설명",
+      "quote": "",
+      "finding": "v03에서 공식 상세 확인. 초콜릿 풍미, 블렌디드 질감. 카페인이 없는 음료는 아님.",
+      "limits": "쌀과자 토핑과 동일한 감각으로 보지 않음.",
+      "checked": "2026-10-07"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.starbucks.co.kr/menu/drink_list.do",
+      "published": null,
+      "kind": "official",
+      "title": "공식 음료 목록",
+      "quote": "",
+      "finding": "v03에서 카페 라떼 등 메뉴명을 브라우저 목록으로 확인.",
+      "limits": "동적 화면의 수집 실패를 메뉴 부재로 처리하지 않음.",
+      "checked": "2026-10-07"
+    }
+  ],
+  "cases": [
+    {
+      "id": "rice",
+      "name": "이천 햅쌀 크림 프라푸치노",
+      "kind": "재출시 이력",
+      "status": "현재 판매 미확인",
+      "sourceIds": [
+        "S01",
+        "S08",
+        "S09"
+      ],
+      "story": "작성자의 경험을 출발점으로 삼았습니다. 좋아하는 감각과 필수 조건을 분리하며, 맛의 유사성을 실제 대체 선택이나 만족도로 단정하지 않습니다.",
+      "question": "좋아했던 요소 중 이번 선택에 꼭 필요한 것은 무엇인가요?",
+      "events": [
+        {
+          "start": "2019-05-02",
+          "end": null,
+          "scope": "재출시",
+          "note": "크림 버전 재출시. 정확한 판매 종료일 미확인."
+        }
+      ]
+    },
+    {
+      "id": "vanilla",
+      "name": "바닐라 크림 콜드 브루",
+      "kind": "시즌 → 상시",
+      "status": "상시 전환 이력, 공식 소개 확인",
+      "sourceIds": [
+        "S02",
+        "S07"
+      ],
+      "story": "이용자 요청이 상시 전환으로 이어진 사례. 현재 이용 가능할 수 있는 메뉴를 무조건 재출시 요청 대상으로 취급하지 않습니다.",
+      "question": "현재 메뉴를 찾는 것이 먼저인가요, 다른 취향의 대안을 원하는 건가요?",
+      "events": [
+        {
+          "start": "2017-04",
+          "end": null,
+          "scope": "프로모션 출시",
+          "note": "2018년 자료에서 상시 전환 확인. 전환 날짜 미확인."
+        }
+      ]
+    },
+    {
+      "id": "custard",
+      "name": "슈크림 라떼",
+      "kind": "반복 시즌",
+      "status": "확인된 봄 판매 기간 종료",
+      "sourceIds": [
+        "S03",
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "story": "재출시를 기다리는 마음과 단맛에 대한 상반된 반응을 함께 봅니다. 덜 달게 만드는 것이 모두에게 개선은 아닙니다.",
+      "question": "크림의 풍미와 단맛 중 무엇이 핵심인가요? 시럽을 줄였던 경험이 있나요?",
+      "events": [
+        {
+          "start": "2026-03-04",
+          "end": "2026-04-14",
+          "scope": "봄 시즌",
+          "note": "6종 합산 실적을 오리지널 한 잔의 실적으로 쓰지 않음."
+        }
+      ]
+    },
+    {
+      "id": "chai",
+      "name": "차이 티 라떼",
+      "kind": "판매 종료 → 한정 복귀",
+      "status": "확인된 한정 판매 기간 종료",
+      "sourceIds": [
+        "S04"
+      ],
+      "story": "2024년 판매 종료 뒤 요청에 따라 2026년 4월 지정 매장에 복귀. 전국 상시 복귀와 구별합니다.",
+      "question": "계피, 향신료 향이 필수인가요? 한정 판매 지점까지 방문할 의향은 별도로 확인합니다.",
+      "events": [
+        {
+          "start": "2024",
+          "end": null,
+          "scope": "판매 종료 발표 이력",
+          "note": "현재 영구 단종을 추정하지 않음."
+        },
+        {
+          "start": "2026-04-01",
+          "end": "2026-04-14",
+          "scope": "계열사 입점 112개 매장",
+          "note": "매장 전체 명단은 확보하지 않음."
+        }
+      ]
+    },
+    {
+      "id": "glazed",
+      "name": "블랙 글레이즈드 라떼",
+      "kind": "반복 시즌, 누적 인기",
+      "status": "2026-10-06 발표 기준 시즌 판매",
+      "sourceIds": [
+        "S05"
+      ],
+      "story": "인기가 많아도 상시 전환하지 않은 반례. 계절을 기다리는 가치와 접근 불편을 함께 확인합니다.",
+      "question": "시즌을 기다리는 즐거움이 있나요, 상시 판매를 더 원하시나요?",
+      "events": [
+        {
+          "start": "2026-08",
+          "end": null,
+          "scope": "가을 시즌",
+          "note": "발표일 기준 판매 중. 지점 재고는 미확인."
+        }
+      ]
+    },
+    {
+      "id": "jeju",
+      "name": "제주 비자림 콜드 브루",
+      "kind": "지역 한정 → 판매처 확대",
+      "status": "과거 확대 이력, 현재 재확인 필요",
+      "sourceIds": [
+        "S06"
+      ],
+      "story": "지역 메뉴도 기간별 예외 매장을 가진다는 사례. 제주라는 이름만 보고 현재 판매처를 단정하지 않습니다.",
+      "question": "특별한 장소의 기억과 음료의 맛 중 무엇 때문에 다시 찾고 싶으신가요?",
+      "events": [
+        {
+          "start": "2023-03-28",
+          "end": "2023-06-30",
+          "scope": "더북한산점, 더북한강R점, 더양평 DTR점, 경동1960점, 별다방점, 이대R점, 대구종로고택점",
+          "note": "과거 한시 확대 7개 지점. 현재 판매 목록 아님."
+        }
+      ]
+    }
+  ],
+  "reviewMethod": {
+    "unit": "공개 후기 게시글",
+    "sample": "검색으로 찾은 슈크림 관련 목적 표본 3개 게시글. 조회순, 무작위 표본 아님. URL 중복 제거.",
+    "exclusions": "홍보 문구, 영양 주장, 판매량은 후기에서 공식 사실로 채택하지 않음.",
+    "limits": "작성자 실구매를 독립 확인하지 않음. 공개 후기는 NEXT CUP 직접 사용시험 결과가 아님.",
+    "captured": "2026-10-07"
+  },
+  "hypotheses": [
+    {
+      "id": "H01",
+      "sources": [
+        "R01",
+        "S01"
+      ],
+      "observation": "시즌 밖 접근과 재출시 요청 신호",
+      "interpretation": "대안 탐색과 요청 남기기를 모두 원할 수 있음",
+      "action": "대안 비교 후 미충족 조건을 기록",
+      "test": "실제 경험과 행동을 먼저 인터뷰"
+    },
+    {
+      "id": "H02",
+      "sources": [
+        "R01",
+        "R03"
+      ],
+      "observation": "크림 선호와 단맛 불만이 공존",
+      "interpretation": "같은 메뉴 선호자도 유지하고 싶은 요소가 다를 수 있음",
+      "action": "선호와 비선호를 따로 확인",
+      "test": "AI 해석 수정률과 결과 도움 평가"
+    },
+    {
+      "id": "H03",
+      "sources": [
+        "R02",
+        "S06",
+        "S04"
+      ],
+      "observation": "특정 기간, 채널, 지점의 예외",
+      "interpretation": "목록 부재와 판매 종료를 혼동할 위험",
+      "action": "판매 범위, 기간, 확인일 표시",
+      "test": "과거 한정 이력을 현재 판매로 오인하는지 검사"
+    }
+  ]
+}

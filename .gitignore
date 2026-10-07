@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+runtime/
+output/
+node_modules/
+*.sqlite*
+*.db
+*.log
+owner-invite.txt
+.DS_Store
