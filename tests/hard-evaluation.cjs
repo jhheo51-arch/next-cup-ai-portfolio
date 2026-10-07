@@ -14,6 +14,6 @@ for(const c of protocol.cases.filter(x=>x.split===(phase==='heldout'?'heldout':'
  row.errors=Object.entries(row.checks).filter(([,v])=>!v).map(([k])=>k);row.pass=row.errors.length===0;
  }catch(e){row.pass=false;row.errors=[e.code||'UPSTREAM'];}
  report.inflight=null;report.rows.push(row);fs.writeFileSync(dest,JSON.stringify(report,null,2));console.log(JSON.stringify({phase,id:row.id,pass:row.pass,errors:row.errors}));
- if(report.rows.slice(-2).length===2&&report.rows.slice(-2).every(r=>r.errors.some(e=>['UPSTREAM','TIMEOUT','AUTH','QUOTA','MODEL','NO_KEY'].includes(e)))){report.stopped='연속 연결 실패 2회. 미실행 문장은 해석 평가 분모에 넣지 않음.';break;}
+ if(report.rows.slice(-2).length===2&&report.rows.slice(-2).every(r=>r.errors.some(e=>['UPSTREAM','UNAVAILABLE','TIMEOUT','AUTH','QUOTA','MODEL','NO_KEY'].includes(e)))){report.stopped='연속 연결 실패 2회. 미실행 문장은 해석 평가 분모에 넣지 않음.';break;}
 }
 report.completed=new Date().toISOString();report.passed=report.rows.filter(r=>r.pass).length;fs.writeFileSync(dest,JSON.stringify(report,null,2));console.log(JSON.stringify({phase,passed:report.passed,total:report.rows.length}));})().catch(e=>{console.error(e.code||e.message);process.exitCode=1;});

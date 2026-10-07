@@ -1,0 +1,25 @@
+{
+  "kind": "live-connectivity-diagnostic-and-synthetic-regression",
+  "externalParticipants": 0,
+  "evaluationRetryRequests": 6,
+  "additionalGenerateDiagnosticRequests": 1,
+  "availabilityReadChecks": "모델 목록 GET 1회와 API 루트 GET 1회. 평가 응답으로 세지 않음.",
+  "primaryRetry": "hard-retry-primary.json",
+  "alternativeRetries": ["hard-retry-25.json", "hard-retry-35.json"],
+  "diagnostic": {
+    "model": "gemini-3.1-flash-lite",
+    "input": "바닐라 향이 좋아요.",
+    "httpStatus": 503,
+    "providerStatus": "UNAVAILABLE",
+    "providerMessageSummary": "모델 요청량 증가로 현재 사용할 수 없다는 응답",
+    "oldApplicationCode": "UPSTREAM"
+  },
+  "regression": {
+    "test": "tests/availability.test.cjs",
+    "fixtureStatus": 503,
+    "before": "실패: 일반 UPSTREAM 및 HTTP 502로 분류",
+    "after": "통과: UNAVAILABLE 및 HTTP 503, 직접 선택 안내와 로그 확인",
+    "realAICalls": 0
+  },
+  "limitations": "해석 점수 미산출. 대체 모델을 실제 서비스 기본값으로 변경하지 않음. 고친 분류로 실제 모델 요청을 재실행한 것은 아님. 전체 제공자 장애 또는 복구 성과가 아님."
+}

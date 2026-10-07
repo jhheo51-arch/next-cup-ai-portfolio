@@ -26,6 +26,7 @@ Playwright 패키지와 Microsoft Edge가 설치된 환경에서 실행합니다
 npm install --no-save playwright
 node tests/simple-browser.cjs
 node tests/layout-check.cjs
+node tests/input-comparison.cjs
 ```
 
 가상 AI 응답만 사용합니다. 유료 호출이 아닙니다.
@@ -73,4 +74,4 @@ Playwright와 Edge가 필요합니다. 새 결과는 runtime/recovery-실행시�
 node --env-file=.env tests/hard-evaluation.cjs baseline
 ```
 
-한 번에 개발용 8개를 평가하고 연결 오류가 2회 연속 발생하면 중단하도록 작성했습니다. 이 중단 규칙을 넣은 뒤 실제 호출은 다시 하지 않았습니다. 새 결과는 runtime/hard-실행시각/에 저장합니다. AI 지시문을 고친 경우 revised, 수정에 쓰지 않은 분리 평가 문장을 실행할 때 heldout을 사용합니다. 이번에는 지시문을 변경하지 않았고 분리 평가도 실행하지 않았습니다.
+한 번에 개발용 8개를 평가하고 연결 오류가 2회 연속 발생하면 중단하도록 작성했습니다. 후속 기본/대체 모델 재시도에서 이 중단 규칙이 작동했습니다. 503을 UNAVAILABLE로 나눈 이후에는 실제 모델 재호출을 하지 않았습니다. 새 결과는 runtime/hard-실행시각/에 저장합니다. AI 지시문을 고친 경우 revised, 수정에 쓰지 않은 분리 평가 문장을 실행할 때 heldout을 사용합니다. 이번에는 지시문을 변경하지 않았고 분리 평가도 실행하지 않았습니다.

@@ -1,0 +1,88 @@
+{
+  "kind": "retrospective-response-replay",
+  "realAICallsThisRun": 0,
+  "externalParticipants": 0,
+  "source": "evidence/connection-results.json / connection-scenarios.json",
+  "definition": "확인 화면에서 목표 조건으로 바꾼 체크/선택 값의 개수. 클릭 수, 수행 시간, 인지 부담이 아님.",
+  "excluded": "기억 입력, 전송 동의, API 대기, 읽기/확인 시간, 펼침/제출 동작은 제외. R03은 AI 오류가 아니라 의도적 조건 변경.",
+  "rows": [
+    {
+      "id": "R01",
+      "input": "쌀은 없어도 괜찮아요. 차갑게 갈린 질감과 요거트 풍미가 좋아요. 초콜릿 풍미는 싫어요.",
+      "kind": "초기 조건",
+      "manual": {
+        "fieldChanges": 5,
+        "changes": [
+          "like:yogurt=true",
+          "like:ice=true",
+          "avoid:cocoa=true",
+          "rice=no",
+          "priority=yogurt"
+        ],
+        "candidates": [
+          "딸기 딜라이트 요거트 블렌디드"
+        ]
+      },
+      "aiReplay": {
+        "fieldChanges": 1,
+        "changes": [
+          "priority=yogurt"
+        ],
+        "candidates": [
+          "딸기 딜라이트 요거트 블렌디드"
+        ]
+      }
+    },
+    {
+      "id": "R02",
+      "input": "쌀의 구수한 풍미가 좋아요. 쌀 풍미는 꼭 있어야 해요.",
+      "kind": "초기 조건",
+      "manual": {
+        "fieldChanges": 2,
+        "changes": [
+          "like:rice=true",
+          "rice=yes"
+        ],
+        "candidates": []
+      },
+      "aiReplay": {
+        "fieldChanges": 0,
+        "changes": [],
+        "candidates": []
+      }
+    },
+    {
+      "id": "R03",
+      "input": "바닐라 향이 좋아요. 쌀은 없어도 괜찮아요.",
+      "kind": "의도적으로 취향을 바꾼 사례",
+      "manual": {
+        "fieldChanges": 6,
+        "changes": [
+          "like:fruit=true",
+          "like:ice=true",
+          "avoid:tea=true",
+          "avoid:cocoa=true",
+          "rice=no",
+          "priority=ice"
+        ],
+        "candidates": [
+          "딸기 딜라이트 요거트 블렌디드"
+        ]
+      },
+      "aiReplay": {
+        "fieldChanges": 6,
+        "changes": [
+          "like:fruit=true",
+          "like:ice=true",
+          "like:vanilla=false",
+          "avoid:tea=true",
+          "avoid:cocoa=true",
+          "priority=ice"
+        ],
+        "candidates": [
+          "딸기 딜라이트 요거트 블렌디드"
+        ]
+      }
+    }
+  ]
+}

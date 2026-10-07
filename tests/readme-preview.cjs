@@ -1,0 +1,3 @@
+const {chromium}=require(process.env.PLAYWRIGHT_PATH||'playwright');
+const {createApp}=require('../app/server.cjs');
+(async()=>{const app=createApp({dbPath:':memory:'});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));const browser=await chromium.launch({channel:'msedge',headless:true});try{const page=await browser.newPage({viewport:{width:1280,height:900}});await page.goto('http://127.0.0.1:'+app.server.address().port);await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:'evidence/readme-preview.png',clip:{x:0,y:0,width:1280,height:820}});}finally{await browser.close();app.server.closeAllConnections();await app.close();}})().catch(e=>{console.error(e.message);process.exitCode=1});

@@ -117,6 +117,7 @@ const messageFor = (code) =>
     AUTH: "Gemini 인증에 실패했습니다. 키 설정을 확인해 주세요.",
     QUOTA: "Gemini 사용 한도에 도달했습니다. 수동 선택을 이용해 주세요.",
     MODEL: "설정한 Gemini 모델을 사용할 수 없습니다.",
+    UNAVAILABLE: "현재 Gemini가 혼잡해 응답하지 못했습니다. 입력은 그대로 두고 직접 선택할 수 있습니다. 잠시 후 다시 시도해 주세요.",
     INVALID:
       "AI 답변의 형식이나 근거를 확인하지 못했습니다. 적용하지 않았습니다.",
     UPSTREAM:
@@ -176,7 +177,9 @@ function createAI({
       if (!response.ok)
         throw Object.assign(new Error(), {
           code:
-            response.status === 429
+            response.status === 503
+              ? "UNAVAILABLE"
+              : response.status === 429
               ? "QUOTA"
               : [401, 403].includes(response.status)
                 ? "AUTH"
@@ -220,7 +223,7 @@ function createAI({
             : "UPSTREAM";
       onEnd(id, code, Date.now() - started, usage);
       throw Object.assign(new Error(messageFor(code)), {
-        status: code === "QUOTA" ? 429 : 502,
+        status: code === "QUOTA" ? 429 : code === "UNAVAILABLE" ? 503 : 502,
         code,
       });
     }
