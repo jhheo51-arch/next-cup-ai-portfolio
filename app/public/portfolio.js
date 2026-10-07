@@ -9,7 +9,7 @@
   ['.eyebrow','h1','.lead'].forEach(s=>copy.append(start.querySelector(s)));
   copy.querySelector('.eyebrow').textContent='그리운 메뉴에서 시작하는 다음 선택';
   copy.querySelector('h1').innerHTML='좋아했던 그 음료,<br> <em>다음엔 무엇을</em><br> 마실까요?';
-  copy.querySelector('.lead').innerHTML='쌀의 구수함이었을까요, 시원하게 갈린 질감이었을까요.<br> 다음 잔에서도 만나고 싶은 특징을 찾아보세요.';
+  copy.querySelector('.lead').textContent='구수한 맛부터 시원한 질감까지, 다음 잔의 취향을 찾아보세요.';
   copy.insertAdjacentHTML('beforeend','<a class="hero-cta" href="#memory" id="hero-begin">내 취향으로 다음 잔 찾기 <span aria-hidden="true">↗</span></a><p class="hero-footnote">가입 없이 시작 / AI 해석은 직접 확인해요</p>');
   hero.append(copy);hero.insertAdjacentHTML('beforeend',`<figure class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="art-overline">THE CUP I REMEMBER</span><span class="flavour-note note-one">구수한 쌀 풍미</span><span class="flavour-note note-two">시원하게 갈린 질감</span><img src="rice-cup.svg" width="480" height="540" alt="쌀 음료의 기억을 표현한 NEXT CUP 콘셉트 일러스트"><figcaption><span>OUR FIRST MEMORY</span><strong>이천 햅쌀 크림 프라푸치노</strong><small>실제 제품 사진이 아닌 콘셉트 일러스트</small></figcaption></figure>`);
   start.prepend(hero);

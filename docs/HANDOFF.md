@@ -25,10 +25,12 @@ Playwright 패키지와 Microsoft Edge가 설치된 환경에서 실행합니다
 ```bash
 npm install --no-save playwright
 node tests/simple-browser.cjs
+node tests/layout-check.cjs
 ```
 
 가상 AI 응답만 사용합니다. 유료 호출이 아닙니다.
 새 화면 검사 결과는 runtime/browser-실행시각/에 저장됩니다. 제출한 원자료는 덮어쓰지 않습니다.
+레이아웃 검사는 375/812/1024/1280/1440px에서 다섯 화면의 가로 넘침과 데스크톱 소개 문구의 한 줄 표시를 확인합니다. 결과와 화면은 runtime/layout-실행시각/에 저장됩니다.
 
 ## 실제 AI 연결 시험
 
