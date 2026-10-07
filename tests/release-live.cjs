@@ -1,7 +1,7 @@
 const fs=require('node:fs'),crypto=require('node:crypto');
 const {chromium}=require(process.env.PLAYWRIGHT_PATH||'playwright');
 const {createApp}=require('../app/server.cjs'),C=require('../app/core.js'),P=require('../app/taste-policy.cjs');
-const protocol=require('../evidence/release-scenarios-v08.json');
+const protocol=require('../evidence/connection-scenarios.json');
 const out=process.env.RELEASE_OUTPUT_DIR||'runtime/release-'+new Date().toISOString().replace(/[:.]/g,'-');fs.mkdirSync(out,{recursive:true});
 (async()=>{
 const app=createApp({dbPath:':memory:'});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));

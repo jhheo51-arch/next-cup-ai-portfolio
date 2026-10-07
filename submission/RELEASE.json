@@ -1,24 +1,22 @@
 {
-  "release": "v08",
-  "artifacts": "v06",
   "repositoryLayout": "app/docs/tests/evidence/submission",
   "repositoryChecks": 20,
   "realAICallsDuringReorganization": 0,
   "checked": "2026-10-07",
   "unitTests": 103,
   "syntheticBrowserChecks": 14,
-  "latestRealGeminiCalls": 4,
-  "latestScenarios": 3,
   "externalParticipants": 0,
   "note": "최초 R03 검사 절차 실패와 재실행을 모두 보존. 과거 24회 결과는 별도.",
   "files": [
     {
       "file": "submission/NEXT-CUP-Portfolio.pdf",
-      "sha256": "489f0a9da06e41acca58ef8cf6f2be3bb8b80b5bff19b01fd2ce814d6b266622"
+      "sha256": "eb445b5e936f175429c6f5b025d0dfa173a55219de0bca084d6b778b100c9ac6"
     },
     {
       "file": "submission/NEXT-CUP-Evidence.xlsx",
-      "sha256": "0a37721b7688b6ddcbe35b27ca2d754bd2840d50bc4a8fc02a81fed2080be565"
+      "sha256": "ac219461012d8d043152c8e01cf9dd61110c83ab7302f187590edf55b45aa4c4"
     }
-  ]
+  ],
+  "connectionRealGeminiCalls": 4,
+  "connectionScenarios": 3
 }

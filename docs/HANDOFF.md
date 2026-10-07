@@ -1,4 +1,4 @@
-# 실행과 인수인계 / v08
+# 실행과 인수인계
 
 ## 기본 실행
 
@@ -36,7 +36,7 @@ node tests/simple-browser.cjs
 node --env-file=.env tests/release-live.cjs
 ```
 
-최대 3회의 실제 호출을 수행합니다. 입력은 release-scenarios-v08.json의 가상 문장입니다.
+최대 3회의 실제 호출을 수행합니다. 입력은 connection-scenarios.json의 가상 문장입니다.
 새 실행 결과는 runtime/release-날짜/에 저장해 제출 근거를 덮어쓰지 않습니다.
 RELEASE_CASE=R03으로 특정 사례만 실행할 수 있습니다. 재실행할 때도 처음 실패한 기록을 보존하세요.
 

@@ -1,8 +1,8 @@
-# 검증 범위 / v08
+# 검증 범위
 
-## 최신 연결 시험
+## 현재 연결 시험
 
-프롬프트 taste-v3-fruit-yogurt, 추천 5종. 시험 입력을 먼저 evidence/release-scenarios-v08.json에 저장했습니다.
+과일/요거트 특징을 포함한 AI 지시문과 추천 목록 5종으로 시험했습니다. 시험 입력을 먼저 evidence/connection-scenarios.json에 저장했습니다.
 가상 입력이며 외부 참여자 0명입니다.
 
 | 사례 | 실제 호출 | 결과 |
@@ -18,9 +18,9 @@
 시간은 페이지 진입부터 AI 응답까지 2.233/2.287/1.614/재실행 9.063초입니다. 과거 서버 측정과 비교하지 않습니다.
 
 원자료:
-- evidence/release-scenarios-v08.json
-- evidence/release-live-v08.json
-- evidence/release-live-v08-retry.json
+- evidence/connection-scenarios.json
+- evidence/connection-results.json
+- evidence/connection-retry.json
 - evidence/release-R01-result.png / release-R02-result.png / release-R03-result.png
 
 ## 자동 검사
@@ -31,9 +31,9 @@
 
 ## 이전 시험 결과
 
-evidence/heldout-result-v1.json: 이전 v2, 메뉴 3종에서 24회 호출. 조건 일치 22회, H04 선호 rice 누락 2회.
-evidence/decision-check.json: 이전 3종 코드에서 동일 12조건의 후보 일치 9→12. 최신 5종이나 고객 효과 수치가 아닙니다.
-과거 화면/시험 파일도 보존하지만 최신 시연은 app/public/simple.html입니다.
+evidence/taste-evaluation.json: 메뉴 3종에서 24회 호출. 조건 일치 22회, H04 선호 rice 누락 2회.
+evidence/decision-check.json: 이전 3종 코드에서 동일 12조건의 후보 일치 9→12. 현재 5종이나 고객 효과 수치가 아닙니다.
+과거 화면/시험 파일도 보존하지만 현재 시연은 app/public/simple.html입니다.
 
 ## 아직 확인하지 않은 것
 
