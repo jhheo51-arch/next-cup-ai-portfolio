@@ -7,14 +7,14 @@ test('품절 후보 제외',()=>assert.ok(!C.compare({...input,essential:false,s
 test('선호와 필수 조건 모두 미선택은 확인 요청',()=>assert.equal(C.compare({...input,tags:[],essential:false}).status,'clarify'));
 test('바삭한 토핑만 원하면 억지 추천하지 않음',()=>assert.equal(C.compare({...input,tags:['crunch'],essential:false}).status,'empty'));
 test('잘못된 태그와 중복 차단',()=>{for(const tags of [['invented'],['rice','rice'],['__proto__']])assert.equal(C.compare({...input,tags}).status,'invalid');});
-test('전 조합의 필수·품절 조건 유지',()=>{for(let n=0;n<16;n++)for(const essential of [true,false])for(const store of ['all','limited','unknown']){const r=C.compare({tags:Object.keys(C.labels).filter((_,i)=>n&(1<<i)),essential,store});assert.ok(r.candidates.every(d=>(!essential||d.tags.includes('rice'))&&(store!=='limited'||d.id!=='coldbrew')));}});
+test('전 조합의 필수, 품절 조건 유지',()=>{for(let n=0;n<16;n++)for(const essential of [true,false])for(const store of ['all','limited','unknown']){const r=C.compare({tags:Object.keys(C.labels).filter((_,i)=>n&(1<<i)),essential,store});assert.ok(r.candidates.every(d=>(!essential||d.tags.includes('rice'))&&(store!=='limited'||d.id!=='coldbrew')));}});
 const request={kind:'return',localMenu:'',reason:'쌀 맛이 좋아서',keep:'쌀의 구수함',change:''};
 const idea={title:'햅쌀 구름',base:'cream',ingredients:['rice'],texture:'smooth',story:'쌀 음료를 그리워하는 사람에게'};
 test('재출시 요청 유효',()=>assert.equal(C.validate('request',request),''));
-test('공백 요청·길이 제한',()=>{assert.notEqual(C.validate('request',{...request,reason:'  '}),'');assert.notEqual(C.validate('request',{...request,keep:'가'.repeat(161)}),'');});
+test('공백 요청, 길이 제한',()=>{assert.notEqual(C.validate('request',{...request,reason:'  '}),'');assert.notEqual(C.validate('request',{...request,keep:'가'.repeat(161)}),'');});
 test('지점 확장 요청에 메뉴와 지점 필수',()=>{assert.notEqual(C.validate('request',{...request,kind:'local'}),'');assert.equal(C.validate('request',{...request,kind:'local',localMenu:'기억하는 메뉴 / 방문 지점'}),'');});
 test('제안은 재료와 고객 맥락 필수',()=>{assert.equal(C.validate('idea',idea),'');assert.notEqual(C.validate('idea',{...idea,ingredients:[]}),'');assert.notEqual(C.validate('idea',{...idea,story:''}),'');});
 test('사전에 없는 재료나 음료 형식 차단',()=>{assert.notEqual(C.validate('idea',{...idea,ingredients:['magic']}),'');assert.notEqual(C.validate('idea',{...idea,base:'__proto__'}),'');});
 test('기록 스키마와 시간 검증',()=>{const r={id:'record-1',createdAt:new Date().toISOString(),type:'idea',payload:idea};assert.ok(C.isRecord(r));assert.ok(!C.isRecord({...r,createdAt:'bad'}));assert.ok(!C.isRecord({...r,type:'vote'}));});
 test('필수 조건 위반 후보 저장 차단',()=>{assert.notEqual(C.validate('candidate',{...input,drinkId:'chocolate',feedback:'pending'}),'');assert.equal(C.validate('candidate',{...input,essential:false,drinkId:'chocolate',feedback:'pending'}),'');});
-test('후보 중복은 취향 선택 순서·평가와 무관',()=>{const p={...input,drinkId:'chocolate',feedback:'pending'};assert.equal(C.signature('candidate',p),C.signature('candidate',{...p,tags:['cream','rice'],feedback:'liked'}));});
+test('후보 중복은 취향 선택 순서, 평가와 무관',()=>{const p={...input,drinkId:'chocolate',feedback:'pending'};assert.equal(C.signature('candidate',p),C.signature('candidate',{...p,tags:['cream','rice'],feedback:'liked'}));});

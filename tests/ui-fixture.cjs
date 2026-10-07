@@ -5,4 +5,4 @@ const owner=app.store.signup({handle:'ui_tester',password:'Only-For-UI-Testing-4
 const member=app.store.signup({handle:'sample_member',password:'Only-For-UI-Testing-4321',invite:app.store.invite()});
 app.store.create(member,'request',{kind:'return',localMenu:'',reason:'[합성 시험 자료] 구수한 쌀 풍미가 그리워요.',keep:'쌀 풍미',change:'단맛은 줄여도 괜찮아요.'});
 app.store.create(owner,'idea',{title:'[시험용] 햅쌀 구름',base:'cream',ingredients:['rice','sesame'],texture:'smooth',story:'[합성 시험 자료] 쌀 음료를 좋아하는 사람의 오후 간식.'});
-app.server.listen(4321,'127.0.0.1',()=>console.log('UI fixture only: http://127.0.0.1:4321 · in-memory data'));
+app.server.listen(4321,'127.0.0.1',()=>console.log('UI fixture only: http://127.0.0.1:4321, in-memory data'));

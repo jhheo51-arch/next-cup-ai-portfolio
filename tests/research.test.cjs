@@ -2,7 +2,7 @@ const test=require('node:test'),assert=require('node:assert/strict');
 const {openStore}=require('../db.cjs'),{initResearch,compare,seedCatalog}=require('../research.cjs');
 const at=Date.parse('2026-10-07T12:00:00Z');
 const input={likes:['cream'],dislikes:[],required:[]};
-test('검토 후보의 조건·신선도 검사',async t=>{
+test('검토 후보의 조건, 신선도 검사',async t=>{
  await t.test('쌀 필수는 대안 없음',()=>assert.equal(compare({...input,required:['rice']},seedCatalog,at).candidates.length,0));
  await t.test('비선호 배제',()=>assert.ok(compare({...input,dislikes:['coffee']},seedCatalog,at).candidates.every(x=>!x.tags.includes('coffee'))));
  await t.test('오래된 자료는 제외',()=>assert.equal(compare(input,seedCatalog,at+31*86400000).candidates.length,0));
@@ -13,13 +13,13 @@ test('검토 후보의 조건·신선도 검사',async t=>{
  await t.test('임의 태그 거절',()=>assert.throws(()=>compare({...input,likes:['invented']},seedCatalog,at)));
  await t.test('빈 취향 확인 질문',()=>assert.equal(compare({...input,likes:[]},seedCatalog,at).status,'clarify'));
 });
-test('평가 기록·운영 검토·복구',async t=>{
+test('평가 기록, 운영 검토, 복구',async t=>{
  const store=openStore(':memory:');
  const ai={taste:async()=>({result:{likes:['cream'],dislikes:[],essentialRice:'no',understanding:'크림',question:''},meta:{model:'synthetic-only',ms:1}})};
  const lab=initResearch(store,ai),u={id:'fixture-user',role:'member'},admin={id:'fixture-admin',role:'admin'};
  const body={caseId:'rice',kind:'synthetic',consent:true,memory:'시험용 크림 선호',behavior:'시험용 다른 음료 선택',experienced:'no'};
  try{
- await t.test('초기 실제 평가 0·평균 미측정',()=>{assert.equal(lab.metrics().completed,0);assert.equal(lab.metrics().modes[0].helpful,null);});
+ await t.test('초기 실제 평가 0, 평균 미측정',()=>{assert.equal(lab.metrics().completed,0);assert.equal(lab.metrics().modes[0].helpful,null);});
  await t.test('동의 없으면 시작 불가',()=>assert.throws(()=>lab.start(u,{...body,consent:false})));
  let tr=lab.start(u,body);
  await t.test('다른 사람 평가 접근 불가',()=>assert.throws(()=>lab.trial({id:'another'},tr.id)));
@@ -37,10 +37,10 @@ test('평가 기록·운영 검토·복구',async t=>{
  const obs=lab.observe(admin,{caseId:'glazed',sourceId:'S05',result:'checked',note:'합성 운영 시험',evidence:'합성 운영 시험'});
  const original=lab.catalog().id;
  await t.test('보류 반영',()=>{lab.review(admin,obs,{action:'hold',menuId:'glazed',reason:'합성 시험'});assert.equal(lab.catalog().items.find(x=>x.id==='glazed').sale,'hold');});
- await t.test('기존 버전 복구·이력 보존',()=>{lab.rollback(admin,{version:original,reason:'합성 복구 시험'});assert.equal(lab.catalog().items.find(x=>x.id==='glazed').sale,'seasonal');assert.ok(lab.catalog().id>original);});
+ await t.test('기존 버전 복구, 이력 보존',()=>{lab.rollback(admin,{version:original,reason:'합성 복구 시험'});assert.equal(lab.catalog().items.find(x=>x.id==='glazed').sale,'seasonal');assert.ok(lab.catalog().id>original);});
  const missing=lab.observe(admin,{caseId:'glazed',sourceId:'S05',result:'missing',note:'합성 부재',evidence:'합성 시험'});
  await t.test('목록 부재를 단종으로 변경 못 함',()=>assert.throws(()=>lab.review(admin,missing,{action:'hold',menuId:'glazed',reason:'시험'})));
  await t.test('근거 묶음에 개인 응답 없음',()=>assert.ok(!JSON.stringify(lab.packet(admin)).includes('시험용 크림 선호')));
- await t.test('철회하면 원문 제거·집계 제외',()=>{lab.withdraw(u,tr.id);assert.equal(lab.metrics().synthetic,0);assert.equal(lab.trial(u,tr.id).payload.memory,undefined);});
+ await t.test('철회하면 원문 제거, 집계 제외',()=>{lab.withdraw(u,tr.id);assert.equal(lab.metrics().synthetic,0);assert.equal(lab.trial(u,tr.id).payload.memory,undefined);});
  }finally{store.close();}
 });

@@ -66,20 +66,20 @@
     " 이 도구는 알레르기, 영양, 건강 조건을 판단하지 않습니다.";
   $("#main").insertAdjacentHTML(
     "beforeend",
-    `<section id="community" class="view section" hidden><div class="page-heading"><p class="eyebrow">OUR NEXT CUP</p><h1>당신의 한 표가,<br>다음 이야기의 단서가 되도록.</h1><p>재출시 요청과 나만의 메뉴 제안을 함께 읽고, 원하는 방향에 의견을 남겨요.</p><span class="status-chip">초대형 시험 커뮤니티 ,  이 컴퓨터에서만 실행 중</span></div><div id="account-panel" class="card"><h2>초대받은 분들과 먼저 시작합니다.</h2><p>스타벅스 계정이 아닌, 이 시험 서비스의 별도 계정입니다. 실명, 이메일은 받지 않습니다.</p><div class="auth-grid"><form id="login-form"><h3>로그인</h3><label for="login-handle">아이디</label><input id="login-handle" required autocomplete="username" maxlength="24"><label for="login-password">비밀번호</label><input id="login-password" type="password" required autocomplete="current-password" maxlength="128"><button class="button" type="submit">로그인</button></form><form id="signup-form"><h3>초대 코드로 가입</h3><label for="signup-invite">초대 코드</label><input id="signup-invite" required autocomplete="off" maxlength="100"><label for="signup-handle">아이디 ,  영문, 숫자, 밑줄, 하이픈 3~24자</label><input id="signup-handle" required pattern="[a-zA-Z0-9_-]{3,24}" autocomplete="username" maxlength="24"><label for="signup-password">비밀번호 ,  12자 이상</label><input id="signup-password" type="password" required minlength="12" maxlength="128" autocomplete="new-password"><button class="outline" type="submit">가입하고 시작하기</button></form></div><p class="fine">가입 정보는 이 컴퓨터의 서버에 저장됩니다. 다른 서비스에서 쓰는 비밀번호는 사용하지 마세요. 초대 코드는 운영자가 발급합니다.</p><p id="auth-error" class="error" role="alert"></p></div><div id="member-panel" hidden><div class="community-toolbar"><p id="member-name"></p><button type="button" id="logout" class="outline">로그아웃</button></div><div class="notice-box">게시한 제안은 이 서버에 가입한 회원에게 공유되며 Google Gemini의 의견 요약에 사용될 수 있습니다. 개인 보관함의 글은 별도로 ‘커뮤니티에 제안’하기 전까지 공개되지 않습니다. 투표는 구매 의사나 실제 수요를 뜻하지 않습니다.</div><div class="community-toolbar"><div class="chips"><button type="button" data-board-filter="all" aria-pressed="true">전체 제안</button><button type="button" data-board-filter="mine" aria-pressed="false">내 제안</button></div><div class="result-actions"><a class="button" href="#collection">내 기록에서 제안하기 ↗</a><button type="button" id="refresh-board" class="outline">새로 불러오기</button></div></div><p id="board-error" class="error" role="alert"></p><div id="board-stats" class="notice-box"></div><div id="board" class="saved-grid"></div><section class="card summary-panel"><p class="eyebrow">LISTEN TO THE REASONS</p><h2>함께 원하는 맛은 무엇일까요?</h2><p>AI가 최근 공개 제안 최대 30건을 주제별로 묶습니다. 표 수는 저장된 실제 표에서 계산합니다.</p><label class="check"><input id="summary-consent" type="checkbox"> 공유 동의된 제안의 본문을 Google Gemini로 보내 요약합니다.</label><button type="button" id="summarize" class="button">AI로 의견 묶어보기</button><p id="summary-error" class="error" role="alert"></p><div id="summary-result" aria-live="polite"></div></section><section id="ops-panel" class="card summary-panel" hidden><h2>운영 확인</h2><p>AI 호출 횟수, 처리 시간, 토큰 사용량과 신고 상태입니다. 금액 추정은 하지 않습니다.</p><button type="button" class="outline" id="load-ops">운영 기록 확인</button><div id="ops-result" aria-live="polite"></div></section></div></section>`,
+    `<section id="community" class="view section" hidden><div class="page-heading"><p class="eyebrow">OUR NEXT CUP</p><h1>당신의 한 표가,<br>다음 이야기의 단서가 되도록.</h1><p>재출시 요청과 나만의 메뉴 제안을 함께 읽고, 원하는 방향에 의견을 남겨요.</p><span class="status-chip">초대형 시험 커뮤니티, 이 컴퓨터에서만 실행 중</span></div><div id="account-panel" class="card"><h2>초대받은 분들과 먼저 시작합니다.</h2><p>스타벅스 계정이 아닌, 이 시험 서비스의 별도 계정입니다. 실명, 이메일은 받지 않습니다.</p><div class="auth-grid"><form id="login-form"><h3>로그인</h3><label for="login-handle">아이디</label><input id="login-handle" required autocomplete="username" maxlength="24"><label for="login-password">비밀번호</label><input id="login-password" type="password" required autocomplete="current-password" maxlength="128"><button class="button" type="submit">로그인</button></form><form id="signup-form"><h3>초대 코드로 가입</h3><label for="signup-invite">초대 코드</label><input id="signup-invite" required autocomplete="off" maxlength="100"><label for="signup-handle">아이디, 영문, 숫자, 밑줄, 하이픈 3~24자</label><input id="signup-handle" required pattern="[a-zA-Z0-9_-]{3,24}" autocomplete="username" maxlength="24"><label for="signup-password">비밀번호, 12자 이상</label><input id="signup-password" type="password" required minlength="12" maxlength="128" autocomplete="new-password"><button class="outline" type="submit">가입하고 시작하기</button></form></div><p class="fine">가입 정보는 이 컴퓨터의 서버에 저장됩니다. 다른 서비스에서 쓰는 비밀번호는 사용하지 마세요. 초대 코드는 운영자가 발급합니다.</p><p id="auth-error" class="error" role="alert"></p></div><div id="member-panel" hidden><div class="community-toolbar"><p id="member-name"></p><button type="button" id="logout" class="outline">로그아웃</button></div><div class="notice-box">게시한 제안은 이 서버에 가입한 회원에게 공유되며 Google Gemini의 의견 요약에 사용될 수 있습니다. 개인 보관함의 글은 별도로 ‘커뮤니티에 제안’하기 전까지 공개되지 않습니다. 투표는 구매 의사나 실제 수요를 뜻하지 않습니다.</div><div class="community-toolbar"><div class="chips"><button type="button" data-board-filter="all" aria-pressed="true">전체 제안</button><button type="button" data-board-filter="mine" aria-pressed="false">내 제안</button></div><div class="result-actions"><a class="button" href="#collection">내 기록에서 제안하기 ↗</a><button type="button" id="refresh-board" class="outline">새로 불러오기</button></div></div><p id="board-error" class="error" role="alert"></p><div id="board-stats" class="notice-box"></div><div id="board" class="saved-grid"></div><section class="card summary-panel"><p class="eyebrow">LISTEN TO THE REASONS</p><h2>함께 원하는 맛은 무엇일까요?</h2><p>AI가 최근 공개 제안 최대 30건을 주제별로 묶습니다. 표 수는 저장된 실제 표에서 계산합니다.</p><label class="check"><input id="summary-consent" type="checkbox"> 공유 동의된 제안의 본문을 Google Gemini로 보내 요약합니다.</label><button type="button" id="summarize" class="button">AI로 의견 묶어보기</button><p id="summary-error" class="error" role="alert"></p><div id="summary-result" aria-live="polite"></div></section><section id="ops-panel" class="card summary-panel" hidden><h2>운영 확인</h2><p>AI 호출 횟수, 처리 시간, 토큰 사용량과 신고 상태입니다. 금액 추정은 하지 않습니다.</p><button type="button" class="outline" id="load-ops">운영 기록 확인</button><div id="ops-result" aria-live="polite"></div></section></div></section>`,
   );
   document.body.insertAdjacentHTML(
     "beforeend",
     `<dialog id="publish-dialog" aria-labelledby="publish-title"><form id="publish-form"><h2 id="publish-title">커뮤니티에 제안하기</h2><div id="publish-fields"></div><label class="check"><input id="publish-consent" type="checkbox" required> 다른 회원에게 공개하고 Google Gemini 의견 요약에 사용하는 데 동의합니다.</label><p class="fine">스타벅스에 제출되는 것은 아닙니다. 개인정보는 게시하지 마세요.</p><p id="publish-error" class="error" role="alert"></p><div class="result-actions"><button type="submit" class="button">확인하고 게시</button><button type="button" class="outline" id="publish-cancel">취소</button></div></form></dialog>`,
   );
   $("#notes").innerHTML =
-    `<div class="page-heading"><p class="eyebrow">PRODUCT & AI WORKFLOW</p><h1>취향의 기억을,<br>다음 메뉴의 근거로.</h1><p>고객 취향 분석 ,  AI 처리 흐름 ,  초대형 제안 커뮤니티</p><a class="outline" href="PRD.md">제품 요구사항 기획서 읽기 ↗</a></div><div class="notes-grid"><article class="card"><h2>지금 구현한 흐름</h2><p>Gemini 취향 해석과 확인 질문 → 사용자 수정, 승인 → 서버의 등록 메뉴 조회와 조건 검사 → 부분 대안 또는 추천 보류 → 개인 기록 → 명시적 커뮤니티 게시 → 계정당 한 표 → 근거 원문을 포함한 AI 의견 묶기.</p><p>AI는 게시, 투표, 주문을 대신 실행하지 않습니다. 규칙 기반 검사로 후보를 제한하며 수동 선택도 유지합니다.</p></article><article class="card"><h2>사실과 가정</h2><p>이천 햅쌀 크림 프라푸치노는 2019년 고객 요청으로 재출시된 기록이 있습니다. 연중 판매 발표는 커피 버전이며 영구 단종 여부는 확인하지 못했습니다.</p><a href="https://www.shinsegaegroupnewsroom.com/starbucks-organic-farm-produce-popular/" target="_blank" rel="noreferrer">공식 재출시 자료 ↗</a><p>추천 후보의 감각 태그는 설계 해석입니다. 현재 전체 메뉴, 매장 재고를 연동하지 않았고, 후보 3종은 공식 목록에서 확인한 소규모 비교 목록입니다. 초콜릿 칩의 씹히는 질감을 쌀과자 토핑과 같다고 보지 않습니다.</p></article><article class="card"><h2>직무 연결</h2><p>고객의 선호, 비선호를 구조화하고 충족되지 않는 요구를 기록합니다. AI 오류 대응, 출처 검증, 사용량 기록으로 개발, 운영의 기초를 보여줍니다. 요청 주제와 투표 이유는 메뉴 검토를 위한 자료이지 수요 예측이 아닙니다.</p></article><article class="card"><h2>공개 운영 전 남은 일</h2><p>현재 주소는 이 컴퓨터에서만 접속됩니다. 공개 인터넷 배포, HTTPS, 계정 복구, 삭제 정책, 개인정보 고지, 운영 인력과 보안 검토는 별도 단계입니다. 실제 주문, 스타벅스 제출, 제조 레시피 자동 개발은 범위에서 제외했습니다.</p><a href="README.md">실행, 검증 안내 ↗</a></article></div>`;
+    `<div class="page-heading"><p class="eyebrow">PRODUCT & AI WORKFLOW</p><h1>서비스 기능과<br>개발 범위</h1><p>고객 취향 분석, AI 처리 흐름, 초대형 제안 커뮤니티</p><a class="outline" href="PRD.md">제품 요구사항 기획서 읽기 ↗</a></div><div class="notes-grid"><article class="card"><h2>지금 구현한 흐름</h2><p>Gemini 취향 해석과 확인 질문 → 사용자 수정, 승인 → 서버의 등록 메뉴 조회와 조건 검사 → 부분 대안 또는 추천 보류 → 개인 기록 → 명시적 커뮤니티 게시 → 계정당 한 표 → 근거 원문을 포함한 AI 의견 묶기.</p><p>AI는 게시, 투표, 주문을 대신 실행하지 않습니다. 규칙 기반 검사로 후보를 제한하며 수동 선택도 유지합니다.</p></article><article class="card"><h2>사실과 가정</h2><p>이천 햅쌀 크림 프라푸치노는 2019년 고객 요청으로 재출시된 기록이 있습니다. 연중 판매 발표는 커피 버전이며 영구 단종 여부는 확인하지 못했습니다.</p><a href="https://www.shinsegaegroupnewsroom.com/starbucks-organic-farm-produce-popular/" target="_blank" rel="noreferrer">공식 재출시 자료 ↗</a><p>추천 후보의 감각 태그는 설계 해석입니다. 현재 전체 메뉴, 매장 재고를 연동하지 않았고, 후보 3종은 공식 목록에서 확인한 소규모 비교 목록입니다. 초콜릿 칩의 씹히는 질감을 쌀과자 토핑과 같다고 보지 않습니다.</p></article><article class="card"><h2>지원 업무와 관련된 기능</h2><p>좋아하는 맛과 피할 맛을 나누고, 후보에서 찾지 못한 조건을 기록합니다. AI 오류 대응, 출처 검증, 사용량 기록으로 개발, 운영의 기초를 보여줍니다. 요청 주제와 투표 이유는 메뉴 검토를 위한 자료이지 수요 예측이 아닙니다.</p></article><article class="card"><h2>공개 운영 전 남은 일</h2><p>현재 주소는 이 컴퓨터에서만 접속됩니다. 공개 인터넷 배포, HTTPS, 계정 복구, 삭제 정책, 개인정보 고지, 운영 인력과 보안 검토는 별도 단계입니다. 실제 주문, 스타벅스 제출, 제조 레시피 자동 개발은 범위에서 제외했습니다.</p><a href="README.md">실행, 검증 안내 ↗</a></article></div>`;
   const oldNotice = $("#taste-form .fine");
   oldNotice.textContent =
-    "AI 해석은 사용자 확인 후 적용 ,  후보, 매장 조건은 시연 자료";
+    "AI 해석은 사용자 확인 후 적용, 후보, 매장 조건은 시연 자료";
   const footerText = $("footer p");
   footerText.textContent =
-    "STARBUCKS FAN CONCEPT / 개인 포트폴리오 ,  공식 서비스 아님";
+    "STARBUCKS FAN CONCEPT / 개인 포트폴리오, 공식 서비스 아님";
   $("#results").setAttribute("aria-live", "polite");
   function renderChat() {
     const box = $("#ai-conversation");
@@ -93,7 +93,7 @@
   function renderInterpretation(meta) {
     const x = interpretation;
     $("#ai-interpretation").innerHTML =
-      `<div class="notice-box"><h3>이렇게 이해했어요</h3><p>${esc(x.understanding)}</p><p><strong>좋아하는 감각</strong> ,  ${x.likes.map((t) => C.labels[t]).join(", ") || "아직 확인 필요"}</p><p><strong>피하고 싶은 감각</strong> ,  ${x.dislikes.map((t) => C.labels[t]).join(", ") || "명시된 항목 없음"}</p><p>쌀 풍미 필수 여부: ${{ yes: "필수", no: "필수 아님", unknown: "추가 확인 필요" }[x.essentialRice]}</p><button type="button" id="apply-taste" class="button">확인하고 아래 취향에 적용</button><p class="fine">${esc(meta.model)} ,  ${(meta.ms / 1000).toFixed(1)}초 ,  AI 해석은 틀릴 수 있습니다. 적용 후 선택 항목을 직접 수정할 수 있어요.</p></div>`;
+      `<div class="notice-box"><h3>이렇게 이해했어요</h3><p>${esc(x.understanding)}</p><p><strong>좋아하는 감각</strong>, ${x.likes.map((t) => C.labels[t]).join(", ") || "아직 확인 필요"}</p><p><strong>피하고 싶은 감각</strong>, ${x.dislikes.map((t) => C.labels[t]).join(", ") || "명시된 항목 없음"}</p><p>쌀 풍미 필수 여부: ${{ yes: "필수", no: "필수 아님", unknown: "추가 확인 필요" }[x.essentialRice]}</p><button type="button" id="apply-taste" class="button">확인하고 아래 취향에 적용</button><p class="fine">${esc(meta.model)}, ${(meta.ms / 1000).toFixed(1)}초, AI 해석은 틀릴 수 있습니다. 적용 후 선택 항목을 직접 수정할 수 있어요.</p></div>`;
   }
   let tasteController = null,
     tasteEpoch = 0;
@@ -228,14 +228,14 @@
         data.model === "test-fixture"
           ? "화면 검증용 가상 AI"
           : data.aiConfigured
-            ? "Gemini 설정 감지 ,  사용 시 호출"
-            : "Gemini 설정 없음 ,  수동 선택 가능";
+            ? "Gemini 설정 감지, 사용 시 호출"
+            : "Gemini 설정 없음, 수동 선택 가능";
       $("#account-panel").hidden = !!me;
       $("#member-panel").hidden = !me;
       $("#ops-panel").hidden = me?.role !== "admin";
       if (me) {
         $("#member-name").textContent =
-          me.handle + "님 ,  " + (me.role === "admin" ? "운영자" : "초대 회원");
+          me.handle + "님, " + (me.role === "admin" ? "운영자" : "초대 회원");
         await loadBoard();
       }
     } catch (error) {
@@ -298,7 +298,7 @@
   function renderBoard() {
     const visible = posts.filter((p) => p.status === "visible");
     $("#board-stats").textContent =
-      `이 목록의 공개 제안 ${visible.length}건 ,  투표 ${visible.reduce((n, p) => n + p.votes.reduce((s, v) => s + v.n, 0), 0)}표 ,  최근 최대 100건 기준 ,  한 사람이 여러 제안에 투표할 수 있습니다.`;
+      `이 목록의 공개 제안 ${visible.length}건, 투표 ${visible.reduce((n, p) => n + p.votes.reduce((s, v) => s + v.n, 0), 0)}표, 최근 최대 100건 기준, 한 사람이 여러 제안에 투표할 수 있습니다.`;
     const items = posts.filter((p) =>
       boardFilter === "mine"
         ? p.mine
@@ -315,7 +315,7 @@
                     ? "이천 햅쌀 크림 프라푸치노"
                     : d.localMenu;
             const text = p.type === "idea" ? d.story : d.reason;
-            return `<article class="card" id="post-${p.id}"><span class="status-chip">${p.type === "idea" ? "신메뉴 제안" : "메뉴 요청"} ,  ${{ visible: "공개", withdrawn: "작성자 비공개", hidden: "운영자 숨김" }[p.status]}</span><h3>${esc(title)}</h3><p>${esc(text)}</p>${p.type === "request" ? "<p><strong>꼭 지킬 것</strong> ,  " + esc(d.keep) + "</p><p><strong>바뀌어도 괜찮은 것</strong> ,  " + esc(d.change || "미기재") + "</p>" : "<p>" + esc(C.bases[d.base] + " ,  " + d.ingredients.map((i) => C.ingredients[i]).join(" + ") + " ,  " + C.textures[d.texture]) + "</p>"}<p class="fine">${esc(p.handle)} ,  ${new Date(p.updated).toLocaleDateString("ko-KR")} ,  버전 ${p.version}${p.version > 1 ? " ,  수정 전 투표가 포함될 수 있습니다." : ""}</p><div class="vote-options">${
+            return `<article class="card" id="post-${p.id}"><span class="status-chip">${p.type === "idea" ? "신메뉴 제안" : "메뉴 요청"}, ${{ visible: "공개", withdrawn: "작성자 비공개", hidden: "운영자 숨김" }[p.status]}</span><h3>${esc(title)}</h3><p>${esc(text)}</p>${p.type === "request" ? "<p><strong>꼭 지킬 것</strong>, " + esc(d.keep) + "</p><p><strong>바뀌어도 괜찮은 것</strong>, " + esc(d.change || "미기재") + "</p>" : "<p>" + esc(C.bases[d.base] + ", " + d.ingredients.map((i) => C.ingredients[i]).join(" + ") + ", " + C.textures[d.texture]) + "</p>"}<p class="fine">${esc(p.handle)}, ${new Date(p.updated).toLocaleDateString("ko-KR")}, 버전 ${p.version}${p.version > 1 ? ", 수정 전 투표가 포함될 수 있습니다." : ""}</p><div class="vote-options">${
               p.status === "visible"
                 ? Object.entries(reasons)
                     .map(
@@ -428,7 +428,7 @@
     $("#publish-fields").innerHTML =
       record.type === "request"
         ? `<p>${esc(p.kind === "return" ? "이천 햅쌀 크림 프라푸치노" : p.localMenu)}</p><label for="shared-reason">그리운 이유</label><textarea id="shared-reason" required maxlength="500">${esc(p.reason)}</textarea><label for="shared-keep">꼭 지킬 것</label><input id="shared-keep" required maxlength="160" value="${esc(p.keep)}"><label for="shared-change">달라져도 괜찮은 것</label><input id="shared-change" maxlength="160" value="${esc(p.change)}">`
-        : `<label for="shared-title">메뉴 이름</label><input id="shared-title" required maxlength="60" value="${esc(p.title)}"><p>${esc(C.bases[p.base] + " ,  " + p.ingredients.map((i) => C.ingredients[i]).join(" + ") + " ,  " + C.textures[p.texture])}</p><label for="shared-story">누가 언제 좋아할 메뉴인가요?</label><textarea id="shared-story" required maxlength="500">${esc(p.story)}</textarea><p class="fine">공유 글의 이름과 설명을 수정합니다. 다른 조합을 제안하려면 개인 보관함에서 새 제안서를 작성해 주세요.</p>`;
+        : `<label for="shared-title">메뉴 이름</label><input id="shared-title" required maxlength="60" value="${esc(p.title)}"><p>${esc(C.bases[p.base] + ", " + p.ingredients.map((i) => C.ingredients[i]).join(" + ") + ", " + C.textures[p.texture])}</p><label for="shared-story">누가 언제 좋아할 메뉴인가요?</label><textarea id="shared-story" required maxlength="500">${esc(p.story)}</textarea><p class="fine">공유 글의 이름과 설명을 수정합니다. 다른 조합을 제안하려면 개인 보관함에서 새 제안서를 작성해 주세요.</p>`;
     $("#publish-consent").checked = false;
     $("#publish-error").textContent = "";
     $("#publish-dialog").showModal();
@@ -487,11 +487,11 @@
         $("#summary-result").innerHTML =
           '<p class="fine">' +
           esc(data.meta.model) +
-          " ,  " +
+          ", " +
           (data.meta.ms / 1000).toFixed(1) +
-          "초 ,  공개 제안 " +
+          "초, 공개 제안 " +
           data.sourceCount +
-          "건 기준 ,  요약 후 다른 회원이 수정했을 수 있습니다.</p>" +
+          "건 기준, 요약 후 다른 회원이 수정했을 수 있습니다.</p>" +
           data.result.groups
             .map(
               (g) =>
@@ -542,7 +542,7 @@
         $("#ops-result").innerHTML =
           "<p>신고 누적 " +
           d.reports +
-          "건 ,  게시물 카드에서 내용을 확인할 수 있습니다.</p>" +
+          "건, 게시물 카드에서 내용을 확인할 수 있습니다.</p>" +
           d.calls
             .map(
               (c) =>
@@ -550,13 +550,13 @@
                 esc(c.task) +
                 " / " +
                 esc(c.model) +
-                " ,  호출 " +
+                ", 호출 " +
                 c.count +
-                "회 ,  성공 " +
+                "회, 성공 " +
                 c.ok +
-                "회 ,  평균 " +
+                "회, 평균 " +
                 c.avgMs +
-                "ms ,  입력 " +
+                "ms, 입력 " +
                 c.inputTokens +
                 " / 출력, 추론 " +
                 c.outputTokens +

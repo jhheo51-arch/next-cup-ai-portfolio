@@ -8,13 +8,13 @@
     '<details><summary>후속 기능</summary><a href="#studio">메뉴 아이디어</a> / <a href="#community">시험 커뮤니티</a></details>',
   );
   $(".hero h1").innerHTML =
-    "그때 좋아했던 맛,<br>다음 잔에서는<br>무엇을 남길까요?";
+    "좋아했던 음료가<br>없을 때,<br>무엇을 고를까요?";
   $(".hero-description").textContent =
-    "기억을 정리하고, 등록된 음료 중 맞는 조건과 달라지는 점을 비교해 보세요.";
+    "좋아했던 맛과 피하고 싶은 맛을 알려주세요. 등록된 음료 3종에서 후보를 찾아드립니다.";
   $(".hero-caption").textContent =
-    "같은 맛을 재현하는 서비스가 아닌, 선택 조건을 확인하는 도구";
+    "쌀 풍미가 꼭 필요하다면 다른 음료를 추천하지 않습니다.";
   $(".next-story").innerHTML =
-    '<div><p class="eyebrow">선택 이후</p><h2>대안으로 채우지 못한 점을 기록하세요.</h2><p>추천 후보에 없는 맛과 식감을 남깁니다. 요청은 내 기기에 저장되며 실제 주문이나 스타벅스 접수가 아닙니다.</p></div><a class="outline" href="#request">남은 요구 기록</a>';
+    '<div><p class="eyebrow">선택 이후</p><h2>후보에 없었던 맛을 남겨주세요.</h2><p>추천 후보에 없는 맛과 식감을 남깁니다. 요청은 내 기기에 저장되며 실제 주문이나 스타벅스 접수가 아닙니다.</p></div><a class="outline" href="#request">남은 요구 기록</a>';
   $("#finder").insertAdjacentHTML(
     "afterbegin",
     '<ol class="journey" aria-label="이용 순서"><li>1 기억 입력</li><li>2 취향 확인</li><li>3 대안 또는 보류</li><li>4 남은 요구 기록</li></ol>',
@@ -35,7 +35,7 @@
   $("#taste-form .step").textContent = "2 / 취향 확인";
   $("#taste-form h3").textContent = "선택 조건을 확인하세요";
   $("#taste-form .muted").textContent =
-    "좋아하는 감각과 피할 감각을 나눕니다. 감각 분류는 실제 시음 점수가 아닙니다.";
+    "좋아하는 감각과 피할 감각을 나눕니다. 맛의 유사도를 측정한 결과는 아닙니다.";
   $("#taste-form .chips").innerHTML = Object.entries(C.labels)
     .map(
       ([key, label]) =>
@@ -75,12 +75,12 @@
   $("#taste-form button[type=submit]").textContent =
     "확인한 조건으로 후보 비교";
   $(".comparison .step").textContent = "3 / 대안 또는 추천 보류";
-  $("#comparison-title").textContent = "맞는 조건과 다른 점을 함께 봅니다";
+  $("#comparison-title").textContent = "선택한 조건에 맞는 음료";
   $("#results").innerHTML =
     "<p>갈린 얼음 질감이 좋고 커피 풍미를 피한다면 초콜릿 크림 칩을 비교할 수 있습니다. 바닐라 향을 원하고 커피가 괜찮다면 바닐라 크림 콜드 브루가 후보입니다.</p><p>쌀 풍미가 필수라면 등록된 세 음료 모두 추천하지 않습니다. 실제 맛과 매장 재고는 별도 확인이 필요합니다.</p>";
-  $("#request .page-heading h1").textContent = "4. 대안으로 채우지 못한 점";
+  $("#request .page-heading h1").textContent = "4. 찾지 못한 맛 기록";
   $("#request .page-heading > p:last-child").textContent =
-    "필요했던 감각, 비교한 후보, 끝내 남은 요구를 확인하고 저장하세요.";
+    "비교한 음료와 아직 찾지 못한 맛을 확인하고 저장하세요.";
   $("#research .page-heading").insertAdjacentHTML(
     "afterend",
     '<article class="card lab-block"><p class="eyebrow">2026.10.07 검증 기록</p><h2>어떤 조건에서 후보가 달라졌나요?</h2><p>같은 12개 입력의 기대 후보 일치는 수정 전 9개에서 수정 후 12개로 바뀌었습니다. 바닐라 분류 누락과 초콜릿 비선호 누락을 수정한 코드 시험입니다.</p><p>새 합성 입력 12개를 각 2회 Gemini로 호출했습니다. 조건 완전 일치 22/24, 지정 후보 ID 일치 24/24입니다. 쌀 필수 미확인은 이 후보 시험에서만 필수 아님으로 가정했습니다. 실제 화면은 직접 확인을 요청합니다.</p><p>자동 검사 96개, 화면 검사 13개 통과. 실제 외부 이용자 검증은 0명이며 맛 유사도나 구매 효과를 입증하지 않았습니다.</p><a class="outline" target="_blank" rel="noreferrer" href="https://github.com/jhheo51-arch/next-cup-ai-portfolio/blob/main/VALIDATION.md">실패 2건과 원자료 확인</a></article>',

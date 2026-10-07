@@ -17,7 +17,7 @@ const cases=[
   }catch(e){rows.push({id,kind:'synthetic',pass:false,errorCode:e.code||'ERROR'});}
   console.log(JSON.stringify({id,pass:rows.at(-1).pass}));
  }
- const report={at:new Date().toISOString(),model:ai.model,kind:'synthetic',humanParticipants:0,scope:'6개의 명시적 표현 검사. 모호한 기억·실제 맛·고객 효과 검증 아님.',rows};
+ const report={at:new Date().toISOString(),model:ai.model,kind:'synthetic',humanParticipants:0,scope:'6개의 명시적 표현 검사. 모호한 기억, 실제 맛, 고객 효과 검증 아님.',rows};
  const dir=path.join(__dirname,'../runtime');fs.mkdirSync(dir,{recursive:true});const dest=path.join(dir,'live-cases-'+Date.now()+'.json');
  fs.writeFileSync(dest,JSON.stringify(report,null,2),{flag:'wx'});console.log(JSON.stringify({passed:rows.filter(x=>x.pass).length,total:rows.length,report:dest}));
 })().catch(e=>{console.error(e.message);process.exitCode=1;});

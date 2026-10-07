@@ -172,7 +172,7 @@ function preview() {
     C.textures[p.texture],
   ]
     .filter(Boolean)
-    .join(" ,  ");
+    .join(", ");
   $("#preview-story").textContent = p.story || "좋아하는 맛에서 시작해 보세요.";
 }
 function editState() {
@@ -343,7 +343,7 @@ async function compare() {
           esc(C.drinks.find((d) => d.id === s.id)?.name) +
           " 자료 ↗</a><br>" +
           esc(s.scope) +
-          " ,  확인 " +
+          ", 확인 " +
           esc(s.checked) +
           "</p>",
       )
@@ -383,30 +383,30 @@ function renderCollection() {
   const selected = records.filter((r) => filter === "all" || r.type === filter);
   if (!selected.length) {
     $("#collection-content").innerHTML =
-      '<div class="empty"><p class="eyebrow">YOUR TASTE STARTS HERE</p><h2>아직 담긴 이야기가 없어요.</h2><p>그리운 이유 하나가 다음 메뉴의 시작이 될 수 있어요.</p><a class="button" href="#request">첫 메뉴 요청 남기기 ↗</a></div>';
+      '<div class="empty"><p class="eyebrow">YOUR TASTE STARTS HERE</p><h2>아직 저장한 기록이 없습니다.</h2><p>비교한 음료나 찾고 싶은 맛을 저장해 보세요.</p><a class="button" href="#request">첫 메뉴 요청 남기기 ↗</a></div>';
     return;
   }
   $("#collection-content").innerHTML = selected
     .map((r) => {
       const p = r.payload;
       const type = {
-        request: "메뉴 요청 ,  미전송",
-        idea: "내 메뉴 아이디어 ,  미전송",
-        candidate: "부분 대안 ,  판매 상태 미확인",
+        request: "메뉴 요청, 미전송",
+        idea: "내 메뉴 아이디어, 미전송",
+        candidate: "부분 대안, 판매 상태 미확인",
       }[r.type];
       let body = "";
       if (r.type === "request") {
-        body = `<h3>${esc(p.kind === "return" ? "이천 햅쌀 크림 프라푸치노" : p.localMenu)}</h3><p>${esc(p.reason)}</p><p><strong>꼭 지킬 것</strong> ,  ${esc(p.keep)}</p>${p.change ? `<p><strong>달라져도 괜찮은 것</strong> ,  ${esc(p.change)}</p>` : ""}`;
+        body = `<h3>${esc(p.kind === "return" ? "이천 햅쌀 크림 프라푸치노" : p.localMenu)}</h3><p>${esc(p.reason)}</p><p><strong>꼭 지킬 것</strong>, ${esc(p.keep)}</p>${p.change ? `<p><strong>달라져도 괜찮은 것</strong>, ${esc(p.change)}</p>` : ""}`;
       }
       if (r.type === "idea") {
-        body = `<h3>${esc(p.title)}</h3><p>${esc(C.bases[p.base])} ,  ${p.ingredients.map((i) => C.ingredients[i]).join(" + ")} ,  ${C.textures[p.texture]}</p><p>${esc(p.story)}</p><p class="fine">실제 주문 레시피가 아닌 제안입니다. 제조, 영양, 알레르기 검증 전입니다.</p>`;
+        body = `<h3>${esc(p.title)}</h3><p>${esc(C.bases[p.base])}, ${p.ingredients.map((i) => C.ingredients[i]).join(" + ")}, ${C.textures[p.texture]}</p><p>${esc(p.story)}</p><p class="fine">실제 주문 레시피가 아닌 제안입니다. 제조, 영양, 알레르기 검증 전입니다.</p>`;
       }
       if (r.type === "candidate") {
         const d = C.drinks.find((d) => d.id === p.drinkId);
-        body = `<h3>${esc(d.name)}</h3><p>${esc(d.difference)}</p><p class="fine">가상 매장 ${p.store === "all" ? "A" : "B"} ,  ${p.tags.map((t) => C.labels[t]).join(", ")}</p><div class="feedback"><label for="feedback-${r.id}">실제로 마셔본 느낌</label><select id="feedback-${r.id}" data-feedback="${r.id}">${Object.entries(
+        body = `<h3>${esc(d.name)}</h3><p>${esc(d.difference)}</p><p class="fine">가상 매장 ${p.store === "all" ? "A" : "B"}, ${p.tags.map((t) => C.labels[t]).join(", ")}</p><div class="feedback"><label for="feedback-${r.id}">실제로 마셔본 느낌</label><select id="feedback-${r.id}" data-feedback="${r.id}">${Object.entries(
           {
             pending: "아직 마시지 않았어요",
-            liked: "이 취향은 이어졌어요",
+            liked: "원했던 맛이 있었어요",
             different: "기대한 느낌과 달라요",
             tooSweet: "너무 달게 느껴져요",
           },
@@ -417,7 +417,7 @@ function renderCollection() {
           )
           .join("")}</select></div>`;
       }
-      return `<article class="card"><span class="status-chip">${type}</span>${body}<p class="fine">${new Date(r.createdAt).toLocaleDateString("ko-KR")} ,  내 브라우저 저장</p>${r.type !== "candidate" ? `<button type="button" class="outline" data-edit="${r.id}">내용 수정하기</button>` : ""}</article>`;
+      return `<article class="card"><span class="status-chip">${type}</span>${body}<p class="fine">${new Date(r.createdAt).toLocaleDateString("ko-KR")}, 내 브라우저 저장</p>${r.type !== "candidate" ? `<button type="button" class="outline" data-edit="${r.id}">내용 수정하기</button>` : ""}</article>`;
     })
     .join("");
 }
