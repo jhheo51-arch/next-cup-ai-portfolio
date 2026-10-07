@@ -1,0 +1,96 @@
+{
+  "kind": "synthetic-rule-test",
+  "externalParticipants": 0,
+  "scope": "운영 검토 분류 규칙. 실제 고객 분류나 수요 통계 아님.",
+  "cases": [
+    {
+      "id": "N01",
+      "label": "동의 없는 기록",
+      "input": {
+        "consent": false
+      },
+      "expected": "no_collection"
+    },
+    {
+      "id": "N02",
+      "label": "조건 변경 이유 모름",
+      "input": {
+        "consent": true,
+        "interpretationChanged": true
+      },
+      "expected": "change_reason_unknown"
+    },
+    {
+      "id": "N03",
+      "label": "원문 대조 후 오해석 확인",
+      "input": {
+        "consent": true,
+        "interpretationChanged": true,
+        "changeReason": "misread"
+      },
+      "expected": "interpretation_review"
+    },
+    {
+      "id": "N04",
+      "label": "지역 농가 상생 요구",
+      "input": {
+        "consent": true,
+        "outsideSupportedFeatures": true
+      },
+      "expected": "unrepresented_need"
+    },
+    {
+      "id": "N05",
+      "label": "공식 자료에서 누락 메뉴 확인",
+      "input": {
+        "consent": true,
+        "verifiedMissingMenu": true
+      },
+      "expected": "catalog_gap"
+    },
+    {
+      "id": "N06",
+      "label": "목록 확인 전 후보 0개",
+      "input": {
+        "consent": true,
+        "candidateCount": 0,
+        "conditionsConfirmed": true
+      },
+      "expected": "pending_review"
+    },
+    {
+      "id": "N07",
+      "label": "확인한 목록에서 쌀 필수 충족 못함",
+      "input": {
+        "consent": true,
+        "conditionsConfirmed": true,
+        "catalogReviewed": true,
+        "candidateCount": 0
+      },
+      "expected": "unmet_in_catalog"
+    },
+    {
+      "id": "N08",
+      "label": "사용자가 취향을 바꾸고 대안을 찾음",
+      "input": {
+        "consent": true,
+        "interpretationChanged": true,
+        "changeReason": "preference_change",
+        "conditionsConfirmed": true,
+        "catalogReviewed": true,
+        "candidateCount": 1
+      },
+      "expected": "alternative_available"
+    },
+    {
+      "id": "N09",
+      "label": "알레르기 조건 포함",
+      "input": {
+        "safetyRelated": true,
+        "consent": true,
+        "candidateCount": 1
+      },
+      "expected": "safety_review"
+    }
+  ]
+}

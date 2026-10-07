@@ -1,0 +1,31 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),{chromium}=require(process.env.PLAYWRIGHT_PATH||'playwright');
+const {createApp}=require('../app/server.cjs'),{createAI}=require('../app/ai.cjs');
+const phase=process.argv[2];if(!['before','after'].includes(phase))throw Error('before or after');
+const dir=process.env.RECOVERY_OUTPUT_DIR||'runtime/recovery-'+Date.now();fs.mkdirSync(dir,{recursive:true});
+const out=dir+'/recovery-'+phase+'.json';if(fs.existsSync(out))throw Error('preserve existing record');
+(async()=>{const events=[],checks=[];let mode='timeout';
+const mark=(name,data={})=>events.push({at:new Date().toISOString(),name,...data});
+const result={likes:['ice'],dislikes:[],essentialRice:'no',understanding:'갈린 질감을 원하고 쌀은 없어도 괜찮습니다.',question:'얼음 덩어리가 씹히는 것은 피하고 싶으신가요?',evidence:[{tag:'ice',polarity:'like',quote:'차갑게 갈린 질감이 좋아요'},{tag:'rice',polarity:'optional',quote:'쌀은 없어도 괜찮아요'}]};
+const ai=createAI({config:{key:'synthetic-test-only',model:'fixture-model'},timeout:150,
+fetchImpl:async(_url,{signal})=>{mark('가상 외부 요청',{mode});if(mode==='timeout')return new Promise((resolve,reject)=>signal.addEventListener('abort',()=>reject(signal.reason),{once:true}));return{ok:true,json:async()=>({candidates:[{content:{parts:[{text:JSON.stringify(result)}]}}]})};},
+onStart:()=>{mark('호출 시작');return'fixture'},onEnd:(_id,status,ms)=>mark('호출 종료',{status,ms})});
+const app=createApp({dbPath:':memory:',aiOverride:ai});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));
+const browser=await chromium.launch({channel:'msedge',headless:true});const page=await browser.newPage({viewport:{width:1280,height:960}});
+const check=(name,pass)=>checks.push({name,pass});
+try{await page.goto('http://127.0.0.1:'+app.server.address().port);
+const text='차갑게 갈린 질감이 좋아요. 쌀은 없어도 괜찮아요.';
+await page.locator('#memory').fill(text);await page.locator('#consent').check();mark('장애 시험 시작');
+await page.locator('#interpret').click();await page.waitForFunction(()=>document.querySelector('#ai-status').textContent.includes('초과'));
+check('서버가 TIMEOUT으로 분류',events.some(e=>e.status==='TIMEOUT'));
+check('입력 원문 보존',await page.locator('#memory').inputValue()===text);
+check('버튼 다시 사용 가능',await page.locator('#interpret').isEnabled());
+await page.locator('#manual').click();await page.locator('[name=like][value=ice]').check();await page.locator('#rice').selectOption('no');await page.locator('#priority').selectOption('ice');await page.locator('#taste-form button').click();await page.locator('.drink').first().waitFor();
+check('직접 선택으로 후보 비교 복구',await page.locator('.drink').count()===3);mark('직접 선택 복구');
+await page.locator('[data-go=confirm]:visible').click();await page.locator('[data-go=start]:visible').click();mode='ok';
+await page.locator('#interpret').click();await page.locator('#confirm').waitFor({state:'visible'});
+check('가상 연결 복구 뒤 재시도 성공',await page.locator('[name=like][value=ice]').isChecked());
+check('AI 확인 질문 표시',(await page.locator('#interpretation').innerText()).includes(result.question));
+check('복구 후 성공 기록',events.some(e=>e.status==='ok'));
+await page.setViewportSize({width:375,height:812});check('375px 가로 넘침 없음',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:dir+'/recovery-'+phase+'.png',fullPage:true});
+mark('시험 종료');const report={kind:'synthetic-fault-injection',realAICalls:0,externalParticipants:0,phase,fault:'외부 응답이 오지 않도록 가상 전송 계층을 주입',testTimeoutMs:150,productionTimeoutMs:12000,scope:'코드의 시간 초과 분기와 UI 복구 시험. 실제 Gemini 복구나 운영 SLA 검증 아님.',events,checks,passed:checks.filter(x=>x.pass).length,total:checks.length};fs.writeFileSync(out,JSON.stringify(report,null,2));console.log(JSON.stringify({phase,passed:report.passed,total:report.total,failures:checks.filter(x=>!x.pass)}));if(phase==='after')assert.ok(checks.every(x=>x.pass));
+}finally{await browser.close();app.server.closeAllConnections();await app.close();}})().catch(e=>{console.error(e.message);process.exitCode=1;});

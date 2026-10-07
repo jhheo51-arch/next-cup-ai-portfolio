@@ -1,0 +1,22 @@
+{
+  "kind": "live-connection-diagnostic",
+  "externalParticipants": 0,
+  "source": "hard-baseline.json",
+  "completedCaseAttempts": 4,
+  "results": {
+    "UPSTREAM": 2,
+    "TIMEOUT": 2
+  },
+  "interruptedCase": "D05",
+  "interruptedOutcome": "요청 진행 중 프로세스 중단. 제공자 수신과 과금 여부 미확인.",
+  "extraDiagnostic": {
+    "input": "바닐라 향이 좋아요.",
+    "result": "TIMEOUT",
+    "scope": "분석용 연결 점검 1회, 난도 평가에 포함하지 않음"
+  },
+  "evaluationAvailable": false,
+  "heldoutRun": false,
+  "reason": "연결 실패 반복으로 추가 유료 호출 중단. 모델 답변을 받지 못해 의미 정확도와 개선율 미산출.",
+  "followup": "연결이 복구되면 기존 기록을 덮어쓰지 않는 새 결과 파일에서 재실행. 시험 전송 시작부터 기록하고 연속 연결 실패 2회에서 중단.",
+  "harnessRepair": "장애 화면 시험 첫 실행은 결과 화면에 없는 시작 버튼을 찾아 중단. 결과→조건 확인→기억 입력 순으로 검사 경로를 수정한 뒤 재실행. AI나 서비스 오류로 세지 않음."
+}

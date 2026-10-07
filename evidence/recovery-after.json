@@ -1,0 +1,90 @@
+{
+  "kind": "synthetic-fault-injection",
+  "realAICalls": 0,
+  "externalParticipants": 0,
+  "phase": "after",
+  "fault": "외부 응답이 오지 않도록 가상 전송 계층을 주입",
+  "testTimeoutMs": 150,
+  "productionTimeoutMs": 12000,
+  "scope": "코드의 시간 초과 분기와 UI 복구 시험. 실제 Gemini 복구나 운영 SLA 검증 아님.",
+  "events": [
+    {
+      "at": "2026-10-07T14:42:06.829Z",
+      "name": "장애 시험 시작"
+    },
+    {
+      "at": "2026-10-07T14:42:06.862Z",
+      "name": "호출 시작"
+    },
+    {
+      "at": "2026-10-07T14:42:06.862Z",
+      "name": "가상 외부 요청",
+      "mode": "timeout"
+    },
+    {
+      "at": "2026-10-07T14:42:07.014Z",
+      "name": "호출 종료",
+      "status": "TIMEOUT",
+      "ms": 152
+    },
+    {
+      "at": "2026-10-07T14:42:07.205Z",
+      "name": "직접 선택 복구"
+    },
+    {
+      "at": "2026-10-07T14:42:07.307Z",
+      "name": "호출 시작"
+    },
+    {
+      "at": "2026-10-07T14:42:07.307Z",
+      "name": "가상 외부 요청",
+      "mode": "ok"
+    },
+    {
+      "at": "2026-10-07T14:42:07.307Z",
+      "name": "호출 종료",
+      "status": "ok",
+      "ms": 0
+    },
+    {
+      "at": "2026-10-07T14:42:07.418Z",
+      "name": "시험 종료"
+    }
+  ],
+  "checks": [
+    {
+      "name": "서버가 TIMEOUT으로 분류",
+      "pass": true
+    },
+    {
+      "name": "입력 원문 보존",
+      "pass": true
+    },
+    {
+      "name": "버튼 다시 사용 가능",
+      "pass": true
+    },
+    {
+      "name": "직접 선택으로 후보 비교 복구",
+      "pass": true
+    },
+    {
+      "name": "가상 연결 복구 뒤 재시도 성공",
+      "pass": true
+    },
+    {
+      "name": "AI 확인 질문 표시",
+      "pass": true
+    },
+    {
+      "name": "복구 후 성공 기록",
+      "pass": true
+    },
+    {
+      "name": "375px 가로 넘침 없음",
+      "pass": true
+    }
+  ],
+  "passed": 8,
+  "total": 8
+}

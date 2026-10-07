@@ -1,22 +1,39 @@
 {
   "repositoryLayout": "app/docs/tests/evidence/submission",
-  "repositoryChecks": 20,
+  "repositoryChecks": 21,
   "realAICallsDuringReorganization": 0,
   "checked": "2026-10-07",
-  "unitTests": 103,
+  "unitTests": 122,
   "syntheticBrowserChecks": 14,
   "externalParticipants": 0,
-  "note": "최초 R03 검사 절차 실패와 재실행을 모두 보존. 과거 24회 결과는 별도.",
+  "note": "기존 연결 시험과 이번 심층 평가를 구분. 이번 16문장 평가는 연결 실패로 미완료이며 의미 정확도 미산출. 가상 장애 시험은 수정 전 7/8, 수정 후 8/8.",
   "files": [
     {
       "file": "submission/NEXT-CUP-Portfolio.pdf",
-      "sha256": "eb445b5e936f175429c6f5b025d0dfa173a55219de0bca084d6b778b100c9ac6"
+      "sha256": "6a3633c0cb3df02d411dac1e5ec15d1ca3046a3476eab955b93227d0579fd7bd"
     },
     {
       "file": "submission/NEXT-CUP-Evidence.xlsx",
-      "sha256": "ac219461012d8d043152c8e01cf9dd61110c83ab7302f187590edf55b45aa4c4"
+      "sha256": "1b9eff6c6ccb0766b23ce09a57a33f7bf4ec5832679e4af846c298b9d9b6505c"
     }
   ],
   "connectionRealGeminiCalls": 4,
-  "connectionScenarios": 3
+  "connectionScenarios": 3,
+  "pdfPages": 10,
+  "excelSheets": 11,
+  "hardEvaluation": {
+    "planned": 16,
+    "finishedConnectionErrors": 4,
+    "interruptedInFlight": 1,
+    "additionalDiagnosticTimeout": 1,
+    "heldoutExecuted": 0,
+    "semanticAccuracy": null
+  },
+  "syntheticRecovery": {
+    "before": 7,
+    "after": 8,
+    "total": 8,
+    "realAICalls": 0
+  },
+  "needTriageCases": 9
 }

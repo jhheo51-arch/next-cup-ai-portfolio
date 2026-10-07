@@ -40,7 +40,7 @@
       $$('[name=like]').forEach(x=>x.checked=data.result.likes.includes(x.value)); $$('[name=avoid]').forEach(x=>x.checked=data.result.dislikes.includes(x.value));
       $('#rice').value=['yes','no'].includes(data.result.essentialRice)?data.result.essentialRice:'';
       $('#priority').value=''; priorityOptions();
-      $('#interpretation').textContent=(data.result.understanding || '')+' 다르게 해석한 부분은 직접 바꿔주세요.';
+      $('#interpretation').textContent=[data.result.understanding, data.result.question ? '확인할 점: '+data.result.question : '', '다르게 해석한 부분은 직접 바꿔주세요.'].filter(Boolean).join(' ');
       if($$('#more-likes input:checked').length) $('#more-likes').parentElement.open=true;
       if($$('#dislikes input:checked').length) $('#dislikes').parentElement.open=true;
       comparison=null; show('confirm');
