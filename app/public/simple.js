@@ -10,9 +10,19 @@
     $('#dislikes').insertAdjacentHTML('beforeend', `<label><input type="checkbox" name="avoid" value="${tag}">${label}</label>`);
   }
   function priorityOptions() {
-    const previous = $('#priority').value;
-    $('#priority').innerHTML = '<option value="">없어요</option>' + $$('[name=like]:checked').filter(x=>x.value!=='rice').map(x=>`<option value="${x.value}">${C.labels[x.value]}</option>`).join('');
-    if ([...$('#priority').options].some(x=>x.value===previous)) $('#priority').value=previous;
+    const select = $('#priority'), previous = select.value;
+    const makeOption = (value, label) => {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = label;
+      return option;
+    };
+    const options = [makeOption('', '없어요')];
+    for (const input of $$('[name=like]:checked').filter(x=>x.value!=='rice')) {
+      options.push(makeOption(input.value, C.labels[input.value] || input.value));
+    }
+    select.replaceChildren(...options);
+    if ([...select.options].some(x=>x.value===previous)) select.value=previous;
   }
   function cancel() { epoch++; controller?.abort(); controller=null; $('#interpret').disabled=false; $('#ai-status').textContent=''; }
   function show(id) {
