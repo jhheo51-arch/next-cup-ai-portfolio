@@ -20,11 +20,17 @@ http://127.0.0.1:4322 로 접속합니다. 다른 프로그램이 이 포트를 
 
 ## 화면 자동 시험
 
-Playwright 패키지와 Microsoft Edge가 설치된 환경에서 실행합니다.
+기본 화면 검사는 Playwright(브라우저 자동 조작 도구)와 Chromium을 사용합니다. GitHub에서도 같은 검사를 실행합니다.
 
 ```bash
-npm install --no-save playwright
-node tests/simple-browser.cjs
+npm ci
+npx playwright install chromium
+npm run test:browser
+```
+
+아래 두 추가 검사는 Microsoft Edge가 설치된 환경에서 별도로 실행합니다.
+
+```bash
 node tests/layout-check.cjs
 node tests/input-comparison.cjs
 ```
