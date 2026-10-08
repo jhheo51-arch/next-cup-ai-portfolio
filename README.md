@@ -74,6 +74,14 @@ npm test
 npm start
 ```
 
+화면 검사도 실행하려면 다음 명령을 사용합니다. GitHub 자동 검사에서는 아래 14개 화면 검사와 위 123개 코드 검사를 모두 실행합니다. 화면 검사는 가상 AI 응답과 임시 저장소를 사용하며 실제 AI 요청은 보내지 않습니다.
+
+```bash
+npm ci
+npx playwright install chromium
+npm run test:browser
+```
+
 접속 주소: http://127.0.0.1:4322
 
 Gemini를 사용하려면 최상위 .env.example을 .env로 복사하고 본인 API 키를 넣습니다.

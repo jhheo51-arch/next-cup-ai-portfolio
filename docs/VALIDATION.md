@@ -27,6 +27,7 @@
 
 - node --test tests/*.test.cjs: 123개 통과. 이전 회원/연구 서버 모듈도 포함합니다.
 - tests/simple-browser.cjs: 14개 통과. 가상 AI 응답을 사용하며 실제 Gemini 0회.
+- GitHub에서 두 검사를 모두 필수 실행합니다. `npm ci`, `npx playwright install chromium` 뒤 `npm test`와 `npm run test:browser`로 재현할 수 있습니다. 화면 검사에 필요한 브라우저가 없으면 성공으로 건너뛰지 않고 실패합니다.
 - 375/812/1440px 가로 넘침, 계정 화면 제외, 직접 선택, 비선호 제외, 보류, 기록 저장, AI 오류 시 입력 보존 확인.
 
 ## 이전 시험 결과

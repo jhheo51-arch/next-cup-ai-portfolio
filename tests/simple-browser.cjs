@@ -1,7 +1,9 @@
-const {chromium}=require(process.env.PLAYWRIGHT_PATH||'playwright');
+const {chromium}=require('playwright');
 const {createApp}=require('../app/server.cjs');const assert=require('node:assert/strict');const fs=require('node:fs');
-(async()=>{const app=createApp({dbPath:':memory:'});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));const browser=await chromium.launch({channel:'msedge',headless:true});const page=await browser.newPage();const output='runtime/browser-'+Date.now();fs.mkdirSync(output,{recursive:true});const checks=[],errors=[];page.on('pageerror',e=>errors.push(e.message));const check=(name,v)=>{assert.ok(v,name);checks.push(name)};try{
-await page.goto(`http://127.0.0.1:${app.server.address().port}/#community`);
+(async()=>{const browser=await chromium.launch({headless:true});const app=createApp({dbPath:':memory:'});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));const page=await browser.newPage();const output='runtime/browser-'+Date.now();fs.mkdirSync(output,{recursive:true});const checks=[],errors=[];page.on('pageerror',e=>errors.push(e.message));const check=(name,v)=>{assert.ok(v,name);checks.push(name)};try{
+const baseURL=`http://127.0.0.1:${app.server.address().port}`;
+await page.route('**/*',route=>new URL(route.request().url()).origin===baseURL?route.continue():route.abort());
+await page.goto(baseURL+'/#community');
 check('기존 커뮤니티 주소는 시작 화면',await page.locator('#start').isVisible());
 check('계정과 시험 양식 없음',await page.locator('input[type=password],#trial-setup,#login-form').count()===0);
 await page.locator('#hero-begin').click();check('첫 화면 버튼에서 입력으로 이동',await page.locator('#memory').evaluate(el=>document.activeElement===el));await page.locator('#manual').click();await page.locator('[name=like][value=ice]').check();await page.locator('#rice').selectOption('no');await page.locator('#priority').selectOption('ice');await page.locator('#taste-form button').click();await page.locator('.drink').first().waitFor();check('갈린 질감 필수 후보',await page.locator('.drink').count()===3);

@@ -11,6 +11,10 @@
     "invite": "node app/admin.cjs invite",
     "admin-invite": "node app/admin.cjs admin-invite",
     "reports": "node app/admin.cjs reports",
-    "live-check": "node app/live-check.cjs"
+    "live-check": "node app/live-check.cjs",
+    "test:browser": "node tests/simple-browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.0"
   }
 }
