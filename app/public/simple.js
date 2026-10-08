@@ -1,7 +1,7 @@
 "use strict";
 (() => {
   const C = NextCup, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-  const key = "next-cup:simple:v1", pages = ["start","confirm","result","request","saved"];
+  const key = "next-cup:simple:v1", clientKey="next-cup:crm-client:v1", pages = ["start","confirm","result","request","saved","crm"];
   let comparison = null, controller = null, epoch = 0;
   const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const mainTags = ['rice','ice','crunch','cream','cocoa','fruit','yogurt'];
@@ -31,6 +31,8 @@
     if(id!=='start') cancel();
     pages.forEach(page=>$('#'+page).hidden=page!==id);
     if(id==='saved') renderSaved();
+    if(id==='crm') renderCRM();
+    $$('[data-view-link]').forEach(link=>link.toggleAttribute('aria-current',link.dataset.viewLink===id));
     history.replaceState(null,'','#'+id); window.scrollTo(0,0); $('#'+id+' h1').setAttribute('tabindex','-1'); $('#'+id+' h1').focus({preventScroll:true});
   }
   $$('[data-go]').forEach(button=>button.addEventListener('click',()=>show(button.dataset.go)));
@@ -80,5 +82,14 @@
   function records(){const value=JSON.parse(localStorage.getItem(key)||'[]');if(!Array.isArray(value)||value.some(r=>!r||typeof r.text!=='string'))throw Error('저장 기록을 읽지 못했습니다. 기존 내용은 덮어쓰지 않았습니다.');return value;}
   $('#request-form').addEventListener('submit',e=>{e.preventDefault();try{const text=$('#unmet').value.trim();if(!text)throw Error('남기고 싶은 특징을 적어주세요.');const rows=records();localStorage.setItem(key,JSON.stringify([...rows,{id:crypto.randomUUID(),text,comparison,at:new Date().toISOString()}]));$('#unmet').value='';show('saved');}catch(error){$('#save-error').textContent=error.message;}});
   function renderSaved(){try{$('#records').innerHTML=records().map(r=>`<article class="record"><p>${esc(r.text)}</p><p class="fine">${esc(new Date(r.at).toLocaleDateString('ko-KR'))} / 내 기기 기록</p></article>`).join('')||'<p>아직 남겨둔 기록이 없습니다.</p>';}catch(error){$('#records').textContent=error.message;}}
+  function clientId(){let value=localStorage.getItem(clientKey);if(!/^[a-f0-9-]{36}$/.test(value||'')){value=crypto.randomUUID();localStorage.setItem(clientKey,value);}return value;}
+  async function loadAlertStatus(){try{const response=await fetch('/api/crm/status?clientId='+encodeURIComponent(clientId()));const data=await response.json();if(!response.ok)throw Error(data.error);$$('[name=alert-topic]').forEach(x=>x.checked=data.topics.includes(x.value));$('#alert-consent').checked=data.topics.length>0;$('#alert-status').textContent=data.topics.length?'알림 동의가 저장되어 있습니다. 선택한 조건은 '+data.topics.length+'개입니다.':'저장된 알림 동의가 없습니다.';}catch(error){$('#alert-status').textContent=error.message;}}
+  async function notificationReady(){if(!('Notification'in window)||!('serviceWorker'in navigator))throw Error('이 브라우저에서는 알림 시험을 지원하지 않습니다.');const permission=Notification.permission==='default'?await Notification.requestPermission():Notification.permission;if(permission!=='granted')throw Error('브라우저 알림 권한이 필요합니다. 주소창의 사이트 권한에서 다시 허용할 수 있습니다.');await navigator.serviceWorker.register('/sw.js');return navigator.serviceWorker.ready;}
+  $('#alert-form').addEventListener('submit',async e=>{e.preventDefault();const button=e.submitter;button.disabled=true;$('#alert-status').textContent='알림 권한과 동의를 확인하고 있습니다.';try{const topics=$$('[name=alert-topic]:checked').map(x=>x.value);if(!topics.length)throw Error('관심 조건을 하나 이상 선택해 주세요.');if(!$('#alert-consent').checked)throw Error('관심 메뉴 알림에 동의해 주세요.');await notificationReady();const data=await post('/api/crm/subscribe',{clientId:clientId(),topics,consent:true},AbortSignal.timeout(12000));$('#alert-status').textContent='선택한 관심 조건 '+data.topics.length+'개를 저장했습니다. 요구 문장 원문은 전송하지 않았습니다.';}catch(error){$('#alert-status').textContent=error.message;}finally{button.disabled=false;}});
+  $('#unsubscribe').addEventListener('click',async e=>{const button=e.currentTarget;button.disabled=true;try{await post('/api/crm/unsubscribe',{clientId:clientId()},AbortSignal.timeout(12000));$$('[name=alert-topic]').forEach(x=>x.checked=false);$('#alert-consent').checked=false;$('#alert-status').textContent='관심 메뉴 알림을 해제했습니다.';}catch(error){$('#alert-status').textContent=error.message;}finally{button.disabled=false;}});
+  async function renderCRM(){try{const response=await fetch('/api/crm/dashboard');const data=await response.json();if(!response.ok)throw Error(data.error);$('#crm-notice').textContent=data.notice;const metrics=[['가상 사례',data.scenarioCount],['후속 검토',data.followUpCount],['알림 동의',data.consentedCount],['조건 일치',data.matchedCount],['시험 발송',data.deliveredCount]];$('#crm-metrics').innerHTML=metrics.map(([label,value])=>`<article><strong>${value}</strong><span>${label}</span></article>`).join('');const max=Math.max(...data.stages.map(x=>x.count),1);$('#crm-pipeline').innerHTML=data.stages.map(x=>`<div class="bar-row"><span>${esc(x.label)}</span><progress max="${max}" value="${x.count}" aria-label="${esc(x.label)} ${x.count}건"></progress><strong>${x.count}</strong></div>`).join('');$('#crm-needs').innerHTML=data.byTopic.filter(x=>x.count).map(x=>`<div class="need-row"><span>${esc(x.label)}</span><strong>${x.count}건</strong></div>`).join('');$('#crm-status').textContent=`이 로컬 서버의 알림 동의 기기 ${data.localPrototype.subscribedClients}개 / 시험 발송 요청 ${data.localPrototype.deliveryRequests}건`;}catch(error){$('#crm-notice').textContent=error.message;}}
+  $('#test-notification').addEventListener('click',async e=>{const button=e.currentTarget;button.disabled=true;try{const registration=await notificationReady();const data=await post('/api/crm/test-notification',{clientId:clientId(),eventId:'synthetic-rice-menu-20261008'},AbortSignal.timeout(12000));if(!data.delivery.duplicate)await registration.showNotification(data.event.title,{body:data.event.body,tag:data.event.id,data:{url:'/#saved'}});await renderCRM();$('#crm-status').textContent=data.delivery.duplicate?'같은 시험 알림은 이미 요청했습니다. 중복 발송하지 않았습니다.':'브라우저에 시험 알림을 표시했습니다. 실제 스타벅스 소식이나 원격 푸시가 아닙니다.';}catch(error){$('#crm-status').textContent=error.message;}finally{button.disabled=false;}});
+  window.addEventListener('hashchange',()=>{if(location.hash==='#saved')loadAlertStatus();});
+  loadAlertStatus();
   show(location.hash.slice(1)||'start');
 })();

@@ -1,0 +1,19 @@
+{
+  "checks": [
+    "가상 자료 표시",
+    "대시보드 지표 5개",
+    "후속 검토 6건",
+    "쌀 풍미 알림 동의 저장",
+    "시험 알림 조건 통과",
+    "중복 발송 방지",
+    "알림 해제",
+    "375px 가로 넘침 없음",
+    "자바스크립트 오류 없음"
+  ],
+  "errors": [],
+  "realAICalls": 0,
+  "externalParticipants": 0,
+  "actualRemotePushes": 0,
+  "browserNotificationInterface": "synthetic",
+  "kind": "synthetic-crm-browser-test"
+}

@@ -11,7 +11,9 @@ function openStore(file){
  CREATE TABLE IF NOT EXISTS votes(post_id TEXT NOT NULL REFERENCES posts(id),user_id TEXT NOT NULL REFERENCES users(id),reason TEXT NOT NULL,PRIMARY KEY(post_id,user_id));
  CREATE TABLE IF NOT EXISTS reports(post_id TEXT NOT NULL REFERENCES posts(id),user_id TEXT NOT NULL REFERENCES users(id),reason TEXT NOT NULL,created TEXT NOT NULL,PRIMARY KEY(post_id,user_id));
  CREATE TABLE IF NOT EXISTS calls(id TEXT PRIMARY KEY,task TEXT NOT NULL,model TEXT NOT NULL,started INTEGER NOT NULL,ms INTEGER,status TEXT NOT NULL,input_tokens INTEGER DEFAULT 0,output_tokens INTEGER DEFAULT 0);
- CREATE TABLE IF NOT EXISTS audit(id INTEGER PRIMARY KEY,actor TEXT NOT NULL,post_id TEXT NOT NULL,action TEXT NOT NULL,created TEXT NOT NULL);`);
+ CREATE TABLE IF NOT EXISTS audit(id INTEGER PRIMARY KEY,actor TEXT NOT NULL,post_id TEXT NOT NULL,action TEXT NOT NULL,created TEXT NOT NULL);
+ CREATE TABLE IF NOT EXISTS crm_subscriptions(client_hash TEXT NOT NULL,topic TEXT NOT NULL,active INTEGER NOT NULL,created TEXT NOT NULL,updated TEXT NOT NULL,PRIMARY KEY(client_hash,topic));
+ CREATE TABLE IF NOT EXISTS crm_deliveries(id TEXT PRIMARY KEY,client_hash TEXT NOT NULL,topic TEXT NOT NULL,event_id TEXT NOT NULL,status TEXT NOT NULL,created TEXT NOT NULL,UNIQUE(client_hash,event_id));`);
  const stmt=s=>db.prepare(s);const tx=fn=>{db.exec('BEGIN IMMEDIATE');try{const r=fn();db.exec('COMMIT');return r;}catch(e){db.exec('ROLLBACK');throw e;}};
  function invite(role='member'){const token=randomBytes(18).toString('base64url');stmt('INSERT INTO invites(token,role,expires) VALUES(?,?,?)').run(hash(token),role,Date.now()+7*86400000);return token;}
  function signup({handle,password,invite:code}){
@@ -32,6 +34,11 @@ function openStore(file){
  function beginCall(task,model,limit=40){return tx(()=>{if(stmt('SELECT COUNT(*) n FROM calls WHERE started>?').get(Date.now()-86400000).n>=limit)fail(429,'최근 24시간 AI 호출 한도에 도달했습니다. 수동 선택을 이용해 주세요.');const id=randomUUID();stmt('INSERT INTO calls(id,task,model,started,status) VALUES(?,?,?,?,?)').run(id,task,model,Date.now(),'running');return id;});}
  function endCall(id,status,ms,usage={}){const count=n=>Number.isFinite(n)&&n>=0?Math.floor(n):0;stmt('UPDATE calls SET status=?,ms=?,input_tokens=?,output_tokens=? WHERE id=?').run(status,ms,count(usage.promptTokenCount),count(usage.candidatesTokenCount)+count(usage.thoughtsTokenCount),id);}
  function operations(){return{calls:stmt('SELECT task,model,COUNT(*) count,SUM(status=\'ok\') ok,ROUND(AVG(ms)) avgMs,SUM(input_tokens) inputTokens,SUM(output_tokens) outputTokens FROM calls GROUP BY task,model').all(),reports:stmt('SELECT COUNT(*) count FROM reports').get().count};}
- return{db,invite,signup,login,session,user,list,post,create,edit,visibility,vote,report,beginCall,endCall,operations,logout:t=>stmt('DELETE FROM sessions WHERE token=?').run(hash(t||'')),close:()=>db.close()};
+ function crmSubscribe(clientId,topics){const client=hash(clientId),now=new Date().toISOString();tx(()=>{stmt('UPDATE crm_subscriptions SET active=0,updated=? WHERE client_hash=?').run(now,client);for(const topic of topics)stmt('INSERT INTO crm_subscriptions VALUES(?,?,?,?,?) ON CONFLICT(client_hash,topic) DO UPDATE SET active=1,updated=excluded.updated').run(client,topic,1,now,now);});}
+ function crmStatus(clientId){return stmt('SELECT topic FROM crm_subscriptions WHERE client_hash=? AND active=1 ORDER BY topic').all(hash(clientId)).map(x=>x.topic);}
+ function crmUnsubscribe(clientId){stmt('UPDATE crm_subscriptions SET active=0,updated=? WHERE client_hash=?').run(new Date().toISOString(),hash(clientId));}
+ function crmDeliver(clientId,event){const client=hash(clientId),now=new Date().toISOString(),id=randomUUID();try{stmt('INSERT INTO crm_deliveries VALUES(?,?,?,?,?,?)').run(id,client,event.topic,event.id,'browser_requested',now);return{status:'browser_requested',duplicate:false,created:now};}catch(error){if(String(error.message).includes('UNIQUE'))return{status:'already_requested',duplicate:true,created:stmt('SELECT created FROM crm_deliveries WHERE client_hash=? AND event_id=?').get(client,event.id).created};throw error;}}
+ function crmMetrics(){return{subscribedClients:stmt('SELECT COUNT(DISTINCT client_hash) count FROM crm_subscriptions WHERE active=1').get().count,deliveryRequests:stmt('SELECT COUNT(*) count FROM crm_deliveries').get().count};}
+ return{db,invite,signup,login,session,user,list,post,create,edit,visibility,vote,report,beginCall,endCall,operations,crmSubscribe,crmStatus,crmUnsubscribe,crmDeliver,crmMetrics,logout:t=>stmt('DELETE FROM sessions WHERE token=?').run(hash(t||'')),close:()=>db.close()};
 }
 module.exports={openStore,fail};
