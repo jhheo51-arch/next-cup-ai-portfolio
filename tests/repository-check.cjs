@@ -11,7 +11,7 @@ checks.push(name+' links');
 assert.deepEqual(errors,[]);
 const app=createApp({dbPath:':memory:'});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));
 try{const base='http://127.0.0.1:'+app.server.address().port;
-for(const route of ['/','/simple.js','/simple.css','/portfolio.js','/portfolio.css','/rice-cup.svg','/core.js','/README.md','/PRD.md','/HANDOFF.md','/PROTOCOL.md']){const response=await fetch(base+route);assert.equal(response.status,200,route);checks.push('HTTP 200 '+route);}
+for(const route of ['/','/simple.js','/simple.css','/portfolio.js','/portfolio.css','/rice-cup.svg','/sw.js','/core.js','/README.md','/PRD.md','/HANDOFF.md','/PROTOCOL.md']){const response=await fetch(base+route);assert.equal(response.status,200,route);checks.push('HTTP 200 '+route);}
 for(const route of ['/.env','/app/ai.cjs','/runtime/next-cup.sqlite'])assert.equal((await fetch(base+route)).status,404,route);
 checks.push('private files blocked');
 }finally{app.server.closeAllConnections();await app.close();}

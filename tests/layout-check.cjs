@@ -10,7 +10,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
   await page.locator('#manual').click();await page.locator('[name=like][value=ice]').check();await page.locator('#rice').selectOption('no');await page.locator('#priority').selectOption('ice');await page.locator('#taste-form button').click();await page.locator('.drink').first().waitFor();
   for(const width of [375,812,1024,1280,1440]){
    await page.setViewportSize({width,height:900});
-   for(const route of ['start','confirm','result','request','saved']){
+   for(const route of ['start','confirm','result','request','saved','crm']){
     await page.evaluate(route=>location.hash=route,route);await page.locator('#'+route).waitFor({state:'visible'});
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route+' '+width);
     checks.push(route+' / '+width+'px 가로 넘침 없음');

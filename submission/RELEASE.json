@@ -1,26 +1,26 @@
 {
   "repositoryLayout": "app/docs/tests/evidence/submission",
-  "repositoryChecks": 22,
+  "repositoryChecks": 23,
   "realAICallsDuringReorganization": 0,
   "checked": "2026-10-08",
-  "unitTests": 123,
-  "syntheticBrowserChecks": 14,
+  "unitTests": 125,
+  "syntheticBrowserChecks": 23,
   "externalParticipants": 0,
-  "note": "PDF, Excel, GitHub의 범위와 수치를 대조. 기존 실제 호출과 가상 응답 재생을 구분. 심층 해석 평가 미완료, 고객 효과 미측정.",
+  "note": "PDF, Excel, GitHub의 범위와 수치를 대조. 기존 실제 호출, 가상 응답 재생, CRM 가상 시나리오를 구분. 심층 해석 평가 미완료, 고객 효과와 실제 원격 푸시 미측정.",
   "files": [
     {
       "file": "submission/NEXT-CUP-Portfolio.pdf",
-      "sha256": "15145becf6485add09e8333b3ef20ce5ba75532699eb7663c8eec9c4ce6012dc"
+      "sha256": "a1f8553197cd5a06b19e6d545777d898c976c2e9bdb5474e85bae0456f767374"
     },
     {
       "file": "submission/NEXT-CUP-Evidence.xlsx",
-      "sha256": "60580d43a79455d2b0c83750310bf731c5a083f343f3bc3d96f3d9f9a8f8f1ab"
+      "sha256": "7a26dea6a60af76447eb83eb621efc30cd62f4375b005b40fcb109a804064f6f"
     }
   ],
   "connectionRealGeminiCalls": 4,
   "connectionScenarios": 3,
-  "pdfPages": 11,
-  "excelSheets": 11,
+  "pdfPages": 12,
+  "excelSheets": 12,
   "hardEvaluation": {
     "planned": 16,
     "finishedConnectionErrors": 4,
@@ -38,7 +38,7 @@
     "realAICalls": 0
   },
   "needTriageCases": 9,
-  "responsiveLayoutChecks": 29,
+  "responsiveLayoutChecks": 34,
   "realAICallsDuringSubmissionSync": 0,
   "inputComparison": {
     "kind": "retrospective-response-replay",
@@ -61,5 +61,17 @@
     "before": "failed",
     "after": "passed",
     "realProviderRecoveryVerified": false
+  },
+  "crmFollowUp": {
+    "kind": "synthetic-crm-follow-up-scenarios",
+    "scenarios": 9,
+    "followUpReview": 6,
+    "alertEligible": 4,
+    "consented": 3,
+    "matched": 2,
+    "testDelivery": 1,
+    "browserChecks": 9,
+    "actualCustomers": 0,
+    "actualRemotePushes": 0
   }
 }

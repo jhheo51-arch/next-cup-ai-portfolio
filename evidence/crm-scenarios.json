@@ -1,0 +1,17 @@
+{
+  "kind": "synthetic-crm-follow-up-scenarios",
+  "externalParticipants": 0,
+  "actualCustomers": 0,
+  "note": "운영 판단과 알림 조건을 시험하기 위한 가상 사례입니다. 시장 수요나 구매 의사가 아닙니다.",
+  "rows": [
+    {"id":"C01","need":"쌀 풍미가 꼭 필요함","decision":"현재 후보 없음. 공식 자료 변화 확인","topic":"rice","followUp":true,"alertEligible":true,"consented":true,"matched":true,"delivered":true},
+    {"id":"C02","need":"바삭한 토핑을 원함","decision":"사전 밖 요구. 메뉴 조사 필요","topic":"crunch","followUp":true,"alertEligible":true,"consented":true,"matched":false,"delivered":false},
+    {"id":"C03","need":"특정 지점 메뉴를 다시 찾음","decision":"지점과 판매 기간 재확인","topic":"rice","followUp":true,"alertEligible":true,"consented":false,"matched":false,"delivered":false},
+    {"id":"C04","need":"지역 농가와 연결된 취지를 원함","decision":"맛 조건과 별도로 보존","topic":"purpose","followUp":true,"alertEligible":true,"consented":true,"matched":true,"delivered":false},
+    {"id":"C05","need":"AI가 바닐라를 현재 선호로 해석","decision":"원문 대조와 해석 평가","topic":"","followUp":false,"alertEligible":false,"consented":false,"matched":false,"delivered":false},
+    {"id":"C06","need":"공식 목록에서 후보 메뉴가 누락됨","decision":"목록 보완 뒤 추천 재검사","topic":"ice","followUp":true,"alertEligible":false,"consented":false,"matched":false,"delivered":false},
+    {"id":"C07","need":"알레르기 안전 조건을 요구","decision":"추천 중단. 공식 안전 정보로 연결","topic":"","followUp":true,"alertEligible":false,"consented":false,"matched":false,"delivered":false},
+    {"id":"C08","need":"갈린 질감의 대안을 수용","decision":"대안 확인 완료. 알림 불필요","topic":"ice","followUp":false,"alertEligible":false,"consented":false,"matched":false,"delivered":false},
+    {"id":"C09","need":"기록 수집에 동의하지 않음","decision":"기기 안 기록만 유지","topic":"rice","followUp":false,"alertEligible":false,"consented":false,"matched":false,"delivered":false}
+  ]
+}

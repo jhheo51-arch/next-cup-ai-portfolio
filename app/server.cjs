@@ -7,6 +7,7 @@ const C = require("./core.js"),
   { openStore, fail } = require("./db.cjs"),
   { createAI, pii } = require("./ai.cjs");
 const { initResearch } = require("./research.cjs");
+const { createCRM } = require("./crm.cjs");
 const reasons = {
   original: "원래 맛 그대로",
   lessSweet: "덜 달게",
@@ -17,6 +18,7 @@ const files = {
   "/portfolio.js": "public/portfolio.js",
   "/simple.js": "public/simple.js",
   "/simple.css": "public/simple.css",
+  "/sw.js": "public/sw.js",
   "/choice-evidence.js": "legacy/choice-evidence.js",
   "/focus.js": "legacy/focus.js",
   "/focus.css": "legacy/focus.css",
@@ -74,6 +76,7 @@ function createApp({ dbPath, aiOverride, dailyLimit = 40 } = {}) {
         onEnd: store.endCall,
       });
   const lab = initResearch(store, ai);
+  const crm = createCRM(store);
   const limits = new Map();
   let inflight = 0;
   const limit = (key, n, period) => {
@@ -216,6 +219,19 @@ function createApp({ dbPath, aiOverride, dailyLimit = 40 } = {}) {
           else fail(404, "연구 기능을 찾을 수 없습니다.");
         } else fail(404, "연구 기능을 찾을 수 없습니다.");
         json(res, 200, result === undefined ? { ok: true } : result);
+        return;
+      }
+      if (route === "/api/crm/dashboard" && req.method === "GET") {
+        json(res, 200, crm.dashboard());
+        return;
+      }
+      if (route === "/api/crm/status" && req.method === "GET") {
+        json(res, 200, crm.status(url.searchParams.get("clientId") || ""));
+        return;
+      }
+      if (["/api/crm/subscribe","/api/crm/unsubscribe","/api/crm/test-notification"].includes(route) && req.method === "POST") {
+        const result=route.endsWith("subscribe")&&!route.endsWith("unsubscribe")?crm.subscribe(body):route.endsWith("unsubscribe")?crm.unsubscribe(body):crm.dispatch(body);
+        json(res, 200, result);
         return;
       }
       if (route === "/api/session" && req.method === "GET") {
@@ -420,6 +436,7 @@ function createApp({ dbPath, aiOverride, dailyLimit = 40 } = {}) {
     store,
     ai,
     lab,
+    crm,
     close: async () => {
       await new Promise((resolve) => server.close(resolve));
       store.close();
