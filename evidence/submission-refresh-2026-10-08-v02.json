@@ -1,0 +1,28 @@
+{
+  "checked": "2026-10-08",
+  "reason": "첫 예약 점검 결과를 세 제출물에 같은 기준으로 반영",
+  "files": [
+    {
+      "path": "submission/NEXT-CUP-Portfolio-2026-10-08-v02.pdf",
+      "sha256": "4e3a7588b0d0dc9fc216e8d5667a6142abd0aa79076426d65c81f9c4280dba43",
+      "pages": 13,
+      "change": "첫 예약 점검 1회와 자동 반영 보류 판단을 13쪽에 추가"
+    },
+    {
+      "path": "submission/NEXT-CUP-Evidence-2026-10-08-v02.xlsx",
+      "sha256": "f822928890b08fc174047290cb99ad217e2f6c92f4f9c5194ecfeaaabadb3b83",
+      "sheets": 12,
+      "change": "검증 요약과 운영 계획에 첫 회차 실행일, 근거 파일과 상태를 기록"
+    }
+  ],
+  "github": {
+    "evidence": "evidence/menu-review-2026-10-08-v01.json",
+    "updatedDocuments": ["README.md", "docs/EVIDENCE.md", "docs/PRD.md", "submission/RELEASE.json"]
+  },
+  "limits": [
+    "S08과 S09의 본문 확인 실패를 판매 종료로 해석하지 않음",
+    "추천 목록과 판매 상태 자동 변경 없음",
+    "첫 회차 범위는 S01부터 S09까지이며 S13은 포함하지 않음",
+    "외부 이용자 효과, 실제 구매, 매출과 지점 재고는 확인하지 않음"
+  ]
+}

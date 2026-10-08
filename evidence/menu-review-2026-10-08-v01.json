@@ -1,0 +1,68 @@
+{
+  "slot": "2026-10-08",
+  "timezone": "Asia/Seoul",
+  "kind": "scheduled-official-source-review",
+  "scope": {
+    "registeredSources": 9,
+    "sourceIds": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09"],
+    "note": "첫 회차는 미리 고정한 9개 출처를 확인했습니다. 현재 저장소에 별도로 추가된 S13은 이 회차 대상에 포함하지 않았습니다."
+  },
+  "summary": {
+    "completedRuns": 1,
+    "plannedRuns": 4,
+    "unchanged": 7,
+    "changed": 0,
+    "failed": 0,
+    "missing": 2,
+    "pendingHumanReview": 2,
+    "automaticCatalogChanges": 0
+  },
+  "checks": [
+    {
+      "sourceId": "S01",
+      "result": "unchanged",
+      "note": "2019년 5월 재출시와 두 종류 합산 판매 기록이 기존 근거와 같았습니다."
+    },
+    {
+      "sourceId": "S02",
+      "result": "unchanged",
+      "note": "바닐라 크림 콜드 브루의 상시 판매 전환 이력이 기존 근거와 같았습니다."
+    },
+    {
+      "sourceId": "S03",
+      "result": "unchanged",
+      "note": "2026년 3월 4일부터 4월 14일까지 슈크림 음료 6종의 판매 기간이 기존 근거와 같았습니다."
+    },
+    {
+      "sourceId": "S04",
+      "result": "unchanged",
+      "note": "2026년 4월 1일부터 14일까지 112개 매장 한정 재출시 기록이 기존 근거와 같았습니다."
+    },
+    {
+      "sourceId": "S05",
+      "result": "unchanged",
+      "note": "가을 시즌 판매와 누적 3천만 잔 기록이 기존 근거와 같았습니다."
+    },
+    {
+      "sourceId": "S06",
+      "result": "unchanged",
+      "note": "2023년 7개 매장 한시 확대 기록이 기존 근거와 같았습니다."
+    },
+    {
+      "sourceId": "S07",
+      "result": "unchanged",
+      "note": "공식 콜드 브루 소개 페이지에서 바닐라 크림 콜드 브루 항목을 확인했습니다. 매장별 판매 여부는 다를 수 있습니다."
+    },
+    {
+      "sourceId": "S08",
+      "result": "missing",
+      "note": "공식 상세 페이지는 열렸지만 제품명과 상세 항목이 본문에 나타나지 않았습니다. 판매 종료로 해석하지 않았습니다."
+    },
+    {
+      "sourceId": "S09",
+      "result": "missing",
+      "note": "공식 음료 목록 페이지는 열렸지만 개별 메뉴명이 본문에 나타나지 않았습니다. 판매 종료로 해석하지 않았습니다."
+    }
+  ],
+  "decision": "S08과 S09를 사람 검토 대기 상태로 남겼습니다. 판매 상태와 추천 목록은 자동 변경하지 않았습니다."
+}

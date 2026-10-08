@@ -9,17 +9,17 @@
   "note": "PDF, Excel, GitHub의 범위와 수치를 대조. 기존 실제 호출, 가상 응답 재생, CRM 가상 시나리오를 구분. 심층 해석 평가 미완료, 고객 효과와 실제 원격 푸시 미측정.",
   "files": [
     {
-      "file": "submission/NEXT-CUP-Portfolio.pdf",
-      "sha256": "a1f8553197cd5a06b19e6d545777d898c976c2e9bdb5474e85bae0456f767374"
+      "file": "submission/NEXT-CUP-Portfolio-2026-10-08-v02.pdf",
+      "sha256": "4e3a7588b0d0dc9fc216e8d5667a6142abd0aa79076426d65c81f9c4280dba43"
     },
     {
-      "file": "submission/NEXT-CUP-Evidence.xlsx",
-      "sha256": "7a26dea6a60af76447eb83eb621efc30cd62f4375b005b40fcb109a804064f6f"
+      "file": "submission/NEXT-CUP-Evidence-2026-10-08-v02.xlsx",
+      "sha256": "f822928890b08fc174047290cb99ad217e2f6c92f4f9c5194ecfeaaabadb3b83"
     }
   ],
   "connectionRealGeminiCalls": 4,
   "connectionScenarios": 3,
-  "pdfPages": 12,
+  "pdfPages": 13,
   "excelSheets": 12,
   "hardEvaluation": {
     "planned": 16,
@@ -40,6 +40,16 @@
   "needTriageCases": 9,
   "responsiveLayoutChecks": 34,
   "realAICallsDuringSubmissionSync": 0,
+  "scheduledMenuReview": {
+    "completedRuns": 1,
+    "plannedRuns": 4,
+    "registeredSources": 9,
+    "unchanged": 7,
+    "missing": 2,
+    "pendingHumanReview": 2,
+    "automaticCatalogChanges": 0,
+    "evidence": "evidence/menu-review-2026-10-08-v01.json"
+  },
   "inputComparison": {
     "kind": "retrospective-response-replay",
     "manualFieldChanges": [
