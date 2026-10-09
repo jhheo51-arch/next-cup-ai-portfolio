@@ -2,7 +2,7 @@
 
 좋아했던 음료의 특징으로 다음 잔을 찾고, 해결하지 못한 요구를 동의 기반 후속 알림으로 연결하는 시제품입니다.
 
-[프로젝트 소개 PDF](submission/NEXT-CUP-Portfolio-2026-10-08-v02.pdf) | [시험 결과 Excel](submission/NEXT-CUP-Evidence-2026-10-08-v02.xlsx) | [화면 설명](docs/DEMO.md)
+[현재 제출 PDF](submission/NEXT-CUP-Portfolio-2026-10-08-v02.pdf) | [현재 검증 Excel](submission/NEXT-CUP-Evidence-2026-10-08-v02.xlsx) | [제출 자료 안내](submission/README.md) | [화면 설명](docs/DEMO.md)
 
 스타벅스 AI 기획/개발 지원용 개인 프로젝트이며, 스타벅스 공식 서비스는 아닙니다.
 
@@ -80,7 +80,7 @@ npm run test:browser
 |---|---|
 | 제품 범위와 직무 연결 | [기획서](docs/PRD.md), [직무 관련 설명](docs/CONTENT.md) |
 | 직접 화면 확인 | [화면 설명](docs/DEMO.md), [사용자 시험 계획](docs/PROTOCOL.md) |
-| 제출자료와 근거 | [제출 파일](submission/), [원자료](evidence/), [파일 확인값](submission/RELEASE.json) |
+| 제출자료와 근거 | [제출 자료 안내](submission/README.md), [원자료 안내](evidence/README.md), [파일 확인값](submission/RELEASE.json) |
 | 현재 구현 | [서버와 추천 코드](app/), [현재 화면](app/public/), [자동 검사](tests/) |
 
 제작자가 문제와 기능 범위를 정하고 결과를 검토했습니다. Codex가 조사와 구현을 보조했고 Gemini는 취향 해석에 사용합니다. 키와 개인 입력 기록은 GitHub에 올리지 않습니다.
