@@ -4,7 +4,7 @@
 
 [현재 제출 PDF](submission/NEXT-CUP-Portfolio-2026-10-08-v02.pdf) | [현재 검증 Excel](submission/NEXT-CUP-Evidence-2026-10-08-v02.xlsx) | [제출 자료 안내](submission/README.md) | [화면 설명](docs/DEMO.md)
 
-스타벅스 AI 기획/개발 지원용 개인 프로젝트이며, 스타벅스 공식 서비스는 아닙니다.
+공개 메뉴 자료와 개인 경험을 바탕으로, 음료 브랜드의 AI 기획과 개발 업무를 맡는 상황을 상상해 만든 개인 프로젝트입니다. 스타벅스 공식 서비스는 아닙니다.
 
 ## 30초 안내
 
