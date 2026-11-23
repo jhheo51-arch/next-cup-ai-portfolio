@@ -1,10 +1,6 @@
 const {chromium}=require('playwright');
-const {mock}=require('node:test');
 const {createApp}=require('../app/server.cjs');const assert=require('node:assert/strict');const fs=require('node:fs');
-// Run the recommendation scenario just after the fixture menu was checked.
-const catalogTestTime = Date.parse('2026-10-08T00:00:00Z');
 (async()=>{const browser=await chromium.launch({headless:true});const app=createApp({dbPath:':memory:'});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));const page=await browser.newPage();const output='runtime/browser-'+Date.now();fs.mkdirSync(output,{recursive:true});const checks=[],errors=[];page.on('pageerror',e=>errors.push(e.message));const check=(name,v)=>{assert.ok(v,name);checks.push(name)};try{
-mock.method(Date,'now',()=>catalogTestTime);
 const baseURL=`http://127.0.0.1:${app.server.address().port}`;
 await page.route('**/*',route=>new URL(route.request().url()).origin===baseURL?route.continue():route.abort());
 await page.goto(baseURL+'/#community');
@@ -17,4 +13,4 @@ await page.locator('[data-go=start]:visible').click();await page.locator('#memor
 await page.unroute('**/api/ai/taste');await page.route('**/api/ai/taste',route=>route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({result:{likes:['ice'],dislikes:['cocoa'],essentialRice:'unknown',understanding:'가상 AI 응답'}})}));await page.locator('#interpret').click();await page.locator('#confirm').waitFor({state:'visible'});check('AI 해석 확인과 쌀 미확인 유지',await page.locator('[name=like][value=ice]').isChecked()&&await page.locator('#rice').inputValue()==='');
 for(const width of [375,812,1440]){await page.setViewportSize({width,height:900});check('가로 넘침 없음 '+width,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
 await page.locator('[data-go=start]:visible').click();await page.setViewportSize({width:1280,height:900});await page.screenshot({path:output+'/simple-desktop.png',fullPage:true});await page.setViewportSize({width:375,height:812});await page.emulateMedia({reducedMotion:'reduce'});await page.screenshot({path:output+'/simple-mobile.png',fullPage:true});check('화면 가운데점 없음',!/[·•‧ㆍ]/.test(await page.locator('body').innerText()));check('자바스크립트 오류 없음',!errors.length);fs.writeFileSync(output+'/simple-results.json',JSON.stringify({checks,errors,realAICalls:0,externalParticipants:0,kind:'synthetic-browser-test'},null,2));console.log(JSON.stringify({passed:checks.length,checks}));
-}finally{mock.restoreAll();await browser.close();app.server.closeAllConnections();await app.close();}})().catch(e=>{console.error(e);process.exitCode=1});
+}finally{await browser.close();app.server.closeAllConnections();await app.close();}})().catch(e=>{console.error(e);process.exitCode=1});
